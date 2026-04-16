@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SDM — Let your team sell. Not administrate.</title>
-  <meta name="description" content="SDM deploys AI agents that capture, analyse, and act on your sales data — so your team can focus on what only humans can do." />
+  <meta name="description" content="SDM deploys AI agents that capture, analyse, and act on your sales data." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -12,11 +12,11 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --white: #ffffff;
-      --bg: #f0ede8;
-      --card: #e8e4de;
+      --bg: #ebebea;
+      --card: #e2e1df;
       --dark: #111110;
       --mid: #6b6a66;
-      --light: #a8a49c;
+      --light: #a8a7a3;
       --border: rgba(0,0,0,0.07);
       --border-mid: rgba(0,0,0,0.11);
       --green: #1D9E75;
@@ -26,14 +26,8 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--dark); -webkit-font-smoothing: antialiased; }
 
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      height: 54px; display: flex; align-items: center; justify-content: space-between;
-      padding: 0 36px;
-      background: rgba(255,255,255,0.93); backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-    }
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 54px; display: flex; align-items: center; justify-content: space-between; padding: 0 36px; background: rgba(255,255,255,0.93); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
     .nav-logo { font-size: 14px; font-weight: 500; color: var(--dark); text-decoration: none; letter-spacing: -0.2px; }
     .nav-links { display: flex; gap: 28px; list-style: none; position: absolute; left: 50%; transform: translateX(-50%); }
     .nav-links a { font-size: 13px; font-weight: 400; color: var(--mid); text-decoration: none; transition: color .15s; }
@@ -44,19 +38,11 @@
     .btn-black { font-family: 'Inter',sans-serif; font-size: 13px; font-weight: 500; color: white; background: var(--dark); border: none; cursor: pointer; padding: 7px 16px; border-radius: 20px; text-decoration: none; transition: opacity .15s; }
     .btn-black:hover { opacity: 0.78; }
 
-    /* ── HERO ── */
+    /* HERO */
     .hero { padding: 116px 36px 72px; max-width: 1200px; margin: 0 auto; }
     .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: end; }
-
-    h1 {
-      font-size: clamp(32px, 3.6vw, 48px);
-      font-weight: 300;
-      line-height: 1.18;
-      letter-spacing: -1.2px;
-      color: var(--dark);
-    }
+    h1 { font-size: clamp(32px, 3.6vw, 48px); font-weight: 300; line-height: 1.18; letter-spacing: -1.2px; color: var(--dark); }
     h1 em { font-style: normal; color: var(--light); }
-
     .hero-right { padding-bottom: 4px; }
     .hero-desc { font-size: 15px; font-weight: 300; color: var(--mid); line-height: 1.8; margin-bottom: 28px; max-width: 400px; }
     .hero-btns { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -66,34 +52,22 @@
     .btn-lg-o:hover { background: var(--bg); }
     .hero-note { font-size: 11px; color: var(--light); margin-top: 12px; }
 
-    /* ── TRUST ── */
+    /* TRUST */
     .trust { padding: 28px 36px; max-width: 1200px; margin: 0 auto; border-top: 1px solid var(--border); display: flex; align-items: center; gap: 36px; }
     .trust-label { font-size: 11px; color: var(--light); white-space: nowrap; }
     .trust-items { display: flex; gap: 32px; flex-wrap: wrap; }
     .trust-item { font-size: 12px; font-weight: 500; color: rgba(0,0,0,0.2); }
 
-    /* ── BENTO ── */
+    /* BENTO */
     .bento-section { padding: 64px 36px; max-width: 1200px; margin: 0 auto; }
     .section-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--light); margin-bottom: 14px; }
-
-    h2 {
-      font-size: clamp(24px, 3vw, 38px);
-      font-weight: 300;
-      letter-spacing: -0.8px;
-      line-height: 1.2;
-      color: var(--dark);
-      margin-bottom: 12px;
-    }
+    h2 { font-size: clamp(24px, 3vw, 38px); font-weight: 300; letter-spacing: -0.8px; line-height: 1.2; color: var(--dark); margin-bottom: 12px; }
     h2 em { font-style: normal; color: var(--light); }
-
     .section-sub { font-size: 14px; font-weight: 300; color: var(--mid); line-height: 1.75; max-width: 420px; margin-bottom: 36px; }
-
     .bento { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: auto auto; gap: 10px; }
-
     .bc { border-radius: 14px; overflow: hidden; border: 1px solid var(--border); background: var(--card); }
 
-    /* Pipeline — spans 2 cols */
-    .bc-pipeline { grid-column: 1 / 3; grid-row: 1; }
+    .bc-pipeline { grid-column: 1/3; grid-row: 1; }
     .bc-pipeline .bc-head { padding: 20px 20px 0; }
     .bc-pipeline .bc-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--light); margin-bottom: 7px; }
     .bc-pipeline .bc-title { font-size: 15px; font-weight: 400; color: var(--dark); letter-spacing: -0.3px; margin-bottom: 5px; line-height: 1.3; }
@@ -101,20 +75,23 @@
     .bc-pipeline .bc-img { border-top: 1px solid var(--border); overflow: hidden; height: 190px; }
     .bc-pipeline .bc-img img { width: 130%; max-width: none; margin-left: -10px; margin-top: -8px; display: block; }
 
-    /* Photo 1 — ocean wave, top-left crop */
-    .bc-photo-1 {
-      grid-column: 3; grid-row: 1;
-      background-image: url('bg-texture.png');
-      background-size: 200%; background-position: 0% 0%;
-      position: relative; min-height: 250px;
-    }
-    .bc-photo-1 .bc-overlay { position: absolute; inset: 0; background: rgba(8,18,16,0.4); }
-    .bc-photo-1 .bc-content { position: absolute; inset: 0; padding: 20px; display: flex; flex-direction: column; justify-content: flex-end; }
-    .bc-photo-1 .bc-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px; }
-    .bc-photo-1 .bc-stat { font-size: 36px; font-weight: 300; color: white; letter-spacing: -1.5px; line-height: 1; margin-bottom: 4px; }
-    .bc-photo-1 .bc-stat-sub { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.55); }
+    /* photo cards */
+    .bc-photo { position: relative; min-height: 250px; background-size: 200%; }
+    .bc-photo-1 { grid-column: 3; grid-row: 1; background-image: url('bg-texture.png'); background-position: 0% 0%; }
+    .bc-photo-2 { grid-column: 2; grid-row: 2; background-image: url('bg-texture.png'); background-position: 100% 0%; min-height: 260px; }
+    .bc-photo-3 { grid-column: 3; grid-row: 2; background-image: url('bg-texture.png'); background-position: 50% 100%; min-height: 260px; }
+    .bc-overlay { position: absolute; inset: 0; background: rgba(8,16,14,0.52); }
+    .bc-content { position: absolute; inset: 0; padding: 22px; display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; }
+    .bc-tag { font-size: 11px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: rgba(255,255,255,0.55); display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+    .bc-tag svg { opacity: 0.6; }
+    .bc-stat { font-size: 38px; font-weight: 300; color: white; letter-spacing: -1.5px; line-height: 1; }
+    .bc-stat-sub { font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.7); }
+    .bc-quote { font-size: 15px; font-weight: 400; color: white; line-height: 1.6; letter-spacing: -0.1px; }
+    .bc-author { font-size: 12px; font-weight: 400; color: rgba(255,255,255,0.55); }
+    .bc-list { list-style: none; }
+    .bc-list li { font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.8); padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 10px; }
+    .bc-list li svg { flex-shrink: 0; opacity: 0.55; }
 
-    /* Capture — col 1, row 2 */
     .bc-capture { grid-column: 1; grid-row: 2; }
     .bc-capture .bc-head { padding: 20px 20px 0; }
     .bc-capture .bc-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--light); margin-bottom: 7px; }
@@ -123,70 +100,110 @@
     .bc-capture .bc-img { border-top: 1px solid var(--border); overflow: hidden; height: 160px; }
     .bc-capture .bc-img img { width: 120%; max-width: none; margin-left: 10px; margin-top: -8px; display: block; }
 
-    /* Photo 2 — rocky coast, top-right crop */
-    .bc-photo-2 {
-      grid-column: 2; grid-row: 2;
-      background-image: url('bg-texture.png');
-      background-size: 200%; background-position: 100% 0%;
-      position: relative; min-height: 260px;
-    }
-    .bc-photo-2 .bc-overlay { position: absolute; inset: 0; background: rgba(10,20,22,0.38); }
-    .bc-photo-2 .bc-content { position: absolute; inset: 0; padding: 20px; display: flex; flex-direction: column; justify-content: flex-end; }
-    .bc-photo-2 .bc-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 10px; }
-    .bc-photo-2 .bc-quote { font-size: 14px; font-weight: 300; color: white; line-height: 1.65; letter-spacing: -0.1px; }
-    .bc-photo-2 .bc-author { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 10px; }
+    /* ── CINEMATIC DEMO ── */
+    .demo-section { padding: 64px 36px; border-top: 1px solid var(--border); }
+    .demo-inner { max-width: 1200px; margin: 0 auto; }
 
-    /* Photo 3 — mountain, bottom crop */
-    .bc-photo-3 {
-      grid-column: 3; grid-row: 2;
-      background-image: url('bg-texture.png');
-      background-size: 200%; background-position: 50% 100%;
-      position: relative; min-height: 260px;
-    }
-    .bc-photo-3 .bc-overlay { position: absolute; inset: 0; background: rgba(8,14,10,0.45); }
-    .bc-photo-3 .bc-content { position: absolute; inset: 0; padding: 20px; display: flex; flex-direction: column; justify-content: flex-end; }
-    .bc-photo-3 .bc-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 10px; }
-    .bc-photo-3 .bc-list { list-style: none; }
-    .bc-photo-3 .bc-list li { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.72); padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 8px; }
-    .bc-photo-3 .bc-list li::before { content: ''; width: 3px; height: 3px; border-radius: 50%; background: rgba(255,255,255,0.35); flex-shrink: 0; }
+    /* stage indicator */
+    .demo-stages { display: flex; gap: 6px; margin-top: 32px; margin-bottom: 20px; }
+    .demo-stage-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border-mid); transition: background .4s, transform .3s; }
+    .demo-stage-dot.active { background: var(--dark); transform: scale(1.3); }
 
-    /* ── AGENTS SECTION (replaces "how it works") ── */
-    .agents-section {
-      border-top: 1px solid var(--border);
-      padding: 64px 36px;
-    }
+    /* 4-panel layout */
+    .demo-panels { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 10px; height: 520px; }
+    .dp { border-radius: 14px; border: 1px solid var(--border); background: var(--card); overflow: hidden; position: relative; display: flex; flex-direction: column; }
+    .dp-head { padding: 12px 16px; border-bottom: 1px solid var(--border); background: rgba(255,255,255,0.5); display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .dp-head-icon { width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; }
+    .dp-head-title { font-size: 12px; font-weight: 500; color: var(--dark); }
+    .dp-head-sub { font-size: 11px; color: var(--light); margin-left: auto; }
+    .dp-body { flex: 1; padding: 12px; overflow: hidden; position: relative; }
+
+    /* KANBAN panel */
+    .kb-mini-cols { display: flex; gap: 6px; height: 100%; }
+    .kb-mini-col { flex: 1; }
+    .kb-mini-col-head { font-size: 9px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--light); margin-bottom: 6px; }
+    .kb-mini-card { background: white; border: 1px solid var(--border); border-radius: 7px; padding: 8px 9px; margin-bottom: 5px; font-size: 10px; transition: all .4s cubic-bezier(.34,1.56,.64,1); }
+    .kb-mini-card .kn { font-weight: 500; color: var(--dark); margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .kb-mini-card .ka { color: var(--light); }
+    .kb-mini-card.moving { background: rgba(29,158,117,0.06); border-color: rgba(29,158,117,0.3); }
+    @keyframes cardSlide { 0%{opacity:0;transform:translateY(-10px)} 100%{opacity:1;transform:none} }
+    .kb-mini-card.new-card { animation: cardSlide .4s ease forwards; }
+    .kb-mini-card.risk-card { border-left: 2px solid var(--amber); }
+
+    /* CAPTURE panel */
+    .cap-anim { display: flex; flex-direction: column; gap: 8px; height: 100%; justify-content: center; }
+    .cap-note { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; font-size: 11px; color: var(--mid); line-height: 1.6; min-height: 48px; }
+    .cap-note .cursor { display: inline-block; width: 1px; height: 11px; background: var(--mid); margin-left: 1px; vertical-align: middle; animation: blink .7s step-end infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+    .cap-arrow { text-align: center; font-size: 11px; color: var(--light); opacity: 0; transition: opacity .4s; }
+    .cap-arrow.show { opacity: 1; }
+    .cap-fields { background: white; border: 1px solid rgba(29,158,117,0.2); border-radius: 8px; overflow: hidden; opacity: 0; transform: translateY(6px); transition: all .4s ease; }
+    .cap-fields.show { opacity: 1; transform: none; }
+    .cap-field-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 10px; border-bottom: 1px solid var(--border); font-size: 10px; }
+    .cap-field-row:last-child { border-bottom: none; }
+    .cfk { color: var(--light); }
+    .cfv { color: var(--dark); font-weight: 500; }
+    .cap-confirm-bar { display: flex; gap: 6px; opacity: 0; transition: opacity .4s; }
+    .cap-confirm-bar.show { opacity: 1; }
+    .cap-cb { flex: 1; font-family: 'Inter',sans-serif; font-size: 10px; font-weight: 500; padding: 6px; border-radius: 7px; border: none; cursor: default; text-align: center; }
+    .cap-cb.yes { background: var(--dark); color: white; }
+    .cap-cb.no { background: transparent; border: 1px solid var(--border-mid); color: var(--light); }
+
+    /* AI SIGNALS panel */
+    .signals-list { display: flex; flex-direction: column; gap: 6px; }
+    .signal-item { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 9px 11px; font-size: 11px; display: flex; align-items: flex-start; gap: 8px; opacity: 0; transform: translateX(-8px); transition: all .5s ease; }
+    .signal-item.show { opacity: 1; transform: none; }
+    .signal-icon { flex-shrink: 0; margin-top: 1px; }
+    .signal-text { color: var(--dark); line-height: 1.5; }
+    .signal-time { font-size: 10px; color: var(--light); margin-top: 2px; }
+
+    /* ANALYTICS panel */
+    .analytics-body { display: flex; flex-direction: column; gap: 8px; height: 100%; justify-content: center; }
+    .analytics-row { display: flex; align-items: center; gap: 8px; }
+    .analytics-label { font-size: 10px; color: var(--mid); width: 90px; flex-shrink: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .analytics-bar-wrap { flex: 1; height: 6px; background: rgba(0,0,0,0.06); border-radius: 10px; overflow: hidden; }
+    .analytics-bar { height: 100%; border-radius: 10px; width: 0; transition: width 1.2s cubic-bezier(.4,0,.2,1); }
+    .analytics-score { font-size: 10px; font-weight: 600; width: 28px; text-align: right; flex-shrink: 0; }
+    .score-g { color: var(--green); }
+    .score-w { color: var(--amber); }
+    .score-b { color: var(--red); }
+    .bar-g { background: var(--green); }
+    .bar-w { background: var(--amber); }
+    .bar-b { background: var(--red); }
+    .analytics-total { margin-top: 4px; padding-top: 8px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 10px; }
+    .analytics-total-label { color: var(--light); }
+    .analytics-total-val { font-weight: 500; color: var(--dark); opacity: 0; transition: opacity .6s; }
+    .analytics-total-val.show { opacity: 1; }
+
+    /* stage label overlay */
+    .demo-label { position: absolute; bottom: 12px; left: 16px; background: var(--dark); color: white; font-size: 10px; font-weight: 500; padding: 4px 10px; border-radius: 10px; opacity: 0; transition: opacity .4s; pointer-events: none; }
+    .demo-label.show { opacity: 1; }
+
+    /* AGENTS */
+    .agents-section { border-top: 1px solid var(--border); padding: 64px 36px; }
     .agents-inner { max-width: 1200px; margin: 0 auto; }
-
-    /* Two-col layout: text left, cards right */
     .agents-layout { display: grid; grid-template-columns: 1fr 1.6fr; gap: 64px; align-items: start; }
     .agents-left { position: sticky; top: 80px; }
     .agents-left h2 { margin-bottom: 16px; }
     .agents-left p { font-size: 14px; font-weight: 300; color: var(--mid); line-height: 1.8; margin-bottom: 28px; }
-    .agents-left .btn-lg { display: inline-flex; }
-
     .agents-cards { display: flex; flex-direction: column; gap: 10px; }
-    .agent-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 24px;
-      transition: background .2s;
-    }
-    .agent-card:hover { background: #e2ddd7; }
-    .agent-num { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--light); margin-bottom: 14px; }
-    .agent-bar { width: 24px; height: 1.5px; background: var(--border-mid); margin-bottom: 14px; border-radius: 2px; }
+    .agent-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 24px; transition: background .2s; }
+    .agent-card:hover { background: #d8d7d4; }
+    .agent-num { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--light); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+    .agent-icon { width: 28px; height: 28px; background: rgba(0,0,0,0.06); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .agent-bar { width: 24px; height: 1.5px; background: var(--border-mid); margin-bottom: 12px; border-radius: 2px; }
     .agent-title { font-size: 16px; font-weight: 400; letter-spacing: -0.3px; color: var(--dark); margin-bottom: 8px; }
     .agent-desc { font-size: 13px; font-weight: 300; color: var(--mid); line-height: 1.75; }
     .agent-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 14px; }
-    .agent-tag { font-size: 10px; font-weight: 500; color: var(--mid); background: rgba(0,0,0,0.06); padding: 3px 9px; border-radius: 10px; }
+    .agent-tag { font-size: 10px; font-weight: 500; color: var(--mid); background: rgba(0,0,0,0.05); padding: 3px 9px; border-radius: 10px; display: flex; align-items: center; gap: 4px; }
 
-    /* ── PRICING ── */
+    /* PRICING */
     .pricing-section { padding: 64px 36px; max-width: 1200px; margin: 0 auto; border-top: 1px solid var(--border); }
-    .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 36px; }
+    .price-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 36px; }
     .pc { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 24px 20px; position: relative; }
     .pc.feat { background: var(--dark); border-color: var(--dark); }
     .pc-tag { position: absolute; top: -10px; left: 20px; background: var(--green); color: white; font-size: 10px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; padding: 3px 10px; border-radius: 10px; }
-    .pc-plan { font-size: 10px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: var(--light); margin-bottom: 12px; }
+    .pc-plan { font-size: 10px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: var(--light); margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
     .pc.feat .pc-plan { color: rgba(255,255,255,0.3); }
     .pc-price { font-size: 38px; font-weight: 300; letter-spacing: -2px; color: var(--dark); line-height: 1; }
     .pc.feat .pc-price { color: white; }
@@ -197,8 +214,7 @@
     .pc-list { list-style: none; margin-bottom: 20px; }
     .pc-list li { font-size: 12px; color: var(--mid); padding: 5px 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px; }
     .pc.feat .pc-list li { color: rgba(255,255,255,0.5); border-color: rgba(255,255,255,0.07); }
-    .pc-list li::before { content: ''; width: 3px; height: 3px; border-radius: 50%; background: rgba(0,0,0,0.15); flex-shrink: 0; }
-    .pc.feat .pc-list li::before { background: rgba(255,255,255,0.2); }
+    .pc-list li svg { flex-shrink: 0; }
     .pc-btn { display: block; text-align: center; font-family: 'Inter',sans-serif; font-size: 12px; font-weight: 500; padding: 9px 16px; border-radius: 18px; text-decoration: none; transition: all .15s; }
     .pcb-d { background: var(--dark); color: white; }
     .pcb-d:hover { opacity: 0.8; }
@@ -207,24 +223,20 @@
     .pcb-o { border: 1px solid var(--border-mid); color: var(--mid); }
     .pcb-o:hover { background: white; color: var(--dark); }
 
-    /* ── FINAL CTA ── */
+    /* CTA */
     .cta-section { padding: 48px 36px 90px; max-width: 1200px; margin: 0 auto; }
-    .cta-inner {
-      background-image: url('bg-texture.png');
-      background-size: cover; background-position: 50% 55%;
-      border-radius: 16px; padding: 72px 56px; position: relative; overflow: hidden;
-    }
-    .cta-overlay { position: absolute; inset: 0; background: rgba(8,14,12,0.52); border-radius: 16px; }
+    .cta-inner { background-image: url('bg-texture.png'); background-size: cover; background-position: 50% 55%; border-radius: 16px; padding: 72px 56px; position: relative; overflow: hidden; }
+    .cta-overlay { position: absolute; inset: 0; background: rgba(8,14,12,0.58); border-radius: 16px; }
     .cta-content { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
     .cta-left h2 { color: white; margin-bottom: 14px; }
-    .cta-left h2 em { color: rgba(255,255,255,0.32); font-style: normal; }
-    .cta-left p { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.48); line-height: 1.75; }
+    .cta-left h2 em { color: rgba(255,255,255,0.35); font-style: normal; }
+    .cta-left p { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.75; }
     .cta-right { flex-shrink: 0; display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
     .btn-cta { font-family: 'Inter',sans-serif; font-size: 13px; font-weight: 500; color: var(--dark); background: white; border: none; cursor: pointer; padding: 12px 24px; border-radius: 20px; text-decoration: none; transition: opacity .15s, transform .15s; white-space: nowrap; }
     .btn-cta:hover { opacity: 0.88; transform: translateY(-1px); }
-    .cta-note { font-size: 11px; color: rgba(255,255,255,0.28); }
+    .cta-note { font-size: 11px; color: rgba(255,255,255,0.3); }
 
-    /* ── FOOTER ── */
+    /* FOOTER */
     footer { border-top: 1px solid var(--border); padding: 26px 36px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
     .f-logo { font-size: 13px; font-weight: 500; color: var(--dark); text-decoration: none; }
     .f-links { display: flex; gap: 22px; list-style: none; }
@@ -232,88 +244,11 @@
     .f-links a:hover { color: var(--dark); }
     .f-copy { font-size: 11px; color: var(--light); }
 
-    /* ── DEMO SECTION ── */
-    .demo-section { padding: 64px 36px; border-top: 1px solid var(--border); }
-    .demo-inner { max-width: 1200px; margin: 0 auto; }
-    .demo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 36px; }
-
-    /* shared demo card */
-    .demo-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
-    .demo-card-head { padding: 14px 18px; border-bottom: 1px solid var(--border); background: rgba(255,255,255,0.5); display: flex; align-items: center; justify-content: space-between; }
-    .demo-card-title { font-size: 12px; font-weight: 500; color: var(--dark); }
-    .demo-card-sub { font-size: 11px; color: var(--light); }
-    .demo-card-body { padding: 16px; }
-
-    /* ── KANBAN SIM ── */
-    .kb-cols { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; }
-    .kb-col { flex-shrink: 0; width: 150px; }
-    .kb-col-head { font-size: 9px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--light); margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between; }
-    .kb-col-count { background: rgba(0,0,0,0.07); color: var(--mid); font-size: 9px; font-weight: 600; padding: 1px 6px; border-radius: 8px; }
-    .kb-card { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 10px; margin-bottom: 6px; cursor: grab; transition: box-shadow .15s, transform .15s, opacity .3s; font-size: 11px; position: relative; }
-    .kb-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); transform: translateY(-1px); }
-    .kb-card.dragging { opacity: 0.4; transform: scale(0.97); }
-    .kb-card.at-risk { border-color: rgba(239,159,39,0.4); }
-    .kb-card.at-risk::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--amber); border-radius: 8px 8px 0 0; }
-    .kb-name { font-weight: 500; color: var(--dark); margin-bottom: 4px; line-height: 1.3; }
-    .kb-meta { color: var(--light); font-size: 10px; margin-bottom: 6px; }
-    .kb-amount { font-weight: 500; color: var(--dark); }
-    .kb-badge { display: inline-block; font-size: 9px; font-weight: 600; padding: 1px 6px; border-radius: 6px; margin-top: 4px; }
-    .kb-badge.paid { background: rgba(29,158,117,0.1); color: var(--green); }
-    .kb-badge.inv { background: rgba(239,159,39,0.1); color: var(--amber); }
-    .kb-badge.risk { background: rgba(226,75,74,0.1); color: var(--red); }
-    .kb-col.drag-over .kb-col-head { color: var(--dark); }
-    .kb-col.drag-over { outline: 1.5px dashed rgba(0,0,0,0.15); outline-offset: 4px; border-radius: 8px; }
-    /* new card pop-in */
-    @keyframes popIn { 0%{opacity:0;transform:translateY(-8px) scale(0.96)} 100%{opacity:1;transform:none} }
-    .kb-card.new { animation: popIn .35s ease forwards; }
-    /* at-risk pulse */
-    @keyframes riskPulse { 0%,100%{border-color:rgba(239,159,39,0.35)} 50%{border-color:rgba(239,159,39,0.75)} }
-    .kb-card.at-risk { animation: riskPulse 2.5s ease-in-out infinite; }
-
-    /* ── CAPTURE SIM ── */
-    .cap-sim { display: flex; flex-direction: column; gap: 12px; }
-    .cap-input-row { display: flex; gap: 8px; align-items: center; }
-    .cap-input { flex: 1; font-family: 'Inter',sans-serif; font-size: 12px; background: white; border: 1px solid var(--border-mid); border-radius: 10px; padding: 9px 12px; color: var(--dark); outline: none; transition: border-color .15s; }
-    .cap-input:focus { border-color: rgba(0,0,0,0.25); }
-    .cap-btn { font-family: 'Inter',sans-serif; font-size: 12px; font-weight: 500; background: var(--dark); color: white; border: none; border-radius: 10px; padding: 9px 14px; cursor: pointer; white-space: nowrap; transition: opacity .15s; flex-shrink: 0; }
-    .cap-btn:hover { opacity: 0.8; }
-    .cap-btn:disabled { opacity: 0.4; cursor: default; }
-
-    .cap-thinking { display: none; align-items: center; gap: 8px; padding: 10px 12px; background: white; border: 1px solid var(--border); border-radius: 10px; font-size: 11px; color: var(--mid); }
-    .cap-thinking.visible { display: flex; }
-    .cap-dots { display: flex; gap: 3px; }
-    .cap-dots span { width: 4px; height: 4px; border-radius: 50%; background: var(--light); animation: dotBounce 1.2s ease-in-out infinite; }
-    .cap-dots span:nth-child(2) { animation-delay: .2s; }
-    .cap-dots span:nth-child(3) { animation-delay: .4s; }
-    @keyframes dotBounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-4px)} }
-
-    .cap-result { display: none; background: white; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-    .cap-result.visible { display: block; }
-    .cap-result-head { padding: 10px 12px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 500; color: var(--green); }
-    .cap-result-head::before { content: '✓'; font-size: 11px; }
-    .cap-field { display: flex; justify-content: space-between; padding: 7px 12px; border-bottom: 1px solid var(--border); font-size: 11px; }
-    .cap-field:last-child { border-bottom: none; }
-    .cap-field-k { color: var(--light); }
-    .cap-field-v { color: var(--dark); font-weight: 500; text-align: right; }
-    .cap-field-v.typing::after { content: '|'; animation: blink .7s step-end infinite; color: var(--light); }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-
-    .cap-confirm { display: none; margin-top: 2px; }
-    .cap-confirm.visible { display: flex; gap: 8px; }
-    .cap-confirm-btn { flex: 1; font-family: 'Inter',sans-serif; font-size: 11px; font-weight: 500; padding: 8px; border-radius: 8px; border: none; cursor: pointer; transition: opacity .15s; }
-    .cap-confirm-btn.confirm { background: var(--dark); color: white; }
-    .cap-confirm-btn.confirm:hover { opacity: 0.8; }
-    .cap-confirm-btn.discard { background: transparent; color: var(--light); border: 1px solid var(--border-mid); }
-    .cap-confirm-btn.discard:hover { color: var(--mid); }
-
-    .cap-success { display: none; padding: 12px; background: rgba(29,158,117,0.06); border: 1px solid rgba(29,158,117,0.15); border-radius: 10px; font-size: 12px; color: var(--green); text-align: center; font-weight: 500; }
-    .cap-success.visible { display: block; }
-
-    /* ── FADE ── */
+    /* FADE */
     .fade { opacity: 0; transform: translateY(12px); transition: opacity 0.5s ease, transform 0.5s ease; }
     .fade.in { opacity: 1; transform: translateY(0); }
 
-    /* ── MOBILE ── */
+    /* MOBILE */
     @media (max-width: 768px) {
       nav { padding: 0 20px; }
       .nav-links { display: none; }
@@ -322,7 +257,9 @@
       .trust { padding: 20px; flex-direction: column; gap: 12px; }
       .bento-section { padding: 48px 20px; }
       .bento { grid-template-columns: 1fr; }
-      .bc-pipeline, .bc-capture, .bc-photo-1, .bc-photo-2, .bc-photo-3 { grid-column: 1; grid-row: auto; }
+      .bc-pipeline,.bc-capture,.bc-photo-1,.bc-photo-2,.bc-photo-3 { grid-column: 1; grid-row: auto; }
+      .demo-section { padding: 48px 20px; }
+      .demo-panels { grid-template-columns: 1fr; height: auto; }
       .agents-section { padding: 48px 20px; }
       .agents-layout { grid-template-columns: 1fr; gap: 36px; }
       .agents-left { position: static; }
@@ -343,7 +280,7 @@
   <a href="/" class="nav-logo">SDM</a>
   <ul class="nav-links">
     <li><a href="#features">Features</a></li>
-    <li><a href="#agents">Agents</a></li>
+    <li><a href="#demo">Demo</a></li>
     <li><a href="#pricing">Pricing</a></li>
   </ul>
   <div class="nav-right">
@@ -362,7 +299,7 @@
       <p class="hero-desc">The best salespeople close deals, build trust, and read the room. SDM handles the rest — capturing every contact, tracking every deal, and surfacing what needs a human touch.</p>
       <div class="hero-btns">
         <a href="https://sdm-prototype.vercel.app/login" class="btn-lg">Start for free →</a>
-        <a href="#agents" class="btn-lg-o">See how it works</a>
+        <a href="#demo" class="btn-lg-o">See it in action</a>
       </div>
       <p class="hero-note">Free forever for 1 user. No credit card required.</p>
     </div>
@@ -381,28 +318,29 @@
   </div>
 </div>
 
-<!-- BENTO FEATURES -->
+<!-- BENTO -->
 <section class="bento-section fade" id="features">
   <div class="section-eyebrow">What SDM does</div>
   <h2>Three pillars.<br /><em>One workflow.</em></h2>
-  <p class="section-sub">Most CRMs are where data goes to die. SDM is built around how sales actually happens — fast, in the field, and human.</p>
-
+  <p class="section-sub">Most CRMs are where data goes to die. SDM is built around how sales actually happens.</p>
   <div class="bento">
+
     <div class="bc bc-pipeline">
       <div class="bc-head">
         <div class="bc-label">Pipeline</div>
         <div class="bc-title">Kanban tracking with invoice and PO status built in</div>
         <p class="bc-desc">See every deal at a glance. At-risk deals are flagged automatically. Revenue tracking means your CRM knows if you actually got paid.</p>
       </div>
-      <div class="bc-img">
-        <img src="screenshot-pipeline.png" alt="Pipeline view" />
-      </div>
+      <div class="bc-img"><img src="screenshot-pipeline.png" alt="Pipeline" /></div>
     </div>
 
-    <div class="bc bc-photo-1">
+    <div class="bc bc-photo bc-photo-1">
       <div class="bc-overlay"></div>
       <div class="bc-content">
-        <div class="bc-tag">AI assistant</div>
+        <div class="bc-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+          AI assistant
+        </div>
         <div class="bc-stat">9 tools</div>
         <div class="bc-stat-sub">available at any time</div>
       </div>
@@ -414,84 +352,132 @@
         <div class="bc-title">Photo, voice, or text — AI does the rest</div>
         <p class="bc-desc">Snap a card, speak a note, type a message. Contact, company, and deal value extracted before you put your phone away.</p>
       </div>
-      <div class="bc-img">
-        <img src="screenshot-capture.png" alt="Capture view" />
-      </div>
+      <div class="bc-img"><img src="screenshot-capture.png" alt="Capture" /></div>
     </div>
 
-    <div class="bc bc-photo-2">
+    <div class="bc bc-photo bc-photo-2">
       <div class="bc-overlay"></div>
       <div class="bc-content">
-        <div class="bc-tag">From the field</div>
+        <div class="bc-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          From the field
+        </div>
         <div class="bc-quote">"I used to spend 20 minutes after every meeting updating our CRM. Now I snap a photo and I'm done."</div>
         <div class="bc-author">— Field sales rep, Oslo</div>
       </div>
     </div>
 
-    <div class="bc bc-photo-3">
+    <div class="bc bc-photo bc-photo-3">
       <div class="bc-overlay"></div>
       <div class="bc-content">
-        <div class="bc-tag">AI assistant can</div>
+        <div class="bc-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          AI assistant can
+        </div>
         <ul class="bc-list">
-          <li>Add contacts and companies</li>
-          <li>Update deal stages</li>
-          <li>Schedule follow-up tasks</li>
-          <li>Summarise your pipeline</li>
-          <li>Flag at-risk deals</li>
+          <li>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Add contacts and companies
+          </li>
+          <li>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Update deal stages
+          </li>
+          <li>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Schedule follow-up tasks
+          </li>
+          <li>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            Search your whole pipeline
+          </li>
+          <li>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+            Flag at-risk deals
+          </li>
         </ul>
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- INTERACTIVE DEMOS -->
-<div class="demo-section fade" id="demo">
+<!-- CINEMATIC DEMO -->
+<div class="demo-section" id="demo">
   <div class="demo-inner">
     <div class="section-eyebrow">See it in action</div>
-    <h2>Built for the way<br /><em>sales actually happens.</em></h2>
-    <p class="section-sub">Try the pipeline and capture flows right here — no signup needed.</p>
-    <div class="demo-grid">
+    <h2>Watch the agents work.</h2>
+    <p class="section-sub">A live simulation of SDM's AI agents — capturing, analysing, tracking, and acting in real time.</p>
+    <div class="demo-stages" id="demoStages"></div>
+    <div class="demo-panels">
 
-      <!-- KANBAN SIM -->
-      <div class="demo-card">
-        <div class="demo-card-head">
-          <span class="demo-card-title">Pipeline</span>
-          <span class="demo-card-sub">Drag cards between stages</span>
+      <!-- Panel 1: Kanban -->
+      <div class="dp" id="dpKanban">
+        <div class="dp-head">
+          <div class="dp-head-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6b6a66" stroke-width="2"><rect x="3" y="3" width="5" height="18" rx="1"/><rect x="10" y="3" width="5" height="12" rx="1"/><rect x="17" y="3" width="5" height="15" rx="1"/></svg>
+          </div>
+          <span class="dp-head-title">Pipeline</span>
+          <span class="dp-head-sub" id="kbSub">4 active deals</span>
         </div>
-        <div class="demo-card-body">
-          <div class="kb-cols" id="kb"></div>
+        <div class="dp-body">
+          <div class="kb-mini-cols" id="kbCols"></div>
+          <div class="demo-label" id="kbLabel">Deal moved →</div>
         </div>
       </div>
 
-      <!-- CAPTURE SIM -->
-      <div class="demo-card">
-        <div class="demo-card-head">
-          <span class="demo-card-title">Capture</span>
-          <span class="demo-card-sub">Paste a note, name, or business card text</span>
-        </div>
-        <div class="demo-card-body">
-          <div class="cap-sim">
-            <div class="cap-input-row">
-              <input class="cap-input" id="capInput" placeholder='Try: "Met Erik Haugen at Nordvik, Head of Procurement, follow up Monday"' />
-              <button class="cap-btn" id="capBtn" onclick="runCapture()">Extract →</button>
-            </div>
-            <div class="cap-thinking" id="capThinking">
-              <div class="cap-dots"><span></span><span></span><span></span></div>
-              <span>AI is reading your note…</span>
-            </div>
-            <div class="cap-result" id="capResult">
-              <div class="cap-result-head">Extracted</div>
-              <div class="cap-field"><span class="cap-field-k">Name</span><span class="cap-field-v" id="cf-name"></span></div>
-              <div class="cap-field"><span class="cap-field-k">Company</span><span class="cap-field-v" id="cf-company"></span></div>
-              <div class="cap-field"><span class="cap-field-k">Role</span><span class="cap-field-v" id="cf-role"></span></div>
-              <div class="cap-field"><span class="cap-field-k">Follow-up</span><span class="cap-field-v" id="cf-followup"></span></div>
-            </div>
-            <div class="cap-confirm" id="capConfirm">
-              <button class="cap-confirm-btn confirm" onclick="confirmCapture()">✓ Add to CRM</button>
-              <button class="cap-confirm-btn discard" onclick="resetCapture()">Discard</button>
-            </div>
-            <div class="cap-success" id="capSuccess">Contact added to CRM ✓</div>
+      <!-- Panel 2: Capture -->
+      <div class="dp" id="dpCapture">
+        <div class="dp-head">
+          <div class="dp-head-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6b6a66" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
           </div>
+          <span class="dp-head-title">Capture</span>
+          <span class="dp-head-sub">AI extraction</span>
+        </div>
+        <div class="dp-body">
+          <div class="cap-anim">
+            <div class="cap-note" id="capNote"><span class="cursor"></span></div>
+            <div class="cap-arrow" id="capArrow">↓ extracting…</div>
+            <div class="cap-fields" id="capFields">
+              <div class="cap-field-row"><span class="cfk">Name</span><span class="cfv" id="cfName"></span></div>
+              <div class="cap-field-row"><span class="cfk">Company</span><span class="cfv" id="cfCompany"></span></div>
+              <div class="cap-field-row"><span class="cfk">Role</span><span class="cfv" id="cfRole"></span></div>
+              <div class="cap-field-row"><span class="cfk">Next action</span><span class="cfv" id="cfNext"></span></div>
+            </div>
+            <div class="cap-confirm-bar" id="capConfirm">
+              <div class="cap-cb yes">✓ Add to CRM</div>
+              <div class="cap-cb no">Discard</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 3: AI Signals -->
+      <div class="dp" id="dpSignals">
+        <div class="dp-head">
+          <div class="dp-head-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6b6a66" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </div>
+          <span class="dp-head-title">AI signals</span>
+          <span class="dp-head-sub" id="signalCount">0 new</span>
+        </div>
+        <div class="dp-body">
+          <div class="signals-list" id="signalsList"></div>
+        </div>
+      </div>
+
+      <!-- Panel 4: Analytics -->
+      <div class="dp" id="dpAnalytics">
+        <div class="dp-head">
+          <div class="dp-head-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6b6a66" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <span class="dp-head-title">Deal health</span>
+          <span class="dp-head-sub">AI scored</span>
+        </div>
+        <div class="dp-body">
+          <div class="analytics-body" id="analyticsBody"></div>
         </div>
       </div>
 
@@ -499,48 +485,90 @@
   </div>
 </div>
 
-<!-- AGENTS SECTION -->
+<!-- AGENTS -->
 <div class="agents-section" id="agents">
   <div class="agents-inner">
     <div class="section-eyebrow">How it works</div>
     <div class="agents-layout">
       <div class="agents-left fade">
         <h2>Deploy agents that capture, analyse,<br /><em>and take action.</em></h2>
-        <p>SDM isn't a form you fill in. It's a layer of intelligent agents that work in the background — observing, learning, and acting on your sales data so your team never has to.</p>
+        <p>SDM isn't a form you fill in. It's a layer of intelligent agents working in the background — observing, learning, and acting on your sales data so your team never has to.</p>
         <a href="https://sdm-prototype.vercel.app/login" class="btn-lg">Try it free →</a>
       </div>
       <div class="agents-cards">
         <div class="agent-card fade">
-          <div class="agent-num">Agent 01</div>
+          <div class="agent-num">
+            <div class="agent-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6b6a66" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            </div>
+            Agent 01
+          </div>
           <div class="agent-bar"></div>
           <div class="agent-title">Capture agent</div>
           <p class="agent-desc">Watches for business cards, voice notes, and messages. Extracts structured CRM data — contact, company, deal value, next action — in seconds. No forms, no typing.</p>
           <div class="agent-tags">
-            <span class="agent-tag">📸 Photo</span>
-            <span class="agent-tag">🎙 Voice</span>
-            <span class="agent-tag">✏️ Text</span>
+            <span class="agent-tag">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+              Photo
+            </span>
+            <span class="agent-tag">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+              Voice
+            </span>
+            <span class="agent-tag">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="21" y1="10" x2="3" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="21" y1="18" x2="11" y2="18"/></svg>
+              Text
+            </span>
           </div>
         </div>
         <div class="agent-card fade" style="transition-delay:.08s">
-          <div class="agent-num">Agent 02</div>
+          <div class="agent-num">
+            <div class="agent-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6b6a66" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            Agent 02
+          </div>
           <div class="agent-bar"></div>
           <div class="agent-title">Analysis agent</div>
           <p class="agent-desc">Continuously monitors your pipeline for signals — stale deals, missing invoices, overdue follow-ups. Surfaces what matters before it becomes a problem.</p>
           <div class="agent-tags">
-            <span class="agent-tag">⚠️ At-risk alerts</span>
-            <span class="agent-tag">📊 Deal health</span>
-            <span class="agent-tag">💬 Nudges</span>
+            <span class="agent-tag">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+              At-risk alerts
+            </span>
+            <span class="agent-tag">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              Deal health
+            </span>
+            <span class="agent-tag">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/></svg>
+              Nudges
+            </span>
           </div>
         </div>
         <div class="agent-card fade" style="transition-delay:.16s">
-          <div class="agent-num">Agent 03</div>
+          <div class="agent-num">
+            <div class="agent-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6b6a66" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            Agent 03
+          </div>
           <div class="agent-bar"></div>
           <div class="agent-title">Action agent</div>
           <p class="agent-desc">Your AI assistant that can update deals, add contacts, schedule tasks, and summarise your pipeline — via voice or text, in natural language. Ask it anything.</p>
           <div class="agent-tags">
-            <span class="agent-tag">🔄 Update deals</span>
-            <span class="agent-tag">📋 Create tasks</span>
-            <span class="agent-tag">🔍 Search CRM</span>
+            <span class="agent-tag">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+              Update deals
+            </span>
+            <span class="agent-tag">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              Create tasks
+            </span>
+            <span class="agent-tag">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              Search CRM
+            </span>
           </div>
         </div>
       </div>
@@ -555,53 +583,62 @@
   <p class="section-sub">No tricks. Free plan is genuinely useful. AI agents are the upgrade.</p>
   <div class="price-grid">
     <div class="pc">
-      <div class="pc-plan">Solo</div>
+      <div class="pc-plan">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Solo
+      </div>
       <div class="pc-price">Free</div>
       <div class="pc-per">forever · 1 user</div>
       <div class="pc-line"></div>
       <ul class="pc-list">
-        <li>Capture (photo, voice, text)</li>
-        <li>Up to 100 contacts</li>
-        <li>Pipeline tracking</li>
-        <li>Task planning</li>
-        <li>Invoice + PO tracking</li>
+        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--light)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Capture (photo, voice, text)</li>
+        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--light)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Up to 100 contacts</li>
+        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--light)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Pipeline tracking</li>
+        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--light)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Task planning</li>
+        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--light)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Invoice + PO tracking</li>
       </ul>
       <a href="https://sdm-prototype.vercel.app/login" class="pc-btn pcb-d">Get started free</a>
     </div>
     <div class="pc feat">
       <div class="pc-tag">Most popular</div>
-      <div class="pc-plan">Pro</div>
+      <div class="pc-plan" style="color:rgba(255,255,255,0.3)">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Pro
+      </div>
       <div class="pc-price">€29</div>
       <div class="pc-per">per user / month</div>
       <div class="pc-line"></div>
       <ul class="pc-list">
-        <li>Everything in Solo</li>
-        <li>Unlimited contacts</li>
-        <li>Proactive AI nudges</li>
-        <li>AI assistant — voice + text</li>
-        <li>Deal health scoring</li>
-        <li>Team analytics</li>
+        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Everything in Solo</li>
+        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Unlimited contacts</li>
+        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Proactive AI nudges</li>
+        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>AI assistant — voice + text</li>
+        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Deal health scoring</li>
+        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Team analytics</li>
       </ul>
       <a href="https://sdm-prototype.vercel.app/login" class="pc-btn pcb-w">Start Pro trial</a>
     </div>
     <div class="pc">
-      <div class="pc-plan">Business</div>
+      <div class="pc-plan">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        Business
+      </div>
       <div class="pc-price">€79</div>
       <div class="pc-per">flat · up to 10 users</div>
       <div class="pc-line"></div>
       <ul class="pc-list">
-        <li>Everything in Pro</li>
-        <li>Manager + admin roles</li>
-        <li>Org-wide pipeline view</li>
-        <li>Team invite system</li>
-        <li>Priority support</li>
+        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--light)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Everything in Pro</li>
+        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--light)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Manager + admin roles</li>
+        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--light)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Org-wide pipeline view</li>
+        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--light)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Team invite system</li>
+        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--light)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Priority support</li>
       </ul>
       <a href="mailto:hello@sdm.app" class="pc-btn pcb-o">Contact us</a>
     </div>
   </div>
 </section>
 
-<!-- FINAL CTA -->
+<!-- CTA -->
 <section class="cta-section">
   <div class="cta-inner">
     <div class="cta-overlay"></div>
@@ -622,7 +659,7 @@
   <a href="/" class="f-logo">SDM</a>
   <ul class="f-links">
     <li><a href="#features">Features</a></li>
-    <li><a href="#agents">Agents</a></li>
+    <li><a href="#demo">Demo</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="mailto:hello@sdm.app">Contact</a></li>
   </ul>
@@ -630,158 +667,233 @@
 </footer>
 
 <script>
-  // ── FADE IN ──
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+// ── FADE IN ──
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade').forEach(el => obs.observe(el));
 
-  // ── KANBAN SIM ──
-  const stages = ['Lead','Qualified','Demo','Proposal','Won'];
-  const deals = [
-    { name:'Nordvik Gruppen', amount:'€18k', stage:'Demo', badge:'inv', badgeLabel:'Invoiced', risk:false },
-    { name:'Telenor Enterprise', amount:'€34k', stage:'Proposal', badge:'risk', badgeLabel:'At risk', risk:true },
-    { name:'Aker Solutions', amount:'€62k', stage:'Won', badge:'paid', badgeLabel:'Paid', risk:false },
-    { name:'Boreal Supply Chain', amount:'€22k', stage:'Lead', badge:'', badgeLabel:'', risk:false },
-    { name:'Helios Solar', amount:'€15k', stage:'Qualified', badge:'', badgeLabel:'', risk:false },
-    { name:'Fjord Fleet', amount:'€41k', stage:'Demo', badge:'', badgeLabel:'', risk:true },
-  ];
+// ── CINEMATIC DEMO ENGINE ──
+const deals = [
+  { name:'Nordvik Gruppen', amt:'€18k', stage:1, score:64, color:'w' },
+  { name:'Telenor Enterprise', amt:'€34k', stage:2, score:41, color:'b' },
+  { name:'Aker Solutions', amt:'€62k', stage:3, score:92, color:'g' },
+  { name:'Helios Solar', amt:'€15k', stage:0, score:78, color:'g' },
+  { name:'Fjord Fleet', amt:'€41k', stage:2, score:55, color:'w' },
+];
+const stageNames = ['Lead','Qualified','Demo','Proposal'];
+const signals = [
+  { icon:'⚠', text:'Telenor hasn't moved in 14 days. Follow up before quarter end?', color:'var(--amber)' },
+  { icon:'✓', text:'Aker Solutions invoice confirmed — €62k marked as paid.', color:'var(--green)' },
+  { icon:'→', text:'Helios Solar moved to Qualified — follow-up task created.', color:'var(--mid)' },
+  { icon:'⚠', text:'Nordvik invoice 21 days overdue. Consider a payment nudge.', color:'var(--amber)' },
+];
 
-  let dragCard = null;
+// Build stage dots
+const stagesEl = document.getElementById('demoStages');
+const STAGES = 4;
+for (let i = 0; i < STAGES; i++) {
+  const d = document.createElement('div');
+  d.className = 'demo-stage-dot' + (i === 0 ? ' active' : '');
+  stagesEl.appendChild(d);
+}
+function setActiveDot(i) {
+  document.querySelectorAll('.demo-stage-dot').forEach((d,idx) => d.classList.toggle('active', idx===i));
+}
 
-  function buildKanban() {
-    const kb = document.getElementById('kb');
-    kb.innerHTML = '';
-    stages.forEach(stage => {
-      const col = document.createElement('div');
-      col.className = 'kb-col';
-      col.dataset.stage = stage;
-      const stageDeals = deals.filter(d => d.stage === stage);
-      col.innerHTML = `<div class="kb-col-head"><span>${stage}</span><span class="kb-col-count">${stageDeals.length}</span></div>`;
-      stageDeals.forEach((deal, i) => {
-        const card = document.createElement('div');
-        card.className = 'kb-card' + (deal.risk ? ' at-risk' : '');
-        card.draggable = true;
-        card.dataset.deal = deal.name;
-        card.innerHTML = `
-          <div class="kb-name">${deal.name}</div>
-          <div class="kb-meta">${stage}</div>
-          <div class="kb-amount">${deal.amount}</div>
-          ${deal.badge ? `<span class="kb-badge ${deal.badge}">${deal.badgeLabel}</span>` : ''}
-        `;
-        card.addEventListener('dragstart', e => {
-          dragCard = deal;
-          setTimeout(() => card.classList.add('dragging'), 0);
-        });
-        card.addEventListener('dragend', () => card.classList.remove('dragging'));
-        col.appendChild(card);
-      });
-      col.addEventListener('dragover', e => { e.preventDefault(); col.classList.add('drag-over'); });
-      col.addEventListener('dragleave', () => col.classList.remove('drag-over'));
-      col.addEventListener('drop', e => {
-        e.preventDefault();
-        col.classList.remove('drag-over');
-        if (dragCard && dragCard.stage !== stage) {
-          dragCard.stage = stage;
-          dragCard.risk = false;
-          buildKanban();
-          // flash new card
-          setTimeout(() => {
-            const newCard = kb.querySelector(`[data-deal="${dragCard.name}"]`);
-            if (newCard) { newCard.classList.add('new'); }
-          }, 20);
-        }
-        dragCard = null;
-      });
-      kb.appendChild(col);
+// Build kanban
+function buildKanban(highlightDeal=null) {
+  const el = document.getElementById('kbCols');
+  el.innerHTML = '';
+  stageNames.forEach((sn, si) => {
+    const col = document.createElement('div');
+    col.className = 'kb-mini-col';
+    col.innerHTML = `<div class="kb-mini-col-head">${sn}</div>`;
+    deals.filter(d => d.stage === si).forEach(d => {
+      const card = document.createElement('div');
+      const isRisk = d.score < 60;
+      card.className = 'kb-mini-card' + (isRisk ? ' risk-card' : '') + (d.name === highlightDeal ? ' moving' : '');
+      card.innerHTML = `<div class="kn">${d.name}</div><div class="ka">${d.amt}</div>`;
+      col.appendChild(card);
     });
-  }
-  buildKanban();
+    el.appendChild(col);
+  });
+}
 
-  // Auto-demo: move Helios Solar from Qualified → Demo after 3s
-  setTimeout(() => {
-    const helios = deals.find(d => d.name === 'Helios Solar');
-    if (helios) { helios.stage = 'Demo'; buildKanban(); }
-  }, 3000);
-
-  // ── CAPTURE SIM ──
-  // Simple local extraction — no API call, pattern matched
-  const captures = [
-    { triggers: ['erik','haugen','nordvik'], name:'Erik Haugen', company:'Nordvik Gruppen', role:'Head of Procurement', followup:'Monday follow-up' },
-    { triggers: ['sarah','sarah k'], name:'Sarah Karlsson', company:'Boreal Supply', role:'CEO', followup:'Send proposal' },
-    { triggers: ['marcus','aker'], name:'Marcus Lie', company:'Aker Solutions', role:'Procurement Lead', followup:'Thursday call' },
-  ];
-
-  const defaultExtract = (text) => {
-    const words = text.split(' ');
-    const name = words.slice(0,2).map(w => w.charAt(0).toUpperCase()+w.slice(1)).join(' ');
-    const hasCompany = text.match(/at ([A-Z][a-z]+ ?[A-Za-z]*)/);
-    const company = hasCompany ? hasCompany[1] : 'Unknown Company';
-    const hasRole = text.match(/(CEO|CTO|Head|Director|Manager|VP|Lead|Founder)/i);
-    const role = hasRole ? hasRole[0] : 'Contact';
-    const hasFollowup = text.match(/(monday|tuesday|wednesday|thursday|friday|next week|follow.?up)/i);
-    const followup = hasFollowup ? hasFollowup[0].charAt(0).toUpperCase()+hasFollowup[0].slice(1) : 'Schedule follow-up';
-    return { name, company, role, followup };
-  };
-
-  function typewriter(el, text, delay=0) {
-    return new Promise(resolve => {
+// Build analytics
+function buildAnalytics(animIn=false) {
+  const el = document.getElementById('analyticsBody');
+  const sorted = [...deals].sort((a,b) => b.score - a.score);
+  el.innerHTML = '';
+  sorted.forEach((d, i) => {
+    const colorClass = d.color;
+    const row = document.createElement('div');
+    row.className = 'analytics-row';
+    row.innerHTML = `
+      <div class="analytics-label">${d.name}</div>
+      <div class="analytics-bar-wrap"><div class="analytics-bar bar-${colorClass}" id="bar-${i}"></div></div>
+      <div class="analytics-score score-${colorClass}">${d.score}</div>
+    `;
+    el.appendChild(row);
+  });
+  const total = document.createElement('div');
+  total.className = 'analytics-total';
+  total.innerHTML = `<span class="analytics-total-label">Pipeline total</span><span class="analytics-total-val" id="pipeTotal">€170k</span>`;
+  el.appendChild(total);
+  if (animIn) {
+    setTimeout(() => {
+      sorted.forEach((d, i) => {
+        const bar = document.getElementById('bar-'+i);
+        if (bar) bar.style.width = d.score + '%';
+      });
       setTimeout(() => {
-        el.classList.add('typing');
-        let i = 0;
-        const interval = setInterval(() => {
-          el.textContent = text.slice(0, ++i);
-          if (i >= text.length) { clearInterval(interval); el.classList.remove('typing'); resolve(); }
-        }, 28);
-      }, delay);
-    });
+        const t = document.getElementById('pipeTotal');
+        if (t) t.classList.add('show');
+      }, 800);
+    }, 300);
   }
+}
 
-  async function runCapture() {
-    const input = document.getElementById('capInput').value.trim();
-    if (!input) return;
-    const btn = document.getElementById('capBtn');
-    btn.disabled = true;
+// Typewriter util
+function typeIn(el, text, speed=30) {
+  return new Promise(res => {
+    let i = 0;
+    el.textContent = '';
+    const t = setInterval(() => {
+      el.textContent += text[i++];
+      if (i >= text.length) { clearInterval(t); res(); }
+    }, speed);
+  });
+}
 
-    // show thinking
-    document.getElementById('capThinking').classList.add('visible');
-    document.getElementById('capResult').classList.remove('visible');
-    document.getElementById('capConfirm').classList.remove('visible');
-    document.getElementById('capSuccess').classList.remove('visible');
-    ['cf-name','cf-company','cf-role','cf-followup'].forEach(id => document.getElementById(id).textContent='');
+// ── STAGE RUNNERS ──
 
-    await new Promise(r => setTimeout(r, 1400));
-    document.getElementById('capThinking').classList.remove('visible');
-
-    // extract
-    const lower = input.toLowerCase();
-    let data = captures.find(c => c.triggers.some(t => lower.includes(t)));
-    if (!data) data = defaultExtract(input);
-
-    document.getElementById('capResult').classList.add('visible');
-    await typewriter(document.getElementById('cf-name'), data.name, 0);
-    await typewriter(document.getElementById('cf-company'), data.company, 80);
-    await typewriter(document.getElementById('cf-role'), data.role, 80);
-    await typewriter(document.getElementById('cf-followup'), data.followup, 80);
-
-    document.getElementById('capConfirm').classList.add('visible');
+// Stage 0: Kanban overview + signals popping in
+async function stage0() {
+  setActiveDot(0);
+  buildKanban();
+  buildAnalytics(true);
+  // pop signals one by one
+  const sl = document.getElementById('signalsList');
+  sl.innerHTML = '';
+  let count = 0;
+  for (const s of signals.slice(0,3)) {
+    const item = document.createElement('div');
+    item.className = 'signal-item';
+    item.innerHTML = `
+      <div class="signal-icon" style="color:${s.color};font-size:13px;">${s.icon}</div>
+      <div><div class="signal-text">${s.text}</div><div class="signal-time">Just now</div></div>
+    `;
+    sl.appendChild(item);
+    await delay(600);
+    item.classList.add('show');
+    count++;
+    document.getElementById('signalCount').textContent = count + ' new';
   }
+}
 
-  function confirmCapture() {
-    document.getElementById('capResult').classList.remove('visible');
-    document.getElementById('capConfirm').classList.remove('visible');
-    document.getElementById('capSuccess').classList.add('visible');
-    setTimeout(resetCapture, 2800);
-  }
+// Stage 1: Deal moves from Lead → Qualified
+async function stage1() {
+  setActiveDot(1);
+  const helios = deals.find(d => d.name === 'Helios Solar');
+  const label = document.getElementById('kbLabel');
+  // highlight
+  buildKanban('Helios Solar');
+  await delay(700);
+  label.textContent = 'Moving to Qualified →';
+  label.classList.add('show');
+  await delay(900);
+  helios.stage = 1;
+  buildKanban('Helios Solar');
+  document.getElementById('kbSub').textContent = '5 active deals';
+  await delay(800);
+  label.classList.remove('show');
+  // update score
+  helios.score = 80; helios.color = 'g';
+  buildAnalytics(true);
+  await delay(1200);
+}
 
-  function resetCapture() {
-    document.getElementById('capInput').value = '';
-    document.getElementById('capBtn').disabled = false;
-    document.getElementById('capThinking').classList.remove('visible');
-    document.getElementById('capResult').classList.remove('visible');
-    document.getElementById('capConfirm').classList.remove('visible');
-    document.getElementById('capSuccess').classList.remove('visible');
+// Stage 2: Capture animation
+async function stage2() {
+  setActiveDot(2);
+  const noteEl = document.getElementById('capNote');
+  const arrowEl = document.getElementById('capArrow');
+  const fieldsEl = document.getElementById('capFields');
+  const confirmEl = document.getElementById('capConfirm');
+  // reset
+  noteEl.innerHTML = '<span class="cursor"></span>';
+  arrowEl.classList.remove('show');
+  fieldsEl.classList.remove('show');
+  confirmEl.classList.remove('show');
+  ['cfName','cfCompany','cfRole','cfNext'].forEach(id => document.getElementById(id).textContent='');
+
+  const text = 'Met Lena Berg at Boreal Supply, VP Sales, wants a demo next Tuesday';
+  let content = '';
+  noteEl.innerHTML = '';
+  for (const ch of text) {
+    content += ch;
+    noteEl.textContent = content;
+    await delay(28);
   }
+  await delay(500);
+  arrowEl.classList.add('show');
+  await delay(700);
+  fieldsEl.classList.add('show');
+  const fields = [
+    ['cfName','Lena Berg'],
+    ['cfCompany','Boreal Supply'],
+    ['cfRole','VP Sales'],
+    ['cfNext','Demo — Tuesday'],
+  ];
+  for (const [id, val] of fields) {
+    await typeIn(document.getElementById(id), val, 32);
+    await delay(180);
+  }
+  await delay(400);
+  confirmEl.classList.add('show');
+  await delay(1400);
+}
+
+// Stage 3: Signals + analytics update
+async function stage3() {
+  setActiveDot(3);
+  const sl = document.getElementById('signalsList');
+  sl.innerHTML = '';
+  let count = 0;
+  for (const s of signals) {
+    const item = document.createElement('div');
+    item.className = 'signal-item';
+    item.innerHTML = `
+      <div class="signal-icon" style="color:${s.color};font-size:13px;">${s.icon}</div>
+      <div><div class="signal-text">${s.text}</div><div class="signal-time">Just now</div></div>
+    `;
+    sl.appendChild(item);
+    await delay(500);
+    item.classList.add('show');
+    count++;
+    document.getElementById('signalCount').textContent = count + ' new';
+  }
+  // re-animate analytics
+  buildAnalytics(true);
+  await delay(1600);
+}
+
+function delay(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+async function runLoop() {
+  await stage0(); await delay(2000);
+  await stage1(); await delay(1000);
+  await stage2(); await delay(1000);
+  await stage3(); await delay(2000);
+  runLoop();
+}
+
+// Start when demo section scrolls into view
+const demoObs = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting) { demoObs.disconnect(); runLoop(); }
+}, { threshold: 0.2 });
+demoObs.observe(document.getElementById('demo'));
 </script>
 </body>
 </html>
