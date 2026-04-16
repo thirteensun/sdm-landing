@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SDM — The CRM that works while you sell</title>
-  <meta name="description" content="Stop updating your CRM. Let it update itself." />
+  <title>SDM — Let your team sell. Not administrate.</title>
+  <meta name="description" content="SDM deploys AI agents that capture, analyse, and act on your sales data — so your team can focus on what only humans can do." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -12,13 +12,13 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --white: #ffffff;
-      --bg: #f5f5f5;
-      --card: #efefed;
+      --bg: #f0ede8;
+      --card: #e8e4de;
       --dark: #111110;
       --mid: #6b6a66;
-      --light: #a8a79f;
+      --light: #a8a49c;
       --border: rgba(0,0,0,0.07);
-      --border-mid: rgba(0,0,0,0.12);
+      --border-mid: rgba(0,0,0,0.11);
       --green: #1D9E75;
       --red: #E24B4A;
       --amber: #EF9F27;
@@ -26,12 +26,12 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--dark); -webkit-font-smoothing: antialiased; }
 
-    /* NAV */
+    /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       height: 54px; display: flex; align-items: center; justify-content: space-between;
       padding: 0 36px;
-      background: rgba(255,255,255,0.92); backdrop-filter: blur(20px);
+      background: rgba(255,255,255,0.93); backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
     }
     .nav-logo { font-size: 14px; font-weight: 500; color: var(--dark); text-decoration: none; letter-spacing: -0.2px; }
@@ -44,13 +44,21 @@
     .btn-black { font-family: 'Inter',sans-serif; font-size: 13px; font-weight: 500; color: white; background: var(--dark); border: none; cursor: pointer; padding: 7px 16px; border-radius: 20px; text-decoration: none; transition: opacity .15s; }
     .btn-black:hover { opacity: 0.78; }
 
-    /* HERO */
-    .hero { padding: 116px 36px 0; max-width: 1200px; margin: 0 auto; }
-    .hero-top { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: end; margin-bottom: 48px; }
-    h1 { font-size: clamp(36px, 4vw, 54px); font-weight: 300; line-height: 1.12; letter-spacing: -1.5px; color: var(--dark); }
+    /* ── HERO ── */
+    .hero { padding: 116px 36px 72px; max-width: 1200px; margin: 0 auto; }
+    .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: end; }
+
+    h1 {
+      font-size: clamp(32px, 3.6vw, 48px);
+      font-weight: 300;
+      line-height: 1.18;
+      letter-spacing: -1.2px;
+      color: var(--dark);
+    }
     h1 em { font-style: normal; color: var(--light); }
-    .hero-right { padding-bottom: 6px; }
-    .hero-desc { font-size: 15px; font-weight: 300; color: var(--mid); line-height: 1.75; margin-bottom: 26px; max-width: 400px; }
+
+    .hero-right { padding-bottom: 4px; }
+    .hero-desc { font-size: 15px; font-weight: 300; color: var(--mid); line-height: 1.8; margin-bottom: 28px; max-width: 400px; }
     .hero-btns { display: flex; gap: 8px; flex-wrap: wrap; }
     .btn-lg { font-family: 'Inter',sans-serif; font-size: 13px; font-weight: 500; color: white; background: var(--dark); border: none; cursor: pointer; padding: 10px 20px; border-radius: 20px; text-decoration: none; transition: opacity .15s, transform .15s; }
     .btn-lg:hover { opacity: 0.8; transform: translateY(-1px); }
@@ -58,124 +66,139 @@
     .btn-lg-o:hover { background: var(--bg); }
     .hero-note { font-size: 11px; color: var(--light); margin-top: 12px; }
 
-    /* SCREENSHOT TABS */
-    .ss-wrap { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
-    .ss-tabs { display: flex; align-items: center; gap: 4px; padding: 10px 14px; border-bottom: 1px solid var(--border); background: rgba(255,255,255,0.6); }
-    .ss-tab { font-family: 'Inter',sans-serif; font-size: 11px; font-weight: 400; color: var(--light); padding: 4px 11px; border-radius: 10px; border: none; background: none; cursor: pointer; transition: all .15s; }
-    .ss-tab.active { background: var(--dark); color: white; font-weight: 500; }
-    .ss-tab:not(.active):hover { background: rgba(0,0,0,0.06); color: var(--mid); }
-    .ss-tag { margin-left: auto; font-size: 11px; color: var(--light); }
-    .ss-frame { display: none; position: relative; }
-    .ss-frame.active { display: block; }
-    .ss-frame img { width: 100%; display: block; border-radius: 0 0 13px 13px; }
-    .ss-frame::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 60px; background: linear-gradient(transparent, var(--card)); pointer-events: none; border-radius: 0 0 13px 13px; }
-
-    /* TRUST */
+    /* ── TRUST ── */
     .trust { padding: 28px 36px; max-width: 1200px; margin: 0 auto; border-top: 1px solid var(--border); display: flex; align-items: center; gap: 36px; }
     .trust-label { font-size: 11px; color: var(--light); white-space: nowrap; }
     .trust-items { display: flex; gap: 32px; flex-wrap: wrap; }
     .trust-item { font-size: 12px; font-weight: 500; color: rgba(0,0,0,0.2); }
 
-    /* BENTO GRID */
+    /* ── BENTO ── */
     .bento-section { padding: 64px 36px; max-width: 1200px; margin: 0 auto; }
-    .section-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--light); margin-bottom: 16px; }
-    h2 { font-size: clamp(26px, 3.2vw, 42px); font-weight: 300; letter-spacing: -1px; line-height: 1.15; color: var(--dark); margin-bottom: 14px; }
+    .section-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--light); margin-bottom: 14px; }
+
+    h2 {
+      font-size: clamp(24px, 3vw, 38px);
+      font-weight: 300;
+      letter-spacing: -0.8px;
+      line-height: 1.2;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
     h2 em { font-style: normal; color: var(--light); }
-    .section-sub { font-size: 14px; font-weight: 300; color: var(--mid); line-height: 1.75; max-width: 420px; margin-bottom: 40px; }
 
-    /* 3-col bento */
-    .bento { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: auto auto; gap: 12px; }
+    .section-sub { font-size: 14px; font-weight: 300; color: var(--mid); line-height: 1.75; max-width: 420px; margin-bottom: 36px; }
 
-    /* card base */
+    .bento { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: auto auto; gap: 10px; }
+
     .bc { border-radius: 14px; overflow: hidden; border: 1px solid var(--border); background: var(--card); }
-    .bc-pad { padding: 24px; }
 
-    /* CARD 1 — pipeline screenshot, spans 2 cols */
-    .bc-pipeline { grid-column: 1 / 3; grid-row: 1; background: var(--card); }
+    /* Pipeline — spans 2 cols */
+    .bc-pipeline { grid-column: 1 / 3; grid-row: 1; }
     .bc-pipeline .bc-head { padding: 20px 20px 0; }
-    .bc-pipeline .bc-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--light); margin-bottom: 8px; }
-    .bc-pipeline .bc-title { font-size: 16px; font-weight: 400; color: var(--dark); letter-spacing: -0.3px; margin-bottom: 6px; }
-    .bc-pipeline .bc-desc { font-size: 12px; font-weight: 300; color: var(--mid); line-height: 1.6; padding-bottom: 16px; }
-    .bc-pipeline .bc-img { border-top: 1px solid var(--border); overflow: hidden; height: 200px; }
+    .bc-pipeline .bc-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--light); margin-bottom: 7px; }
+    .bc-pipeline .bc-title { font-size: 15px; font-weight: 400; color: var(--dark); letter-spacing: -0.3px; margin-bottom: 5px; line-height: 1.3; }
+    .bc-pipeline .bc-desc { font-size: 12px; font-weight: 300; color: var(--mid); line-height: 1.65; padding-bottom: 14px; }
+    .bc-pipeline .bc-img { border-top: 1px solid var(--border); overflow: hidden; height: 190px; }
     .bc-pipeline .bc-img img { width: 130%; max-width: none; margin-left: -10px; margin-top: -8px; display: block; }
 
-    /* CARD 2 — photo bg top-right: ocean wave (top-left of image) */
-    .bc-photo-1 { grid-column: 3; grid-row: 1;
+    /* Photo 1 — ocean wave, top-left crop */
+    .bc-photo-1 {
+      grid-column: 3; grid-row: 1;
       background-image: url('bg-texture.png');
-      background-size: 200%;
-      background-position: 0% 0%;
-      position: relative; min-height: 260px;
+      background-size: 200%; background-position: 0% 0%;
+      position: relative; min-height: 250px;
     }
-    .bc-photo-1 .bc-overlay { position: absolute; inset: 0; background: rgba(10,20,18,0.38); }
-    .bc-photo-1 .bc-content { position: absolute; inset: 0; padding: 22px; display: flex; flex-direction: column; justify-content: flex-end; }
-    .bc-photo-1 .bc-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 8px; }
-    .bc-photo-1 .bc-stat { font-size: 32px; font-weight: 300; color: white; letter-spacing: -1px; line-height: 1; margin-bottom: 4px; }
-    .bc-photo-1 .bc-stat-sub { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.6); }
+    .bc-photo-1 .bc-overlay { position: absolute; inset: 0; background: rgba(8,18,16,0.4); }
+    .bc-photo-1 .bc-content { position: absolute; inset: 0; padding: 20px; display: flex; flex-direction: column; justify-content: flex-end; }
+    .bc-photo-1 .bc-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px; }
+    .bc-photo-1 .bc-stat { font-size: 36px; font-weight: 300; color: white; letter-spacing: -1.5px; line-height: 1; margin-bottom: 4px; }
+    .bc-photo-1 .bc-stat-sub { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.55); }
 
-    /* CARD 3 — capture screenshot */
-    .bc-capture { grid-column: 1; grid-row: 2; background: var(--card); }
+    /* Capture — col 1, row 2 */
+    .bc-capture { grid-column: 1; grid-row: 2; }
     .bc-capture .bc-head { padding: 20px 20px 0; }
-    .bc-capture .bc-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--light); margin-bottom: 8px; }
-    .bc-capture .bc-title { font-size: 16px; font-weight: 400; color: var(--dark); letter-spacing: -0.3px; margin-bottom: 6px; }
-    .bc-capture .bc-desc { font-size: 12px; font-weight: 300; color: var(--mid); line-height: 1.6; padding-bottom: 16px; }
-    .bc-capture .bc-img { border-top: 1px solid var(--border); overflow: hidden; height: 170px; }
+    .bc-capture .bc-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--light); margin-bottom: 7px; }
+    .bc-capture .bc-title { font-size: 15px; font-weight: 400; color: var(--dark); letter-spacing: -0.3px; margin-bottom: 5px; line-height: 1.3; }
+    .bc-capture .bc-desc { font-size: 12px; font-weight: 300; color: var(--mid); line-height: 1.65; padding-bottom: 14px; }
+    .bc-capture .bc-img { border-top: 1px solid var(--border); overflow: hidden; height: 160px; }
     .bc-capture .bc-img img { width: 120%; max-width: none; margin-left: 10px; margin-top: -8px; display: block; }
 
-    /* CARD 4 — photo bg: rocky coast (top-right of image) */
-    .bc-photo-2 { grid-column: 2; grid-row: 2;
+    /* Photo 2 — rocky coast, top-right crop */
+    .bc-photo-2 {
+      grid-column: 2; grid-row: 2;
       background-image: url('bg-texture.png');
-      background-size: 200%;
-      background-position: 100% 0%;
-      position: relative; min-height: 280px;
+      background-size: 200%; background-position: 100% 0%;
+      position: relative; min-height: 260px;
     }
-    .bc-photo-2 .bc-overlay { position: absolute; inset: 0; background: rgba(15,25,30,0.35); }
-    .bc-photo-2 .bc-content { position: absolute; inset: 0; padding: 22px; display: flex; flex-direction: column; justify-content: flex-end; }
-    .bc-photo-2 .bc-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px; }
-    .bc-photo-2 .bc-quote { font-size: 15px; font-weight: 300; color: white; line-height: 1.6; letter-spacing: -0.2px; }
-    .bc-photo-2 .bc-author { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 10px; }
+    .bc-photo-2 .bc-overlay { position: absolute; inset: 0; background: rgba(10,20,22,0.38); }
+    .bc-photo-2 .bc-content { position: absolute; inset: 0; padding: 20px; display: flex; flex-direction: column; justify-content: flex-end; }
+    .bc-photo-2 .bc-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 10px; }
+    .bc-photo-2 .bc-quote { font-size: 14px; font-weight: 300; color: white; line-height: 1.65; letter-spacing: -0.1px; }
+    .bc-photo-2 .bc-author { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 10px; }
 
-    /* CARD 5 — photo bg: landscape (bottom of image) */
-    .bc-photo-3 { grid-column: 3; grid-row: 2;
+    /* Photo 3 — mountain, bottom crop */
+    .bc-photo-3 {
+      grid-column: 3; grid-row: 2;
       background-image: url('bg-texture.png');
-      background-size: 200%;
-      background-position: 50% 100%;
-      position: relative; min-height: 280px;
+      background-size: 200%; background-position: 50% 100%;
+      position: relative; min-height: 260px;
     }
-    .bc-photo-3 .bc-overlay { position: absolute; inset: 0; background: rgba(8,16,12,0.42); }
-    .bc-photo-3 .bc-content { position: absolute; inset: 0; padding: 22px; display: flex; flex-direction: column; justify-content: flex-end; }
-    .bc-photo-3 .bc-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 10px; }
+    .bc-photo-3 .bc-overlay { position: absolute; inset: 0; background: rgba(8,14,10,0.45); }
+    .bc-photo-3 .bc-content { position: absolute; inset: 0; padding: 20px; display: flex; flex-direction: column; justify-content: flex-end; }
+    .bc-photo-3 .bc-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 10px; }
     .bc-photo-3 .bc-list { list-style: none; }
-    .bc-photo-3 .bc-list li { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.75); padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 8px; }
-    .bc-photo-3 .bc-list li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,0.4); flex-shrink: 0; }
+    .bc-photo-3 .bc-list li { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.72); padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 8px; }
+    .bc-photo-3 .bc-list li::before { content: ''; width: 3px; height: 3px; border-radius: 50%; background: rgba(255,255,255,0.35); flex-shrink: 0; }
 
-    /* HOW IT WORKS */
-    .how-section { border-top: 1px solid var(--border); background: var(--card); padding: 64px 36px; }
-    .how-inner { max-width: 1200px; margin: 0 auto; }
-    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; margin-top: 48px; }
-    .step-n { font-size: 10px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: var(--light); margin-bottom: 14px; }
-    .step-bar { width: 28px; height: 1.5px; background: var(--border-mid); margin-bottom: 16px; border-radius: 2px; }
-    .step-t { font-size: 15px; font-weight: 400; letter-spacing: -0.2px; color: var(--dark); margin-bottom: 8px; }
-    .step-d { font-size: 13px; font-weight: 300; color: var(--mid); line-height: 1.75; }
+    /* ── AGENTS SECTION (replaces "how it works") ── */
+    .agents-section {
+      border-top: 1px solid var(--border);
+      padding: 64px 36px;
+    }
+    .agents-inner { max-width: 1200px; margin: 0 auto; }
 
-    /* PRICING */
+    /* Two-col layout: text left, cards right */
+    .agents-layout { display: grid; grid-template-columns: 1fr 1.6fr; gap: 64px; align-items: start; }
+    .agents-left { position: sticky; top: 80px; }
+    .agents-left h2 { margin-bottom: 16px; }
+    .agents-left p { font-size: 14px; font-weight: 300; color: var(--mid); line-height: 1.8; margin-bottom: 28px; }
+    .agents-left .btn-lg { display: inline-flex; }
+
+    .agents-cards { display: flex; flex-direction: column; gap: 10px; }
+    .agent-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      transition: background .2s;
+    }
+    .agent-card:hover { background: #e2ddd7; }
+    .agent-num { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--light); margin-bottom: 14px; }
+    .agent-bar { width: 24px; height: 1.5px; background: var(--border-mid); margin-bottom: 14px; border-radius: 2px; }
+    .agent-title { font-size: 16px; font-weight: 400; letter-spacing: -0.3px; color: var(--dark); margin-bottom: 8px; }
+    .agent-desc { font-size: 13px; font-weight: 300; color: var(--mid); line-height: 1.75; }
+    .agent-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 14px; }
+    .agent-tag { font-size: 10px; font-weight: 500; color: var(--mid); background: rgba(0,0,0,0.06); padding: 3px 9px; border-radius: 10px; }
+
+    /* ── PRICING ── */
     .pricing-section { padding: 64px 36px; max-width: 1200px; margin: 0 auto; border-top: 1px solid var(--border); }
-    .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 40px; }
-    .pc { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 26px 22px; position: relative; }
+    .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 36px; }
+    .pc { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 24px 20px; position: relative; }
     .pc.feat { background: var(--dark); border-color: var(--dark); }
-    .pc-tag { position: absolute; top: -10px; left: 22px; background: var(--green); color: white; font-size: 10px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; padding: 3px 10px; border-radius: 10px; }
+    .pc-tag { position: absolute; top: -10px; left: 20px; background: var(--green); color: white; font-size: 10px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; padding: 3px 10px; border-radius: 10px; }
     .pc-plan { font-size: 10px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: var(--light); margin-bottom: 12px; }
-    .pc.feat .pc-plan { color: rgba(255,255,255,0.35); }
-    .pc-price { font-size: 40px; font-weight: 300; letter-spacing: -2px; color: var(--dark); line-height: 1; }
+    .pc.feat .pc-plan { color: rgba(255,255,255,0.3); }
+    .pc-price { font-size: 38px; font-weight: 300; letter-spacing: -2px; color: var(--dark); line-height: 1; }
     .pc.feat .pc-price { color: white; }
-    .pc-per { font-size: 11px; color: var(--light); margin-top: 4px; margin-bottom: 18px; }
-    .pc.feat .pc-per { color: rgba(255,255,255,0.35); }
-    .pc-line { height: 1px; background: var(--border); margin-bottom: 16px; }
-    .pc.feat .pc-line { background: rgba(255,255,255,0.1); }
-    .pc-list { list-style: none; margin-bottom: 22px; }
-    .pc-list li { font-size: 12px; color: var(--mid); padding: 6px 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px; }
-    .pc.feat .pc-list li { color: rgba(255,255,255,0.55); border-color: rgba(255,255,255,0.08); }
+    .pc-per { font-size: 11px; color: var(--light); margin-top: 4px; margin-bottom: 16px; }
+    .pc.feat .pc-per { color: rgba(255,255,255,0.3); }
+    .pc-line { height: 1px; background: var(--border); margin-bottom: 14px; }
+    .pc.feat .pc-line { background: rgba(255,255,255,0.08); }
+    .pc-list { list-style: none; margin-bottom: 20px; }
+    .pc-list li { font-size: 12px; color: var(--mid); padding: 5px 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px; }
+    .pc.feat .pc-list li { color: rgba(255,255,255,0.5); border-color: rgba(255,255,255,0.07); }
     .pc-list li::before { content: ''; width: 3px; height: 3px; border-radius: 50%; background: rgba(0,0,0,0.15); flex-shrink: 0; }
-    .pc.feat .pc-list li::before { background: rgba(255,255,255,0.25); }
+    .pc.feat .pc-list li::before { background: rgba(255,255,255,0.2); }
     .pc-btn { display: block; text-align: center; font-family: 'Inter',sans-serif; font-size: 12px; font-weight: 500; padding: 9px 16px; border-radius: 18px; text-decoration: none; transition: all .15s; }
     .pcb-d { background: var(--dark); color: white; }
     .pcb-d:hover { opacity: 0.8; }
@@ -184,24 +207,24 @@
     .pcb-o { border: 1px solid var(--border-mid); color: var(--mid); }
     .pcb-o:hover { background: white; color: var(--dark); }
 
-    /* FINAL CTA */
+    /* ── FINAL CTA ── */
     .cta-section { padding: 48px 36px 90px; max-width: 1200px; margin: 0 auto; }
     .cta-inner {
       background-image: url('bg-texture.png');
-      background-size: cover; background-position: 50% 60%;
+      background-size: cover; background-position: 50% 55%;
       border-radius: 16px; padding: 72px 56px; position: relative; overflow: hidden;
     }
-    .cta-overlay { position: absolute; inset: 0; background: rgba(8,14,12,0.55); border-radius: 16px; }
+    .cta-overlay { position: absolute; inset: 0; background: rgba(8,14,12,0.52); border-radius: 16px; }
     .cta-content { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
-    .cta-left h2 { color: white; margin-bottom: 12px; }
-    .cta-left h2 em { color: rgba(255,255,255,0.35); font-style: normal; }
-    .cta-left p { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.7; }
+    .cta-left h2 { color: white; margin-bottom: 14px; }
+    .cta-left h2 em { color: rgba(255,255,255,0.32); font-style: normal; }
+    .cta-left p { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.48); line-height: 1.75; }
     .cta-right { flex-shrink: 0; display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
     .btn-cta { font-family: 'Inter',sans-serif; font-size: 13px; font-weight: 500; color: var(--dark); background: white; border: none; cursor: pointer; padding: 12px 24px; border-radius: 20px; text-decoration: none; transition: opacity .15s, transform .15s; white-space: nowrap; }
     .btn-cta:hover { opacity: 0.88; transform: translateY(-1px); }
-    .cta-note { font-size: 11px; color: rgba(255,255,255,0.3); }
+    .cta-note { font-size: 11px; color: rgba(255,255,255,0.28); }
 
-    /* FOOTER */
+    /* ── FOOTER ── */
     footer { border-top: 1px solid var(--border); padding: 26px 36px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
     .f-logo { font-size: 13px; font-weight: 500; color: var(--dark); text-decoration: none; }
     .f-links { display: flex; gap: 22px; list-style: none; }
@@ -209,26 +232,27 @@
     .f-links a:hover { color: var(--dark); }
     .f-copy { font-size: 11px; color: var(--light); }
 
-    /* ANIMATIONS */
+    /* ── FADE ── */
     .fade { opacity: 0; transform: translateY(12px); transition: opacity 0.5s ease, transform 0.5s ease; }
     .fade.in { opacity: 1; transform: translateY(0); }
 
-    /* MOBILE */
+    /* ── MOBILE ── */
     @media (max-width: 768px) {
       nav { padding: 0 20px; }
       .nav-links { display: none; }
-      .hero { padding: 96px 20px 0; }
-      .hero-top { grid-template-columns: 1fr; gap: 28px; }
-      .trust { padding: 22px 20px; flex-direction: column; gap: 12px; }
+      .hero { padding: 96px 20px 56px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 28px; }
+      .trust { padding: 20px; flex-direction: column; gap: 12px; }
       .bento-section { padding: 48px 20px; }
       .bento { grid-template-columns: 1fr; }
       .bc-pipeline, .bc-capture, .bc-photo-1, .bc-photo-2, .bc-photo-3 { grid-column: 1; grid-row: auto; }
-      .how-section { padding: 48px 20px; }
-      .steps { grid-template-columns: 1fr; gap: 32px; }
+      .agents-section { padding: 48px 20px; }
+      .agents-layout { grid-template-columns: 1fr; gap: 36px; }
+      .agents-left { position: static; }
       .pricing-section { padding: 48px 20px; }
       .price-grid { grid-template-columns: 1fr; }
       .cta-section { padding: 36px 20px 72px; }
-      .cta-inner { padding: 40px 28px; }
+      .cta-inner { padding: 40px 24px; }
       .cta-content { flex-direction: column; }
       .cta-right { align-items: flex-start; }
       footer { padding: 22px 20px; flex-direction: column; }
@@ -237,11 +261,12 @@
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <a href="/" class="nav-logo">SDM</a>
   <ul class="nav-links">
     <li><a href="#features">Features</a></li>
-    <li><a href="#how">How it works</a></li>
+    <li><a href="#agents">Agents</a></li>
     <li><a href="#pricing">Pricing</a></li>
   </ul>
   <div class="nav-right">
@@ -252,30 +277,17 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-top">
+  <div class="hero-inner">
     <div>
-      <h1>Stop updating<br />your CRM.<br /><em>Let it update itself.</em></h1>
+      <h1>Your team deserves<br />better than<br /><em>filling in forms.</em></h1>
     </div>
     <div class="hero-right">
-      <p class="hero-desc">SDM captures contacts from photos and voice, tracks your pipeline in real time, and surfaces exactly what needs your attention — powered by AI.</p>
+      <p class="hero-desc">The best salespeople close deals, build trust, and read the room. SDM handles the rest — capturing every contact, tracking every deal, and surfacing what needs a human touch.</p>
       <div class="hero-btns">
         <a href="https://sdm-prototype.vercel.app/login" class="btn-lg">Start for free →</a>
-        <a href="#how" class="btn-lg-o">See how it works</a>
+        <a href="#agents" class="btn-lg-o">See how it works</a>
       </div>
       <p class="hero-note">Free forever for 1 user. No credit card required.</p>
-    </div>
-  </div>
-  <div class="ss-wrap fade">
-    <div class="ss-tabs">
-      <button class="ss-tab active" onclick="switchTab(0)">Pipeline</button>
-      <button class="ss-tab" onclick="switchTab(1)">Capture</button>
-      <span class="ss-tag">Live from the app</span>
-    </div>
-    <div class="ss-frame active" id="tab-0">
-      <img src="screenshot-pipeline.png" alt="SDM Pipeline" />
-    </div>
-    <div class="ss-frame" id="tab-1">
-      <img src="screenshot-capture.png" alt="SDM Capture" />
     </div>
   </div>
 </section>
@@ -293,14 +305,12 @@
 </div>
 
 <!-- BENTO FEATURES -->
-<section class="bento-section" id="features">
+<section class="bento-section fade" id="features">
   <div class="section-eyebrow">What SDM does</div>
   <h2>Three pillars.<br /><em>One workflow.</em></h2>
-  <p class="section-sub">Most CRMs are where data goes to die. SDM is built around how sales actually happens.</p>
+  <p class="section-sub">Most CRMs are where data goes to die. SDM is built around how sales actually happens — fast, in the field, and human.</p>
 
-  <div class="bento fade">
-
-    <!-- Pipeline card -->
+  <div class="bento">
     <div class="bc bc-pipeline">
       <div class="bc-head">
         <div class="bc-label">Pipeline</div>
@@ -312,39 +322,35 @@
       </div>
     </div>
 
-    <!-- Photo card 1 — ocean wave -->
     <div class="bc bc-photo-1">
       <div class="bc-overlay"></div>
       <div class="bc-content">
-        <div class="bc-tag">Real-time signals</div>
+        <div class="bc-tag">AI assistant</div>
         <div class="bc-stat">9 tools</div>
-        <div class="bc-stat-sub">available to your AI assistant</div>
+        <div class="bc-stat-sub">available at any time</div>
       </div>
     </div>
 
-    <!-- Capture card -->
     <div class="bc bc-capture">
       <div class="bc-head">
         <div class="bc-label">Capture</div>
         <div class="bc-title">Photo, voice, or text — AI does the rest</div>
-        <p class="bc-desc">Snap a card, speak a note, type a message. SDM extracts contact, company, and deal value — before you put your phone away.</p>
+        <p class="bc-desc">Snap a card, speak a note, type a message. Contact, company, and deal value extracted before you put your phone away.</p>
       </div>
       <div class="bc-img">
         <img src="screenshot-capture.png" alt="Capture view" />
       </div>
     </div>
 
-    <!-- Photo card 2 — rocky coast -->
     <div class="bc bc-photo-2">
       <div class="bc-overlay"></div>
       <div class="bc-content">
-        <div class="bc-tag">From a sales rep</div>
-        <div class="bc-quote">"I used to spend 20 minutes after every meeting updating our CRM. Now I just snap a photo and I'm done."</div>
-        <div class="bc-author">— Field sales, Oslo</div>
+        <div class="bc-tag">From the field</div>
+        <div class="bc-quote">"I used to spend 20 minutes after every meeting updating our CRM. Now I snap a photo and I'm done."</div>
+        <div class="bc-author">— Field sales rep, Oslo</div>
       </div>
     </div>
 
-    <!-- Photo card 3 — mountain landscape -->
     <div class="bc bc-photo-3">
       <div class="bc-overlay"></div>
       <div class="bc-content">
@@ -358,33 +364,53 @@
         </ul>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<div class="how-section" id="how">
-  <div class="how-inner">
+<!-- AGENTS SECTION -->
+<div class="agents-section" id="agents">
+  <div class="agents-inner">
     <div class="section-eyebrow">How it works</div>
-    <h2>From meeting to pipeline<br /><em>in under 30 seconds.</em></h2>
-    <div class="steps">
-      <div class="fade">
-        <div class="step-n">Step 01</div>
-        <div class="step-bar"></div>
-        <div class="step-t">Capture the moment</div>
-        <p class="step-d">Snap a business card, record a voice note, or type a quick message. SDM extracts the contact, company, deal value, and next action — automatically.</p>
+    <div class="agents-layout">
+      <div class="agents-left fade">
+        <h2>Deploy agents that capture, analyse,<br /><em>and take action.</em></h2>
+        <p>SDM isn't a form you fill in. It's a layer of intelligent agents that work in the background — observing, learning, and acting on your sales data so your team never has to.</p>
+        <a href="https://sdm-prototype.vercel.app/login" class="btn-lg">Try it free →</a>
       </div>
-      <div class="fade" style="transition-delay:.1s">
-        <div class="step-n">Step 02</div>
-        <div class="step-bar"></div>
-        <div class="step-t">AI fills the gaps</div>
-        <p class="step-d">The assistant flags stale deals, surfaces what's missing, and suggests follow-ups before you'd even think to check. Like having a sales ops person on call.</p>
-      </div>
-      <div class="fade" style="transition-delay:.2s">
-        <div class="step-n">Step 03</div>
-        <div class="step-bar"></div>
-        <div class="step-t">Close and track revenue</div>
-        <p class="step-d">Move deals through your pipeline, attach invoices and POs, and see exactly what's confirmed, invoiced, and paid — all without leaving SDM.</p>
+      <div class="agents-cards">
+        <div class="agent-card fade">
+          <div class="agent-num">Agent 01</div>
+          <div class="agent-bar"></div>
+          <div class="agent-title">Capture agent</div>
+          <p class="agent-desc">Watches for business cards, voice notes, and messages. Extracts structured CRM data — contact, company, deal value, next action — in seconds. No forms, no typing.</p>
+          <div class="agent-tags">
+            <span class="agent-tag">📸 Photo</span>
+            <span class="agent-tag">🎙 Voice</span>
+            <span class="agent-tag">✏️ Text</span>
+          </div>
+        </div>
+        <div class="agent-card fade" style="transition-delay:.08s">
+          <div class="agent-num">Agent 02</div>
+          <div class="agent-bar"></div>
+          <div class="agent-title">Analysis agent</div>
+          <p class="agent-desc">Continuously monitors your pipeline for signals — stale deals, missing invoices, overdue follow-ups. Surfaces what matters before it becomes a problem.</p>
+          <div class="agent-tags">
+            <span class="agent-tag">⚠️ At-risk alerts</span>
+            <span class="agent-tag">📊 Deal health</span>
+            <span class="agent-tag">💬 Nudges</span>
+          </div>
+        </div>
+        <div class="agent-card fade" style="transition-delay:.16s">
+          <div class="agent-num">Agent 03</div>
+          <div class="agent-bar"></div>
+          <div class="agent-title">Action agent</div>
+          <p class="agent-desc">Your AI assistant that can update deals, add contacts, schedule tasks, and summarise your pipeline — via voice or text, in natural language. Ask it anything.</p>
+          <div class="agent-tags">
+            <span class="agent-tag">🔄 Update deals</span>
+            <span class="agent-tag">📋 Create tasks</span>
+            <span class="agent-tag">🔍 Search CRM</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -394,7 +420,7 @@
 <section class="pricing-section fade" id="pricing">
   <div class="section-eyebrow">Pricing</div>
   <h2>Start free.<br /><em>Scale when ready.</em></h2>
-  <p class="section-sub">No tricks. Free plan is genuinely useful. AI is the upgrade.</p>
+  <p class="section-sub">No tricks. Free plan is genuinely useful. AI agents are the upgrade.</p>
   <div class="price-grid">
     <div class="pc">
       <div class="pc-plan">Solo</div>
@@ -449,8 +475,8 @@
     <div class="cta-overlay"></div>
     <div class="cta-content fade">
       <div class="cta-left">
-        <h2>Your pipeline won't<br /><em>manage itself.</em></h2>
-        <p>Join sales teams who've stopped dreading their CRM.<br />Start free — no card, no setup, no nonsense.</p>
+        <h2>Less admin.<br /><em>More selling.</em></h2>
+        <p>Your team has better things to do than update spreadsheets.<br />Start free — no card, no setup, no nonsense.</p>
       </div>
       <div class="cta-right">
         <a href="https://sdm-prototype.vercel.app/login" class="btn-cta">Start for free →</a>
@@ -464,7 +490,7 @@
   <a href="/" class="f-logo">SDM</a>
   <ul class="f-links">
     <li><a href="#features">Features</a></li>
-    <li><a href="#how">How it works</a></li>
+    <li><a href="#agents">Agents</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="mailto:hello@sdm.app">Contact</a></li>
   </ul>
@@ -472,10 +498,6 @@
 </footer>
 
 <script>
-  function switchTab(i) {
-    document.querySelectorAll('.ss-tab').forEach((t,idx) => t.classList.toggle('active', idx===i));
-    document.querySelectorAll('.ss-frame').forEach((f,idx) => f.classList.toggle('active', idx===i));
-  }
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
   }, { threshold: 0.08 });
