@@ -81,13 +81,13 @@
     .bc-photo-3 { grid-column: 3; grid-row: 2; background-image: url('bg-texture.png'); background-position: 50% 100%; min-height: 260px; }
     .bc-overlay { position: absolute; inset: 0; background: rgba(8,16,14,0.52); }
     .bc-content { position: absolute; inset: 0; padding: 22px; display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; }
-    .bc-tag { font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.55); display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
-    .bc-stat { font-size: 38px; font-weight: 300; color: white; letter-spacing: -1.5px; line-height: 1; }
-    .bc-stat-sub { font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.7); }
-    .bc-quote { font-size: 14px; font-weight: 400; color: white; line-height: 1.6; }
-    .bc-author { font-size: 11px; font-weight: 400; color: rgba(255,255,255,0.5); }
+    .bc-tag { font-size: 10px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: rgba(255,255,255,0.5); display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+    .bc-stat { font-size: 32px; font-weight: 300; color: white; letter-spacing: -1px; line-height: 1; }
+    .bc-stat-sub { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.6); }
+    .bc-quote { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.85); line-height: 1.65; }
+    .bc-author { font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.4); }
     .bc-list { list-style: none; }
-    .bc-list li { font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.8); padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 10px; }
+    .bc-list li { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.72); padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 10px; }
 
     .bc-capture { grid-column: 1; grid-row: 2; }
     .bc-capture .bc-head { padding: 20px 20px 0; }
@@ -115,11 +115,11 @@
     .demo-scene.active { display: block; }
 
     /* Two-col editorial layout */
-    .scene-cols { max-width: 1200px; margin: 0 auto; padding: 40px 36px 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: stretch; }
+    .scene-cols { max-width: 1200px; margin: 0 auto; padding: 40px 36px 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: stretch; height: 540px; }
 
     /* Left: photo card */
     .scene-photo {
-      border-radius: 16px; overflow: hidden; position: relative; min-height: 460px;
+      border-radius: 16px; overflow: hidden; position: relative;
       background-image: url('bg-texture.png'); background-size: cover;
     }
     .scene-photo-1 { background-position: 0% 20%; }
@@ -152,7 +152,7 @@
     .photo-thumb { width: 36px; height: 36px; border-radius: 6px; background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 
     /* Right: analytics panel */
-    .scene-panel { background: var(--bg); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 20px; }
+    .scene-panel { background: var(--bg); border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 14px; overflow-y: auto; }
     .panel-title { font-size: 12px; font-weight: 500; color: var(--dark); margin-bottom: 4px; }
     .panel-sub { font-size: 11px; color: var(--light); }
 
@@ -285,8 +285,8 @@
       .bento { grid-template-columns: 1fr; }
       .bc-pipeline,.bc-capture,.bc-photo-1,.bc-photo-2,.bc-photo-3 { grid-column: 1; grid-row: auto; }
       .demo-tabs { padding: 40px 20px 0; }
-      .scene-cols { padding: 24px 20px 48px; grid-template-columns: 1fr; }
-      .scene-photo { min-height: 320px; }
+      .scene-cols { padding: 24px 20px 48px; grid-template-columns: 1fr; height: auto; }
+      .scene-photo { min-height: 280px; }
       .agents-section { padding: 48px 20px; }
       .agents-layout { grid-template-columns: 1fr; gap: 36px; }
       .agents-left { position: static; }
