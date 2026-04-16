@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SDM — The CRM that works while you sell</title>
+  <meta name="description" content="Stop updating your CRM. Let it update itself." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --white: #ffffff;
+      --bg: #f5f5f5;
+      --card: #efefed;
+      --dark: #111110;
+      --mid: #6b6a66;
+      --light: #a8a79f;
+      --border: rgba(0,0,0,0.07);
+      --border-mid: rgba(0,0,0,0.12);
+      --green: #1D9E75;
+      --red: #E24B4A;
+      --amber: #EF9F27;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--dark); -webkit-font-smoothing: antialiased; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: 54px; display: flex; align-items: center; justify-content: space-between;
+      padding: 0 36px;
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-size: 14px; font-weight: 500; color: var(--dark); text-decoration: none; letter-spacing: -0.2px; }
+    .nav-links { display: flex; gap: 28px; list-style: none; position: absolute; left: 50%; transform: translateX(-50%); }
+    .nav-links a { font-size: 13px; font-weight: 400; color: var(--mid); text-decoration: none; transition: color .15s; }
+    .nav-links a:hover { color: var(--dark); }
+    .nav-right { display: flex; gap: 6px; align-items: center; }
+    .btn-ghost { font-family: 'Inter',sans-serif; font-size: 13px; color: var(--mid); background: none; border: none; cursor: pointer; padding: 6px 14px; border-radius: 20px; text-decoration: none; transition: color .15s, background .15s; }
+    .btn-ghost:hover { color: var(--dark); background: var(--bg); }
+    .btn-black { font-family: 'Inter',sans-serif; font-size: 13px; font-weight: 500; color: white; background: var(--dark); border: none; cursor: pointer; padding: 7px 16px; border-radius: 20px; text-decoration: none; transition: opacity .15s; }
+    .btn-black:hover { opacity: 0.78; }
+
+    /* HERO */
+    .hero { padding: 116px 36px 0; max-width: 1200px; margin: 0 auto; }
+    .hero-top { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: end; margin-bottom: 48px; }
+    h1 { font-size: clamp(36px, 4vw, 54px); font-weight: 300; line-height: 1.12; letter-spacing: -1.5px; color: var(--dark); }
+    h1 em { font-style: normal; color: var(--light); }
+    .hero-right { padding-bottom: 6px; }
+    .hero-desc { font-size: 15px; font-weight: 300; color: var(--mid); line-height: 1.75; margin-bottom: 26px; max-width: 400px; }
+    .hero-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+    .btn-lg { font-family: 'Inter',sans-serif; font-size: 13px; font-weight: 500; color: white; background: var(--dark); border: none; cursor: pointer; padding: 10px 20px; border-radius: 20px; text-decoration: none; transition: opacity .15s, transform .15s; }
+    .btn-lg:hover { opacity: 0.8; transform: translateY(-1px); }
+    .btn-lg-o { font-family: 'Inter',sans-serif; font-size: 13px; font-weight: 400; color: var(--dark); background: none; border: 1px solid var(--border-mid); cursor: pointer; padding: 10px 20px; border-radius: 20px; text-decoration: none; transition: background .15s; }
+    .btn-lg-o:hover { background: var(--bg); }
+    .hero-note { font-size: 11px; color: var(--light); margin-top: 12px; }
+
+    /* SCREENSHOT TABS */
+    .ss-wrap { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+    .ss-tabs { display: flex; align-items: center; gap: 4px; padding: 10px 14px; border-bottom: 1px solid var(--border); background: rgba(255,255,255,0.6); }
+    .ss-tab { font-family: 'Inter',sans-serif; font-size: 11px; font-weight: 400; color: var(--light); padding: 4px 11px; border-radius: 10px; border: none; background: none; cursor: pointer; transition: all .15s; }
+    .ss-tab.active { background: var(--dark); color: white; font-weight: 500; }
+    .ss-tab:not(.active):hover { background: rgba(0,0,0,0.06); color: var(--mid); }
+    .ss-tag { margin-left: auto; font-size: 11px; color: var(--light); }
+    .ss-frame { display: none; position: relative; }
+    .ss-frame.active { display: block; }
+    .ss-frame img { width: 100%; display: block; border-radius: 0 0 13px 13px; }
+    .ss-frame::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 60px; background: linear-gradient(transparent, var(--card)); pointer-events: none; border-radius: 0 0 13px 13px; }
+
+    /* TRUST */
+    .trust { padding: 28px 36px; max-width: 1200px; margin: 0 auto; border-top: 1px solid var(--border); display: flex; align-items: center; gap: 36px; }
+    .trust-label { font-size: 11px; color: var(--light); white-space: nowrap; }
+    .trust-items { display: flex; gap: 32px; flex-wrap: wrap; }
+    .trust-item { font-size: 12px; font-weight: 500; color: rgba(0,0,0,0.2); }
+
+    /* BENTO GRID */
+    .bento-section { padding: 64px 36px; max-width: 1200px; margin: 0 auto; }
+    .section-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--light); margin-bottom: 16px; }
+    h2 { font-size: clamp(26px, 3.2vw, 42px); font-weight: 300; letter-spacing: -1px; line-height: 1.15; color: var(--dark); margin-bottom: 14px; }
+    h2 em { font-style: normal; color: var(--light); }
+    .section-sub { font-size: 14px; font-weight: 300; color: var(--mid); line-height: 1.75; max-width: 420px; margin-bottom: 40px; }
+
+    /* 3-col bento */
+    .bento { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: auto auto; gap: 12px; }
+
+    /* card base */
+    .bc { border-radius: 14px; overflow: hidden; border: 1px solid var(--border); background: var(--card); }
+    .bc-pad { padding: 24px; }
+
+    /* CARD 1 — pipeline screenshot, spans 2 cols */
+    .bc-pipeline { grid-column: 1 / 3; grid-row: 1; background: var(--card); }
+    .bc-pipeline .bc-head { padding: 20px 20px 0; }
+    .bc-pipeline .bc-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--light); margin-bottom: 8px; }
+    .bc-pipeline .bc-title { font-size: 16px; font-weight: 400; color: var(--dark); letter-spacing: -0.3px; margin-bottom: 6px; }
+    .bc-pipeline .bc-desc { font-size: 12px; font-weight: 300; color: var(--mid); line-height: 1.6; padding-bottom: 16px; }
+    .bc-pipeline .bc-img { border-top: 1px solid var(--border); overflow: hidden; height: 200px; }
+    .bc-pipeline .bc-img img { width: 130%; max-width: none; margin-left: -10px; margin-top: -8px; display: block; }
+
+    /* CARD 2 — photo bg top-right: ocean wave (top-left of image) */
+    .bc-photo-1 { grid-column: 3; grid-row: 1;
+      background-image: url('bg-texture.png');
+      background-size: 200%;
+      background-position: 0% 0%;
+      position: relative; min-height: 260px;
+    }
+    .bc-photo-1 .bc-overlay { position: absolute; inset: 0; background: rgba(10,20,18,0.38); }
+    .bc-photo-1 .bc-content { position: absolute; inset: 0; padding: 22px; display: flex; flex-direction: column; justify-content: flex-end; }
+    .bc-photo-1 .bc-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 8px; }
+    .bc-photo-1 .bc-stat { font-size: 32px; font-weight: 300; color: white; letter-spacing: -1px; line-height: 1; margin-bottom: 4px; }
+    .bc-photo-1 .bc-stat-sub { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.6); }
+
+    /* CARD 3 — capture screenshot */
+    .bc-capture { grid-column: 1; grid-row: 2; background: var(--card); }
+    .bc-capture .bc-head { padding: 20px 20px 0; }
+    .bc-capture .bc-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--light); margin-bottom: 8px; }
+    .bc-capture .bc-title { font-size: 16px; font-weight: 400; color: var(--dark); letter-spacing: -0.3px; margin-bottom: 6px; }
+    .bc-capture .bc-desc { font-size: 12px; font-weight: 300; color: var(--mid); line-height: 1.6; padding-bottom: 16px; }
+    .bc-capture .bc-img { border-top: 1px solid var(--border); overflow: hidden; height: 170px; }
+    .bc-capture .bc-img img { width: 120%; max-width: none; margin-left: 10px; margin-top: -8px; display: block; }
+
+    /* CARD 4 — photo bg: rocky coast (top-right of image) */
+    .bc-photo-2 { grid-column: 2; grid-row: 2;
+      background-image: url('bg-texture.png');
+      background-size: 200%;
+      background-position: 100% 0%;
+      position: relative; min-height: 280px;
+    }
+    .bc-photo-2 .bc-overlay { position: absolute; inset: 0; background: rgba(15,25,30,0.35); }
+    .bc-photo-2 .bc-content { position: absolute; inset: 0; padding: 22px; display: flex; flex-direction: column; justify-content: flex-end; }
+    .bc-photo-2 .bc-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px; }
+    .bc-photo-2 .bc-quote { font-size: 15px; font-weight: 300; color: white; line-height: 1.6; letter-spacing: -0.2px; }
+    .bc-photo-2 .bc-author { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 10px; }
+
+    /* CARD 5 — photo bg: landscape (bottom of image) */
+    .bc-photo-3 { grid-column: 3; grid-row: 2;
+      background-image: url('bg-texture.png');
+      background-size: 200%;
+      background-position: 50% 100%;
+      position: relative; min-height: 280px;
+    }
+    .bc-photo-3 .bc-overlay { position: absolute; inset: 0; background: rgba(8,16,12,0.42); }
+    .bc-photo-3 .bc-content { position: absolute; inset: 0; padding: 22px; display: flex; flex-direction: column; justify-content: flex-end; }
+    .bc-photo-3 .bc-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 10px; }
+    .bc-photo-3 .bc-list { list-style: none; }
+    .bc-photo-3 .bc-list li { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.75); padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 8px; }
+    .bc-photo-3 .bc-list li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,0.4); flex-shrink: 0; }
+
+    /* HOW IT WORKS */
+    .how-section { border-top: 1px solid var(--border); background: var(--card); padding: 64px 36px; }
+    .how-inner { max-width: 1200px; margin: 0 auto; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; margin-top: 48px; }
+    .step-n { font-size: 10px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: var(--light); margin-bottom: 14px; }
+    .step-bar { width: 28px; height: 1.5px; background: var(--border-mid); margin-bottom: 16px; border-radius: 2px; }
+    .step-t { font-size: 15px; font-weight: 400; letter-spacing: -0.2px; color: var(--dark); margin-bottom: 8px; }
+    .step-d { font-size: 13px; font-weight: 300; color: var(--mid); line-height: 1.75; }
+
+    /* PRICING */
+    .pricing-section { padding: 64px 36px; max-width: 1200px; margin: 0 auto; border-top: 1px solid var(--border); }
+    .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 40px; }
+    .pc { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 26px 22px; position: relative; }
+    .pc.feat { background: var(--dark); border-color: var(--dark); }
+    .pc-tag { position: absolute; top: -10px; left: 22px; background: var(--green); color: white; font-size: 10px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; padding: 3px 10px; border-radius: 10px; }
+    .pc-plan { font-size: 10px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: var(--light); margin-bottom: 12px; }
+    .pc.feat .pc-plan { color: rgba(255,255,255,0.35); }
+    .pc-price { font-size: 40px; font-weight: 300; letter-spacing: -2px; color: var(--dark); line-height: 1; }
+    .pc.feat .pc-price { color: white; }
+    .pc-per { font-size: 11px; color: var(--light); margin-top: 4px; margin-bottom: 18px; }
+    .pc.feat .pc-per { color: rgba(255,255,255,0.35); }
+    .pc-line { height: 1px; background: var(--border); margin-bottom: 16px; }
+    .pc.feat .pc-line { background: rgba(255,255,255,0.1); }
+    .pc-list { list-style: none; margin-bottom: 22px; }
+    .pc-list li { font-size: 12px; color: var(--mid); padding: 6px 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px; }
+    .pc.feat .pc-list li { color: rgba(255,255,255,0.55); border-color: rgba(255,255,255,0.08); }
+    .pc-list li::before { content: ''; width: 3px; height: 3px; border-radius: 50%; background: rgba(0,0,0,0.15); flex-shrink: 0; }
+    .pc.feat .pc-list li::before { background: rgba(255,255,255,0.25); }
+    .pc-btn { display: block; text-align: center; font-family: 'Inter',sans-serif; font-size: 12px; font-weight: 500; padding: 9px 16px; border-radius: 18px; text-decoration: none; transition: all .15s; }
+    .pcb-d { background: var(--dark); color: white; }
+    .pcb-d:hover { opacity: 0.8; }
+    .pcb-w { background: white; color: var(--dark); }
+    .pcb-w:hover { opacity: 0.88; }
+    .pcb-o { border: 1px solid var(--border-mid); color: var(--mid); }
+    .pcb-o:hover { background: white; color: var(--dark); }
+
+    /* FINAL CTA */
+    .cta-section { padding: 48px 36px 90px; max-width: 1200px; margin: 0 auto; }
+    .cta-inner {
+      background-image: url('bg-texture.png');
+      background-size: cover; background-position: 50% 60%;
+      border-radius: 16px; padding: 72px 56px; position: relative; overflow: hidden;
+    }
+    .cta-overlay { position: absolute; inset: 0; background: rgba(8,14,12,0.55); border-radius: 16px; }
+    .cta-content { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .cta-left h2 { color: white; margin-bottom: 12px; }
+    .cta-left h2 em { color: rgba(255,255,255,0.35); font-style: normal; }
+    .cta-left p { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.7; }
+    .cta-right { flex-shrink: 0; display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
+    .btn-cta { font-family: 'Inter',sans-serif; font-size: 13px; font-weight: 500; color: var(--dark); background: white; border: none; cursor: pointer; padding: 12px 24px; border-radius: 20px; text-decoration: none; transition: opacity .15s, transform .15s; white-space: nowrap; }
+    .btn-cta:hover { opacity: 0.88; transform: translateY(-1px); }
+    .cta-note { font-size: 11px; color: rgba(255,255,255,0.3); }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border); padding: 26px 36px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .f-logo { font-size: 13px; font-weight: 500; color: var(--dark); text-decoration: none; }
+    .f-links { display: flex; gap: 22px; list-style: none; }
+    .f-links a { font-size: 12px; color: var(--light); text-decoration: none; transition: color .15s; }
+    .f-links a:hover { color: var(--dark); }
+    .f-copy { font-size: 11px; color: var(--light); }
+
+    /* ANIMATIONS */
+    .fade { opacity: 0; transform: translateY(12px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .fade.in { opacity: 1; transform: translateY(0); }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 96px 20px 0; }
+      .hero-top { grid-template-columns: 1fr; gap: 28px; }
+      .trust { padding: 22px 20px; flex-direction: column; gap: 12px; }
+      .bento-section { padding: 48px 20px; }
+      .bento { grid-template-columns: 1fr; }
+      .bc-pipeline, .bc-capture, .bc-photo-1, .bc-photo-2, .bc-photo-3 { grid-column: 1; grid-row: auto; }
+      .how-section { padding: 48px 20px; }
+      .steps { grid-template-columns: 1fr; gap: 32px; }
+      .pricing-section { padding: 48px 20px; }
+      .price-grid { grid-template-columns: 1fr; }
+      .cta-section { padding: 36px 20px 72px; }
+      .cta-inner { padding: 40px 28px; }
+      .cta-content { flex-direction: column; }
+      .cta-right { align-items: flex-start; }
+      footer { padding: 22px 20px; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">SDM</a>
+  <ul class="nav-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="https://sdm-prototype.vercel.app/login" class="btn-ghost">Log in</a>
+    <a href="https://sdm-prototype.vercel.app/login" class="btn-black">Start free →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-top">
+    <div>
+      <h1>Stop updating<br />your CRM.<br /><em>Let it update itself.</em></h1>
+    </div>
+    <div class="hero-right">
+      <p class="hero-desc">SDM captures contacts from photos and voice, tracks your pipeline in real time, and surfaces exactly what needs your attention — powered by AI.</p>
+      <div class="hero-btns">
+        <a href="https://sdm-prototype.vercel.app/login" class="btn-lg">Start for free →</a>
+        <a href="#how" class="btn-lg-o">See how it works</a>
+      </div>
+      <p class="hero-note">Free forever for 1 user. No credit card required.</p>
+    </div>
+  </div>
+  <div class="ss-wrap fade">
+    <div class="ss-tabs">
+      <button class="ss-tab active" onclick="switchTab(0)">Pipeline</button>
+      <button class="ss-tab" onclick="switchTab(1)">Capture</button>
+      <span class="ss-tag">Live from the app</span>
+    </div>
+    <div class="ss-frame active" id="tab-0">
+      <img src="screenshot-pipeline.png" alt="SDM Pipeline" />
+    </div>
+    <div class="ss-frame" id="tab-1">
+      <img src="screenshot-capture.png" alt="SDM Capture" />
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="trust">
+  <span class="trust-label">Built for</span>
+  <div class="trust-items">
+    <span class="trust-item">Consulting firms</span>
+    <span class="trust-item">SaaS sales teams</span>
+    <span class="trust-item">Freelance agencies</span>
+    <span class="trust-item">Field sales reps</span>
+    <span class="trust-item">Startups</span>
+  </div>
+</div>
+
+<!-- BENTO FEATURES -->
+<section class="bento-section" id="features">
+  <div class="section-eyebrow">What SDM does</div>
+  <h2>Three pillars.<br /><em>One workflow.</em></h2>
+  <p class="section-sub">Most CRMs are where data goes to die. SDM is built around how sales actually happens.</p>
+
+  <div class="bento fade">
+
+    <!-- Pipeline card -->
+    <div class="bc bc-pipeline">
+      <div class="bc-head">
+        <div class="bc-label">Pipeline</div>
+        <div class="bc-title">Kanban tracking with invoice and PO status built in</div>
+        <p class="bc-desc">See every deal at a glance. At-risk deals are flagged automatically. Revenue tracking means your CRM knows if you actually got paid.</p>
+      </div>
+      <div class="bc-img">
+        <img src="screenshot-pipeline.png" alt="Pipeline view" />
+      </div>
+    </div>
+
+    <!-- Photo card 1 — ocean wave -->
+    <div class="bc bc-photo-1">
+      <div class="bc-overlay"></div>
+      <div class="bc-content">
+        <div class="bc-tag">Real-time signals</div>
+        <div class="bc-stat">9 tools</div>
+        <div class="bc-stat-sub">available to your AI assistant</div>
+      </div>
+    </div>
+
+    <!-- Capture card -->
+    <div class="bc bc-capture">
+      <div class="bc-head">
+        <div class="bc-label">Capture</div>
+        <div class="bc-title">Photo, voice, or text — AI does the rest</div>
+        <p class="bc-desc">Snap a card, speak a note, type a message. SDM extracts contact, company, and deal value — before you put your phone away.</p>
+      </div>
+      <div class="bc-img">
+        <img src="screenshot-capture.png" alt="Capture view" />
+      </div>
+    </div>
+
+    <!-- Photo card 2 — rocky coast -->
+    <div class="bc bc-photo-2">
+      <div class="bc-overlay"></div>
+      <div class="bc-content">
+        <div class="bc-tag">From a sales rep</div>
+        <div class="bc-quote">"I used to spend 20 minutes after every meeting updating our CRM. Now I just snap a photo and I'm done."</div>
+        <div class="bc-author">— Field sales, Oslo</div>
+      </div>
+    </div>
+
+    <!-- Photo card 3 — mountain landscape -->
+    <div class="bc bc-photo-3">
+      <div class="bc-overlay"></div>
+      <div class="bc-content">
+        <div class="bc-tag">AI assistant can</div>
+        <ul class="bc-list">
+          <li>Add contacts and companies</li>
+          <li>Update deal stages</li>
+          <li>Schedule follow-up tasks</li>
+          <li>Summarise your pipeline</li>
+          <li>Flag at-risk deals</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<div class="how-section" id="how">
+  <div class="how-inner">
+    <div class="section-eyebrow">How it works</div>
+    <h2>From meeting to pipeline<br /><em>in under 30 seconds.</em></h2>
+    <div class="steps">
+      <div class="fade">
+        <div class="step-n">Step 01</div>
+        <div class="step-bar"></div>
+        <div class="step-t">Capture the moment</div>
+        <p class="step-d">Snap a business card, record a voice note, or type a quick message. SDM extracts the contact, company, deal value, and next action — automatically.</p>
+      </div>
+      <div class="fade" style="transition-delay:.1s">
+        <div class="step-n">Step 02</div>
+        <div class="step-bar"></div>
+        <div class="step-t">AI fills the gaps</div>
+        <p class="step-d">The assistant flags stale deals, surfaces what's missing, and suggests follow-ups before you'd even think to check. Like having a sales ops person on call.</p>
+      </div>
+      <div class="fade" style="transition-delay:.2s">
+        <div class="step-n">Step 03</div>
+        <div class="step-bar"></div>
+        <div class="step-t">Close and track revenue</div>
+        <p class="step-d">Move deals through your pipeline, attach invoices and POs, and see exactly what's confirmed, invoiced, and paid — all without leaving SDM.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<section class="pricing-section fade" id="pricing">
+  <div class="section-eyebrow">Pricing</div>
+  <h2>Start free.<br /><em>Scale when ready.</em></h2>
+  <p class="section-sub">No tricks. Free plan is genuinely useful. AI is the upgrade.</p>
+  <div class="price-grid">
+    <div class="pc">
+      <div class="pc-plan">Solo</div>
+      <div class="pc-price">Free</div>
+      <div class="pc-per">forever · 1 user</div>
+      <div class="pc-line"></div>
+      <ul class="pc-list">
+        <li>Capture (photo, voice, text)</li>
+        <li>Up to 100 contacts</li>
+        <li>Pipeline tracking</li>
+        <li>Task planning</li>
+        <li>Invoice + PO tracking</li>
+      </ul>
+      <a href="https://sdm-prototype.vercel.app/login" class="pc-btn pcb-d">Get started free</a>
+    </div>
+    <div class="pc feat">
+      <div class="pc-tag">Most popular</div>
+      <div class="pc-plan">Pro</div>
+      <div class="pc-price">€29</div>
+      <div class="pc-per">per user / month</div>
+      <div class="pc-line"></div>
+      <ul class="pc-list">
+        <li>Everything in Solo</li>
+        <li>Unlimited contacts</li>
+        <li>Proactive AI nudges</li>
+        <li>AI assistant — voice + text</li>
+        <li>Deal health scoring</li>
+        <li>Team analytics</li>
+      </ul>
+      <a href="https://sdm-prototype.vercel.app/login" class="pc-btn pcb-w">Start Pro trial</a>
+    </div>
+    <div class="pc">
+      <div class="pc-plan">Business</div>
+      <div class="pc-price">€79</div>
+      <div class="pc-per">flat · up to 10 users</div>
+      <div class="pc-line"></div>
+      <ul class="pc-list">
+        <li>Everything in Pro</li>
+        <li>Manager + admin roles</li>
+        <li>Org-wide pipeline view</li>
+        <li>Team invite system</li>
+        <li>Priority support</li>
+      </ul>
+      <a href="mailto:hello@sdm.app" class="pc-btn pcb-o">Contact us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-overlay"></div>
+    <div class="cta-content fade">
+      <div class="cta-left">
+        <h2>Your pipeline won't<br /><em>manage itself.</em></h2>
+        <p>Join sales teams who've stopped dreading their CRM.<br />Start free — no card, no setup, no nonsense.</p>
+      </div>
+      <div class="cta-right">
+        <a href="https://sdm-prototype.vercel.app/login" class="btn-cta">Start for free →</a>
+        <span class="cta-note">Free plan available forever</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="/" class="f-logo">SDM</a>
+  <ul class="f-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="mailto:hello@sdm.app">Contact</a></li>
+  </ul>
+  <span class="f-copy">© 2026 SDM Prototype</span>
+</footer>
+
+<script>
+  function switchTab(i) {
+    document.querySelectorAll('.ss-tab').forEach((t,idx) => t.classList.toggle('active', idx===i));
+    document.querySelectorAll('.ss-frame').forEach((f,idx) => f.classList.toggle('active', idx===i));
+  }
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
