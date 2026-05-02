@@ -183,7 +183,7 @@
 
     /* PRICING — 4 column launch sequence */
     .pricing-section { padding: 64px 36px; max-width: 1200px; margin: 0 auto; border-top: 1px solid var(--border); }
-    .price-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; margin-top: 36px; }
+    .price-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; margin-top: 36px; }
     .pc { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 22px 18px; position: relative; display: flex; flex-direction: column; }
     .pc-waitlist { background: white; border: 1.5px solid var(--green); }
     .pc-phase-badge { display: inline-block; font-size: 10px; font-weight: 500; padding: 3px 10px; border-radius: 10px; background: var(--bg); color: var(--light); margin-bottom: 12px; width: fit-content; }
@@ -441,40 +441,24 @@
 
     <div class="price-grid">
 
-      <!-- Waitlist -->
-      <div class="pc pc-waitlist">
-        <div class="pc-phase-badge pc-badge-green">Waitlist</div>
-        <div class="pc-plan-title">Join the list</div>
-        <div class="pc-price">Free</div>
-        <div class="pc-per">&nbsp;</div>
-        <p class="pc-desc">Reserve your spot. First access when we open Solo and Pro seats.</p>
-        <div class="pc-seats">No limit on signups</div>
-        <div class="pc-line"></div>
-        <ul class="pc-list">
-          <li>Priority invite when we open</li>
-          <li>Early access pricing locked in</li>
-          <li>Shape the product with early feedback</li>
-        </ul>
-        <a href="https://workspace.rollable.app" class="pc-btn pcb-green">Join waitlist</a>
-      </div>
 
-      <!-- Solo — 1 month free trial -->
-      <div class="pc">
-        <div class="pc-phase-badge pc-badge-gray">Solo</div>
-        <div class="pc-plan-title">1 month free</div>
+      <!-- Solo — open now, limited pro access -->
+      <div class="pc" style="background: white; border: 1.5px solid var(--green);">
+        <div class="pc-phase-badge pc-badge-green">Open now</div>
+        <div class="pc-plan-title">Solo</div>
         <div class="pc-price">Free <span class="pc-per-inline">/ first month</span></div>
         <div class="pc-per">then €29 / user / mo</div>
-        <p class="pc-desc">Full Pro access for 30 days. Your AI credits stay with you — nothing resets when you upgrade.</p>
+        <p class="pc-desc">Get started today. Limited access to Pro features — and first in line when public beta opens.</p>
         <div class="pc-seats">1 user · no card required</div>
         <div class="pc-line"></div>
         <ul class="pc-list">
-          <li>Full Pro features for 30 days</li>
+          <li>Core CRM features</li>
           <li>Unlimited contacts</li>
           <li>AI assistant — voice + text</li>
-          <li>Proactive nudges + deal health</li>
-          <li>Credits carry over on upgrade</li>
+          <li>Limited Pro features</li>
+          <li>Priority access to public beta</li>
         </ul>
-        <a href="https://workspace.rollable.app" class="pc-btn pcb-dark">Start free trial</a>
+        <a href="https://workspace.rollable.app" class="pc-btn pcb-dark">Start free</a>
       </div>
 
       <!-- Early access -->
@@ -503,11 +487,12 @@
         <div class="pc-plan-title">Pro</div>
         <div class="pc-price">€29 <span class="pc-per-inline">/ user / mo</span></div>
         <div class="pc-per">&nbsp;</div>
-        <p class="pc-desc">Once we're out of beta. Standard pricing for all new users.</p>
+        <p class="pc-desc">Once we're out of beta. All Pro features for every new user.</p>
         <div class="pc-seats">No seat limit</div>
         <div class="pc-line"></div>
         <ul class="pc-list pc-list-muted">
-          <li>Full Pro access</li>
+          <li>All Pro features</li>
+          <li>Beta function priority</li>
           <li>Priority support</li>
           <li>Team + analytics</li>
         </ul>
