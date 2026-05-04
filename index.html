@@ -6,15 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rollable — Simple to start. Smart from day one.</title>
   <meta name="description" content="Rollable is the AI CRM that logs itself. Snap a photo, speak a note, drop a file — your pipeline updates automatically. No manual entry. No training sessions." />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="canonical" href="https://rollable.app/" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://rollable.app/" />
   <meta property="og:title" content="Rollable — Simple to start. Smart from day one." />
   <meta property="og:description" content="Rollable is the AI CRM that logs itself. Snap a photo, speak a note, drop a file — your pipeline updates automatically." />
   <meta property="og:site_name" content="Rollable" />
+  <meta property="og:image" content="https://rollable.app/social.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Rollable — Simple to start. Smart from day one." />
   <meta name="twitter:description" content="Rollable is the AI CRM that logs itself. Snap a photo, speak a note, drop a file — your pipeline updates automatically." />
+  <meta name="twitter:image" content="https://rollable.app/social.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -290,7 +295,7 @@
           <a href="https://workspace.rollable.app" class="btn-lg">Start for free</a>
           <a href="#demo" class="btn-lg-o">See it in action</a>
         </div>
-        <p class="hero-note">No credit card required. First month free.</p>
+        <p class="hero-note">No credit card required. Free until public beta.</p>
       </div>
     </div>
   </section>
@@ -338,9 +343,9 @@
       <div class="bc bc-photo bc-photo-2">
         <div class="bc-overlay"></div>
         <div class="bc-content">
-          <div class="bc-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>From the field</div>
-          <div class="bc-quote">"I used to spend 20 minutes after every meeting updating our CRM. Now I snap a photo and I'm done."</div>
-          <div class="bc-author">— Field sales rep, Oslo</div>
+          <div class="bc-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Capture speed</div>
+          <div class="bc-stat">&lt; 30s</div>
+          <div class="bc-stat-sub">from snap to CRM update</div>
         </div>
       </div>
       <div class="bc bc-photo bc-photo-3">
@@ -511,7 +516,7 @@
         </div>
         <div class="cta-right">
           <a href="https://workspace.rollable.app" class="btn-cta">Start for free</a>
-          <span class="cta-note">First month free. No card required.</span>
+          <span class="cta-note">Free until public beta. No card required.</span>
         </div>
       </div>
     </div>
@@ -525,6 +530,8 @@
         <li><a href="#demo">Demo</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="mailto:hello@rollable.app">Contact</a></li>
+        <li><a href="/privacy.html">Privacy</a></li>
+        <li><a href="/terms.html">Terms</a></li>
       </ul>
       <span class="f-copy">© 2026 Rollable</span>
     </div>
@@ -613,5 +620,7 @@
     let autoIdx=0;
     setInterval(()=>{ autoIdx=(autoIdx+1)%4; showScene(autoIdx,document.querySelectorAll('.dtb')[autoIdx]); },12000);
   </script>
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
