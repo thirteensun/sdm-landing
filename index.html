@@ -20,9 +20,24 @@
   <meta name="twitter:title" content="Rollable — Simple to start. Smart from day one." />
   <meta name="twitter:description" content="Rollable is the AI CRM that logs itself. Snap a photo, speak a note, drop a file — your pipeline updates automatically." />
   <meta name="twitter:image" content="https://rollable.app/social.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 300 500;
+      font-display: swap;
+      src: url('/fonts/inter-latin-ext.woff2') format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 300 500;
+      font-display: swap;
+      src: url('/fonts/inter-latin.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+  </style>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -74,9 +89,9 @@
     .bc-pipeline .bc-img { border-top: 1px solid var(--border); overflow: hidden; height: 190px; }
     .bc-pipeline .bc-img img { width: 130%; max-width: none; margin-left: -10px; margin-top: -8px; display: block; }
     .bc-photo { position: relative; min-height: 250px; background-size: 200%; }
-    .bc-photo-1 { grid-column: 3; grid-row: 1; background-image: url('bg-texture.png'); background-position: 0% 0%; }
-    .bc-photo-2 { grid-column: 2; grid-row: 2; background-image: url('bg-texture.png'); background-position: 100% 0%; min-height: 260px; }
-    .bc-photo-3 { grid-column: 3; grid-row: 2; background-image: url('bg-texture.png'); background-position: 50% 100%; min-height: 260px; }
+    .bc-photo-1 { grid-column: 3; grid-row: 1; background-image: url('bg-texture.webp'); background-position: 0% 0%; }
+    .bc-photo-2 { grid-column: 2; grid-row: 2; background-image: url('bg-texture.webp'); background-position: 100% 0%; min-height: 260px; }
+    .bc-photo-3 { grid-column: 3; grid-row: 2; background-image: url('bg-texture.webp'); background-position: 50% 100%; min-height: 260px; }
     .bc-overlay { position: absolute; inset: 0; background: rgba(8,16,14,0.52); }
     .bc-content { position: absolute; inset: 0; padding: 22px; display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; }
     .bc-tag { font-size: 10px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: rgba(255,255,255,0.5); display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
@@ -105,7 +120,7 @@
     .demo-scene { display: none; }
     .demo-scene.active { display: block; }
     .scene-cols { max-width: 1200px; margin: 0 auto; padding: 40px 36px 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: stretch; height: 540px; }
-    .scene-photo { border-radius: 16px; overflow: hidden; position: relative; background-image: url('bg-texture.png'); background-size: cover; }
+    .scene-photo { border-radius: 16px; overflow: hidden; position: relative; background-image: url('bg-texture.webp'); background-size: cover; }
     .scene-photo-1 { background-position: 0% 20%; }
     .scene-photo-2 { background-position: 100% 10%; }
     .scene-photo-3 { background-position: 50% 60%; }
@@ -214,7 +229,7 @@
     .pcb-disabled { background: var(--bg); color: var(--light); cursor: not-allowed; border: 1px solid var(--border); }
 
     .cta-section { padding: 48px 36px 90px; max-width: 1200px; margin: 0 auto; }
-    .cta-inner { background-image: url('bg-texture.png'); background-size: cover; background-position: 50% 55%; border-radius: 16px; padding: 72px 56px; position: relative; overflow: hidden; }
+    .cta-inner { background-image: url('bg-texture.webp'); background-size: cover; background-position: 50% 55%; border-radius: 16px; padding: 72px 56px; position: relative; overflow: hidden; }
     .cta-overlay { position: absolute; inset: 0; background: rgba(8,14,12,0.58); border-radius: 16px; }
     .cta-content { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
     .cta-left h2 { color: white; margin-bottom: 14px; }
@@ -270,7 +285,7 @@
   <nav>
     <div class="nav-inner">
       <a href="/" class="nav-logo">
-        <img src="/rollable-logo.svg" alt="Rollable" style="height: 32px; width: auto; display: block;" />
+        <img src="/rollable-logo.svg" alt="Rollable" width="220" height="56" style="height: 32px; width: auto; display: block;" />
       </a>
       <ul class="nav-links">
         <li><a href="#features">Features</a></li>
@@ -322,7 +337,7 @@
           <div class="bc-title">Kanban tracking with invoice and PO status built in</div>
           <p class="bc-desc">See every deal at a glance. At-risk deals are flagged. Revenue tracking means your CRM knows if you actually got paid.</p>
         </div>
-        <div class="bc-img"><img src="pipeline.png" alt="Pipeline" /></div>
+        <div class="bc-img"><picture><source srcset="pipeline.webp" type="image/webp" /><img src="pipeline.png" alt="Pipeline" loading="lazy" width="1602" height="656" /></picture></div>
       </div>
       <div class="bc bc-photo bc-photo-1">
         <div class="bc-overlay"></div>
@@ -338,7 +353,7 @@
           <div class="bc-title">Photo, voice, or text — AI does the rest</div>
           <p class="bc-desc">Snap a card, speak a note, type a message. Contact, company, and deal value extracted before you put your phone away.</p>
         </div>
-        <div class="bc-img"><img src="capture.png" alt="Capture" /></div>
+        <div class="bc-img"><picture><source srcset="capture.webp" type="image/webp" /><img src="capture.png" alt="Capture" loading="lazy" width="1199" height="792" /></picture></div>
       </div>
       <div class="bc bc-photo bc-photo-2">
         <div class="bc-overlay"></div>
@@ -524,7 +539,7 @@
 
   <footer>
     <div class="footer-inner">
-      <a href="/" class="f-logo"><img src="rollable-logo.svg" alt="Rollable" style="height: 24px; width: auto; display: block;" /></a>
+      <a href="/" class="f-logo"><img src="rollable-logo.svg" alt="Rollable" width="220" height="56" style="height: 24px; width: auto; display: block;" /></a>
       <ul class="f-links">
         <li><a href="mailto:hello@rollable.app">Contact</a></li>
         <li><a href="/privacy.html">Privacy</a></li>
