@@ -5,11 +5,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rollable — Simple to start. Smart from day one.</title>
-  <meta name="description" content="Rollable is the AI CRM that logs itself. Snap a photo, speak a note, drop a file — your pipeline updates automatically. No manual entry. No training sessions." />
+  <meta name="description" content="Rollable is the AI CRM that logs itself. Snap a photo, speak a note, drop a file — your pipeline updates automatically. No manual entry." />
+  <meta property="og:locale" content="en_US" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="canonical" href="https://rollable.app/" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://rollable.app/" />
   <meta property="og:title" content="Rollable — Simple to start. Smart from day one." />
@@ -20,6 +22,115 @@
   <meta name="twitter:title" content="Rollable — Simple to start. Smart from day one." />
   <meta name="twitter:description" content="Rollable is the AI CRM that logs itself. Snap a photo, speak a note, drop a file — your pipeline updates automatically." />
   <meta name="twitter:image" content="https://rollable.app/social.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://rollable.app/#organization",
+        "name": "Rollable",
+        "url": "https://rollable.app",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://rollable.app/rollable-logo.svg"
+        },
+        "description": "Rollable is an AI CRM that automatically captures contacts, deals, and updates from photos, voice notes, and files — no manual data entry required.",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "hello@rollable.app",
+          "contactType": "customer support"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://rollable.app/#website",
+        "url": "https://rollable.app",
+        "name": "Rollable",
+        "description": "Rollable is the AI CRM that logs itself.",
+        "publisher": { "@id": "https://rollable.app/#organization" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://rollable.app/#software",
+        "name": "Rollable",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "CRM Software",
+        "operatingSystem": "Web",
+        "url": "https://rollable.app",
+        "description": "Rollable is an AI CRM that logs itself. Capture contacts from photos, voice notes, or files. AI updates your pipeline automatically — no manual entry required.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "description": "Free until public beta. No credit card required."
+        },
+        "featureList": [
+          "AI-powered contact capture from photos and voice notes",
+          "Automatic CRM pipeline updates",
+          "Kanban deal tracking with invoice and PO status",
+          "AI assistant for pipeline queries via voice or text",
+          "Deal health scoring and at-risk alerts",
+          "Proactive AI signals and follow-up nudges"
+        ],
+        "publisher": { "@id": "https://rollable.app/#organization" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Rollable?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rollable is an AI CRM that logs itself. Instead of manual data entry, your team snaps a photo of a business card, speaks a voice note, or uploads a file — and Rollable's AI instantly extracts contact details, deal values, and next actions into your pipeline. No forms, no training sessions required."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the AI capture work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rollable's Capture Agent watches for photos, voice recordings, and text inputs. It uses AI to identify names, companies, roles, deal amounts, and follow-up actions — then structures that data directly into your CRM. The whole process takes under 30 seconds from photo to pipeline update."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Rollable require manual data entry?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Rollable is designed to eliminate manual CRM entry entirely. The AI handles extraction and logging automatically. Your team's job is to sell — Rollable's job is to keep the CRM current."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does Rollable cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rollable is free to use until public beta launches — no credit card required. Early access to the paid Pro plan will be available at €14 per user per month (50% off the standard €29/month price), locked in for 12 months for early adopters."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What types of businesses use Rollable?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rollable is built for small to mid-sized sales teams including consulting firms, SaaS sales teams, freelance agencies, field sales reps, and startups — any team where CRM adoption is low because the manual logging burden is too high."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is Rollable different from other CRMs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most CRMs require your team to log activity manually — a constant source of incomplete data and low adoption. Rollable reverses this with AI agents that capture, analyse, and act on your pipeline automatically. The result is a CRM that stays current without requiring discipline or habit changes from your sales team."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
   <style>
     @font-face {
       font-family: 'Inter';
@@ -248,6 +359,15 @@
     .f-links a { font-size: 12px; color: var(--light); text-decoration: none; transition: color .15s; }
     .f-links a:hover { color: var(--dark); }
     .f-copy { font-size: 11px; color: var(--light); justify-self: end; }
+    .faq-section { padding: 64px 36px; max-width: 1200px; margin: 0 auto; border-top: 1px solid var(--border); }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 36px; }
+    .faq-item { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+    .faq-item summary { font-size: 14px; font-weight: 400; color: var(--dark); padding: 18px 20px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; letter-spacing: -0.2px; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; font-size: 18px; font-weight: 300; color: var(--light); flex-shrink: 0; transition: transform .2s; }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-item[open] summary { border-bottom: 1px solid var(--border); }
+    .faq-a { font-size: 13px; font-weight: 300; color: var(--mid); line-height: 1.75; padding: 16px 20px; }
     .fade { opacity: 0; transform: translateY(12px); transition: opacity 0.5s ease, transform 0.5s ease; }
     .fade.in { opacity: 1; transform: translateY(0); }
 
@@ -270,6 +390,8 @@
       .agents-left { position: static; }
       .pricing-section { padding: 48px 20px; }
       .price-grid { grid-template-columns: 1fr; }
+      .faq-section { padding: 48px 20px; }
+      .faq-grid { grid-template-columns: 1fr; }
       .cta-section { padding: 36px 20px 72px; }
       .cta-inner { padding: 40px 24px; }
       .cta-content { flex-direction: column; }
@@ -287,7 +409,7 @@
   <nav>
     <div class="nav-inner">
       <a href="/" class="nav-logo">
-        <img src="/rollable-logo.svg" alt="Rollable" width="220" height="56" style="height: 32px; width: auto; display: block;" />
+        <img src="/rollable-logo.svg" alt="Rollable AI CRM" width="220" height="56" style="height: 32px; width: auto; display: block;" />
       </a>
       <ul class="nav-links">
         <li><a href="#features">Features</a></li>
@@ -304,7 +426,7 @@
   <section class="hero">
     <div class="hero-inner">
       <div>
-        <h1>Simple to start.<br />Smart<br /><em>from day one.</em></h1>
+        <h1>The AI CRM<br />that logs itself.<br /><em>Simple from day one.</em></h1>
       </div>
       <div class="hero-right">
         <p class="hero-desc">Rollable registers information the way your team already works — snap a photo, speak a note, drop a file. The AI handles the rest, so nobody has to think about where to log, what to update, or what they might be missing. Just make it roll.</p>
@@ -339,7 +461,7 @@
           <div class="bc-title">Kanban tracking with invoice and PO status built in</div>
           <p class="bc-desc">See every deal at a glance. At-risk deals are flagged. Revenue tracking means your CRM knows if you actually got paid.</p>
         </div>
-        <div class="bc-img"><picture><source srcset="pipeline.webp" type="image/webp" /><img src="pipeline.png" alt="Pipeline" loading="lazy" width="1602" height="656" /></picture></div>
+        <div class="bc-img"><picture><source srcset="pipeline.webp" type="image/webp" /><img src="pipeline.png" alt="Rollable AI CRM kanban pipeline view with deal health scores and invoice tracking" loading="lazy" width="1602" height="656" /></picture></div>
       </div>
       <div class="bc bc-photo bc-photo-1">
         <div class="bc-overlay"></div>
@@ -355,7 +477,7 @@
           <div class="bc-title">Photo, voice, or text — AI does the rest</div>
           <p class="bc-desc">Snap a card, speak a note, type a message. Contact, company, and deal value extracted before you put your phone away.</p>
         </div>
-        <div class="bc-img"><picture><source srcset="capture.webp" type="image/webp" /><img src="capture.png" alt="Capture" loading="lazy" width="1199" height="792" /></picture></div>
+        <div class="bc-img"><picture><source srcset="capture.webp" type="image/webp" /><img src="capture.png" alt="Rollable AI capture screen showing contact details extracted from a voice note" loading="lazy" width="1199" height="792" /></picture></div>
       </div>
       <div class="bc bc-photo bc-photo-2">
         <div class="bc-overlay"></div>
@@ -381,7 +503,7 @@
     </div>
   </section>
 
-  <div class="demo-section" id="demo">
+  <section class="demo-section" id="demo" aria-label="Product demo">
     <div class="demo-tabs">
       <div class="section-eyebrow">See it in action</div>
       <h2>AI that actually does the work.</h2>
@@ -417,9 +539,9 @@
         <div class="scene-panel"><div><div class="panel-title">AI signals</div><div class="panel-sub">Proactive — no prompting needed</div></div><div style="display:flex;flex-direction:column;gap:8px;" id="signalItems"></div></div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="agents-section" id="agents">
+  <section class="agents-section" id="agents" aria-label="How it works">
     <div class="agents-inner">
       <div class="section-eyebrow">How it works</div>
       <div class="agents-layout">
@@ -453,7 +575,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- PRICING — 4 column launch sequence -->
   <section class="pricing-section fade" id="pricing">
@@ -523,6 +645,37 @@
     </div>
   </section>
 
+  <section class="faq-section fade" id="faq">
+    <div class="section-eyebrow">FAQ</div>
+    <h2>Common questions.</h2>
+    <div class="faq-grid">
+      <details class="faq-item">
+        <summary>What is Rollable?</summary>
+        <p class="faq-a">Rollable is an AI CRM that logs itself. Instead of manual data entry, your team snaps a photo of a business card, speaks a voice note, or uploads a file — and Rollable's AI instantly extracts contact details, deal values, and next actions into your pipeline. No forms, no training sessions required.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How does the AI capture work?</summary>
+        <p class="faq-a">Rollable's Capture Agent watches for photos, voice recordings, and text inputs. It uses AI to identify names, companies, roles, deal amounts, and follow-up actions — then structures that data directly into your CRM. The whole process takes under 30 seconds from photo to pipeline update.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does Rollable require manual data entry?</summary>
+        <p class="faq-a">No. Rollable is designed to eliminate manual CRM entry entirely. The AI handles extraction and logging automatically. Your team's job is to sell — Rollable's job is to keep the CRM current.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How much does Rollable cost?</summary>
+        <p class="faq-a">Rollable is free to use until public beta launches — no credit card required. Early access to the paid Pro plan will be available at €14 per user per month (50% off the standard €29/month price), locked in for 12 months for early adopters.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What types of businesses use Rollable?</summary>
+        <p class="faq-a">Rollable is built for small to mid-sized sales teams including consulting firms, SaaS sales teams, freelance agencies, field sales reps, and startups — any team where CRM adoption is low because the manual logging burden is too high.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How is Rollable different from other CRMs?</summary>
+        <p class="faq-a">Most CRMs require your team to log activity manually — a constant source of incomplete data and low adoption. Rollable reverses this with AI agents that capture, analyse, and act on your pipeline automatically. The result is a CRM that stays current without requiring discipline or habit changes from your sales team.</p>
+      </details>
+    </div>
+  </section>
+
   <section class="cta-section">
     <div class="cta-inner">
       <div class="cta-overlay"></div>
@@ -541,7 +694,7 @@
 
   <footer>
     <div class="footer-inner">
-      <a href="/" class="f-logo"><img src="rollable-logo.svg" alt="Rollable" width="220" height="56" style="height: 24px; width: auto; display: block;" /></a>
+      <a href="/" class="f-logo"><img src="rollable-logo.svg" alt="Rollable AI CRM" width="220" height="56" style="height: 24px; width: auto; display: block;" /></a>
       <ul class="f-links">
         <li><a href="mailto:hello@rollable.app">Contact</a></li>
         <li><a href="/privacy.html">Privacy</a></li>
