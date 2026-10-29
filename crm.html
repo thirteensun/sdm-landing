@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rollable — Simple to start. Smart from day one.</title>
+  <meta name="description" content="Rollable is the AI CRM that logs itself. Snap a photo, speak a note, drop a file — your pipeline updates automatically. No manual entry." />
+  <meta property="og:locale" content="en_US" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="canonical" href="https://rollable.app/crm" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rollable.app/crm" />
+  <meta property="og:title" content="Rollable — Simple to start. Smart from day one." />
+  <meta property="og:description" content="Rollable is the AI CRM that logs itself. Snap a photo, speak a note, drop a file — your pipeline updates automatically." />
+  <meta property="og:site_name" content="Rollable" />
+  <meta property="og:image" content="https://rollable.app/social.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rollable — Simple to start. Smart from day one." />
+  <meta name="twitter:description" content="Rollable is the AI CRM that logs itself. Snap a photo, speak a note, drop a file — your pipeline updates automatically." />
+  <meta name="twitter:image" content="https://rollable.app/social.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://rollable.app/#organization",
+        "name": "Rollable",
+        "url": "https://rollable.app",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://rollable.app/rollable-logo.svg"
+        },
+        "description": "Rollable is an AI CRM that automatically captures contacts, deals, and updates from photos, voice notes, and files — no manual data entry required.",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "hello@rollable.app",
+          "contactType": "customer support"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://rollable.app/#website",
+        "url": "https://rollable.app",
+        "name": "Rollable",
+        "description": "Rollable is the AI CRM that logs itself.",
+        "publisher": { "@id": "https://rollable.app/#organization" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://rollable.app/#software",
+        "name": "Rollable",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "CRM Software",
+        "operatingSystem": "Web",
+        "url": "https://rollable.app/crm",
+        "description": "Rollable is an AI CRM that logs itself. Capture contacts from photos, voice notes, or files. AI updates your pipeline automatically — no manual entry required.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "description": "Free until public beta. No credit card required."
+        },
+        "featureList": [
+          "AI-powered contact capture from photos and voice notes",
+          "Automatic CRM pipeline updates",
+          "Kanban deal tracking with invoice and PO status",
+          "AI assistant for pipeline queries via voice or text",
+          "Deal health scoring and at-risk alerts",
+          "Proactive AI signals and follow-up nudges"
+        ],
+        "publisher": { "@id": "https://rollable.app/#organization" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Rollable?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rollable is an AI CRM that logs itself. Instead of manual data entry, your team snaps a photo of a business card, speaks a voice note, or uploads a file — and Rollable's AI instantly extracts contact details, deal values, and next actions into your pipeline. No forms, no training sessions required."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the AI capture work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rollable's Capture Agent watches for photos, voice recordings, and text inputs. It uses AI to identify names, companies, roles, deal amounts, and follow-up actions — then structures that data directly into your CRM. The whole process takes under 30 seconds from photo to pipeline update."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Rollable require manual data entry?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Rollable is designed to eliminate manual CRM entry entirely. The AI handles extraction and logging automatically. Your team's job is to sell — Rollable's job is to keep the CRM current."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does Rollable cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rollable is free to use until public beta launches — no credit card required. Early access to the paid Pro plan will be available at €14 per user per month (50% off the standard €29/month price), locked in for 12 months for early adopters."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What types of businesses use Rollable?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rollable is built for small to mid-sized sales teams including consulting firms, SaaS sales teams, freelance agencies, field sales reps, and startups — any team where CRM adoption is low because the manual logging burden is too high."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is Rollable different from other CRMs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most CRMs require your team to log activity manually — a constant source of incomplete data and low adoption. Rollable reverses this with AI agents that capture, analyse, and act on your pipeline automatically. The result is a CRM that stays current without requiring discipline or habit changes from your sales team."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 300 500;
+      font-display: swap;
+      src: url('/fonts/inter-latin-ext.woff2') format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 300 500;
+      font-display: swap;
+      src: url('/fonts/inter-latin.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+  </style>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --white: #ffffff; --bg: #f4f3f1; --card: #eeede9; --dark: #111110;
+      --mid: #6b6a66; --light: #a8a7a3; --border: rgba(0,0,0,0.06);
+      --border-mid: rgba(0,0,0,0.10); --green: #1D9E75; --red: #E24B4A; --amber: #EF9F27;
+    }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--dark); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 54px; padding: 0 16px; background: rgba(255,255,255,0.93); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: 1200px; height: 100%; margin: 0 auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
+    .nav-logo { font-family: "General Sans", sans-serif; font-size: 18px; font-weight: 500; color: var(--dark); text-decoration: none; letter-spacing: -0.05em; }
+    .nav-links { display: flex; gap: 28px; list-style: none; justify-self: center; }
+    .nav-links a { font-size: 14px; letter-spacing: 0.01em; font-weight: 400; color: var(--mid); text-decoration: none; transition: color .15s; }
+    .nav-links a:hover { color: var(--dark); }
+    .nav-right { display: flex; gap: 6px; align-items: center; justify-self: end; }
+    .btn-ghost { font-family: 'Inter',sans-serif; font-size: 13px; color: var(--mid); background: none; border: none; cursor: pointer; padding: 6px 14px; border-radius: 20px; text-decoration: none; transition: color .15s, background .15s; }
+    .btn-ghost:hover { color: var(--dark); background: var(--bg); }
+    .btn-black { font-family: 'Inter',sans-serif; font-size: 13px; font-weight: 500; color: white; background: var(--dark); border: none; cursor: pointer; padding: 7px 16px; border-radius: 20px; text-decoration: none; transition: opacity .15s; }
+    .btn-black:hover { opacity: 0.78; }
+    .hero { padding: 116px 36px 72px; max-width: 1200px; margin: 0 auto; }
+    .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    h1 { font-size: clamp(28px, 3vw, 42px); font-weight: 500; line-height: 1.18; letter-spacing: -1.2px; color: var(--dark); }
+    h1 em { font-style: normal; color: var(--light); }
+    .hero-right { padding-bottom: 4px; }
+    .hero-desc { font-size: 15px; font-weight: 300; color: var(--mid); line-height: 1.8; margin-bottom: 28px; max-width: 400px; }
+    .hero-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+    .btn-lg { font-family: 'Inter',sans-serif; font-size: 13px; font-weight: 500; color: white; background: var(--dark); border: none; cursor: pointer; padding: 10px 20px; border-radius: 20px; text-decoration: none; transition: opacity .15s, transform .15s; }
+    .btn-lg:hover { opacity: 0.8; transform: translateY(-1px); }
+    .btn-lg-o { font-family: 'Inter',sans-serif; font-size: 13px; font-weight: 400; color: var(--dark); background: none; border: 1px solid var(--border-mid); cursor: pointer; padding: 10px 20px; border-radius: 20px; text-decoration: none; transition: background .15s; }
+    .btn-lg-o:hover { background: var(--bg); }
+    .hero-note { font-size: 11px; color: var(--light); margin-top: 12px; }
+    .trust { padding: 28px 36px; max-width: 1200px; margin: 0 auto; border-top: 1px solid var(--border); display: flex; align-items: center; gap: 36px; }
+    .trust-label { font-size: 11px; color: var(--light); white-space: nowrap; }
+    .trust-items { display: flex; gap: 32px; flex-wrap: wrap; }
+    .trust-item { font-size: 12px; font-weight: 500; color: rgba(0,0,0,0.2); }
+    .bento-section { padding: 64px 36px; max-width: 1200px; margin: 0 auto; }
+    .section-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--light); margin-bottom: 14px; }
+    h2 { font-size: clamp(24px, 3vw, 38px); font-weight: 300; letter-spacing: -0.8px; line-height: 1.2; color: var(--dark); margin-bottom: 12px; }
+    h2 em { font-style: normal; color: var(--light); }
+    .section-sub { font-size: 14px; font-weight: 300; color: var(--mid); line-height: 1.75; max-width: 420px; margin-bottom: 36px; }
+    .bento { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: auto auto; gap: 10px; }
+    .bc { border-radius: 14px; overflow: hidden; border: 1px solid var(--border); background: var(--card); }
+    .bc-pipeline { grid-column: 1/3; grid-row: 1; }
+    .bc-pipeline .bc-head { padding: 20px 20px 0; }
+    .bc-pipeline .bc-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--light); margin-bottom: 7px; }
+    .bc-pipeline .bc-title { font-size: 15px; font-weight: 400; color: var(--dark); letter-spacing: -0.3px; margin-bottom: 5px; line-height: 1.3; }
+    .bc-pipeline .bc-desc { font-size: 12px; font-weight: 300; color: var(--mid); line-height: 1.65; padding-bottom: 14px; }
+    .bc-pipeline .bc-img { border-top: 1px solid var(--border); overflow: hidden; height: 190px; }
+    .bc-pipeline .bc-img picture { display: block; width: 100%; height: 100%; }
+    .bc-pipeline .bc-img img { width: 100%; height: 100%; object-fit: cover; object-position: left top; display: block; }
+    .bc-photo { position: relative; min-height: 250px; background-size: 200%; }
+    .bc-photo-1 { grid-column: 3; grid-row: 1; background-image: url('bg-texture.webp'); background-position: 0% 0%; }
+    .bc-photo-2 { grid-column: 2; grid-row: 2; background-image: url('bg-texture.webp'); background-position: 100% 0%; min-height: 260px; }
+    .bc-photo-3 { grid-column: 3; grid-row: 2; background-image: url('bg-texture.webp'); background-position: 50% 100%; min-height: 260px; }
+    .bc-overlay { position: absolute; inset: 0; background: rgba(8,16,14,0.52); }
+    .bc-content { position: absolute; inset: 0; padding: 22px; display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; }
+    .bc-tag { font-size: 10px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: rgba(255,255,255,0.5); display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+    .bc-stat { font-size: 32px; font-weight: 300; color: white; letter-spacing: -1px; line-height: 1; }
+    .bc-stat-sub { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.6); }
+    .bc-quote { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.85); line-height: 1.65; }
+    .bc-author { font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.4); }
+    .bc-list { list-style: none; }
+    .bc-list li { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.72); padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 10px; }
+    .bc-capture { grid-column: 1; grid-row: 2; }
+    .bc-capture .bc-head { padding: 20px 20px 0; }
+    .bc-capture .bc-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--light); margin-bottom: 7px; }
+    .bc-capture .bc-title { font-size: 15px; font-weight: 400; color: var(--dark); letter-spacing: -0.3px; margin-bottom: 5px; line-height: 1.3; }
+    .bc-capture .bc-desc { font-size: 12px; font-weight: 300; color: var(--mid); line-height: 1.65; padding-bottom: 14px; }
+    .bc-capture .bc-img { border-top: 1px solid var(--border); overflow: hidden; height: 160px; }
+    .bc-capture .bc-img picture { display: block; width: 100%; height: 100%; }
+    .bc-capture .bc-img img { width: 100%; height: 100%; object-fit: cover; object-position: left top; display: block; }
+    .demo-section { border-top: 1px solid var(--border); }
+    .demo-tabs { max-width: 1200px; margin: 0 auto; padding: 56px 36px 0; }
+    .demo-tabs .section-eyebrow { margin-bottom: 20px; }
+    .demo-tabs h2 { margin-bottom: 8px; }
+    .demo-tabs .section-sub { margin-bottom: 32px; }
+    .demo-tab-btns { display: flex; gap: 6px; flex-wrap: wrap; }
+    .dtb { font-family: 'Inter',sans-serif; font-size: 12px; font-weight: 400; color: var(--mid); background: none; border: 1px solid var(--border-mid); cursor: pointer; padding: 7px 16px; border-radius: 20px; transition: all .15s; }
+    .dtb.on { background: var(--dark); color: white; border-color: var(--dark); font-weight: 500; }
+    .dtb:not(.on):hover { background: var(--bg); }
+    .demo-scene { display: none; }
+    .demo-scene.active { display: block; }
+    .scene-cols { max-width: 1200px; margin: 0 auto; padding: 40px 36px 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: stretch; height: 540px; }
+    .scene-photo { border-radius: 16px; overflow: hidden; position: relative; background-image: url('bg-texture.webp'); background-size: cover; }
+    .scene-photo-1 { background-position: 0% 20%; }
+    .scene-photo-2 { background-position: 100% 10%; }
+    .scene-photo-3 { background-position: 50% 60%; }
+    .scene-photo-4 { background-position: 20% 80%; }
+    .scene-overlay { position: absolute; inset: 0; background: rgba(6,12,10,0.5); }
+    .scene-photo-content { position: absolute; inset: 0; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; }
+    .scene-label { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.5); display: flex; align-items: center; gap: 8px; }
+    .scene-label svg { opacity: 0.6; }
+    .scene-bubbles { display: flex; flex-direction: column; gap: 10px; }
+    .bubble { border-radius: 14px; padding: 12px 16px; font-size: 13px; line-height: 1.5; max-width: 85%; opacity: 0; transform: translateY(8px); transition: all .45s ease; }
+    .bubble.show { opacity: 1; transform: none; }
+    .bubble.ai { background: rgba(255,255,255,0.15); backdrop-filter: blur(8px); color: white; align-self: flex-start; border: 1px solid rgba(255,255,255,0.12); }
+    .bubble.user { background: white; color: var(--dark); align-self: flex-end; font-weight: 400; }
+    .bubble.action { background: rgba(29,158,117,0.3); border: 1px solid rgba(29,158,117,0.4); color: white; align-self: flex-start; display: flex; align-items: center; gap: 8px; font-weight: 500; }
+    .voice-wave { display: flex; align-items: center; gap: 3px; height: 24px; }
+    .voice-bar { width: 3px; border-radius: 3px; background: rgba(255,255,255,0.7); animation: wave 1.2s ease-in-out infinite; }
+    .voice-bar:nth-child(1){height:6px;animation-delay:0s} .voice-bar:nth-child(2){height:14px;animation-delay:.1s} .voice-bar:nth-child(3){height:20px;animation-delay:.2s} .voice-bar:nth-child(4){height:12px;animation-delay:.3s} .voice-bar:nth-child(5){height:18px;animation-delay:.4s} .voice-bar:nth-child(6){height:8px;animation-delay:.5s} .voice-bar:nth-child(7){height:16px;animation-delay:.35s}
+    @keyframes wave { 0%,100%{transform:scaleY(1)} 50%{transform:scaleY(0.4)} }
+    .photo-preview { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 10px 14px; display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.8); font-size: 12px; }
+    .photo-thumb { width: 36px; height: 36px; border-radius: 6px; background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .scene-panel { background: var(--bg); border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 14px; overflow-y: auto; }
+    .panel-title { font-size: 12px; font-weight: 500; color: var(--dark); margin-bottom: 4px; }
+    .panel-sub { font-size: 11px; color: var(--light); }
+    .stat-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .stat-card { background: white; border-radius: 10px; border: 1px solid var(--border); padding: 12px 14px; }
+    .stat-val { font-size: 22px; font-weight: 300; letter-spacing: -0.8px; color: var(--dark); line-height: 1; margin-bottom: 4px; transition: all .5s; }
+    .stat-lbl { font-size: 10px; color: var(--light); font-weight: 400; }
+    .stat-delta { font-size: 10px; font-weight: 500; margin-top: 2px; }
+    .delta-up { color: var(--green); } .delta-dn { color: var(--red); }
+    .chart-wrap { background: white; border-radius: 10px; border: 1px solid var(--border); padding: 14px; }
+    .chart-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .chart-title { font-size: 11px; font-weight: 500; color: var(--dark); }
+    .chart-val { font-size: 11px; font-weight: 500; color: var(--green); }
+    .chart-svg { width: 100%; height: 64px; }
+    .funnel-wrap { background: white; border-radius: 10px; border: 1px solid var(--border); padding: 14px; }
+    .funnel-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+    .funnel-label { font-size: 10px; color: var(--mid); width: 70px; flex-shrink: 0; }
+    .funnel-bar-bg { flex: 1; height: 8px; background: rgba(0,0,0,0.05); border-radius: 6px; overflow: hidden; }
+    .funnel-bar { height: 100%; border-radius: 6px; width: 0; transition: width 1s cubic-bezier(.4,0,.2,1); }
+    .funnel-count { font-size: 10px; font-weight: 500; color: var(--dark); width: 20px; text-align: right; flex-shrink: 0; }
+    .health-wrap { background: white; border-radius: 10px; border: 1px solid var(--border); padding: 14px; }
+    .health-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; }
+    .health-name { font-size: 10px; color: var(--mid); width: 88px; flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .health-bar-bg { flex: 1; height: 5px; background: rgba(0,0,0,0.05); border-radius: 4px; overflow: hidden; }
+    .health-bar { height: 100%; border-radius: 4px; width: 0; transition: width 1.1s cubic-bezier(.4,0,.2,1); }
+    .health-score { font-size: 10px; font-weight: 600; width: 24px; text-align: right; flex-shrink: 0; }
+    .hg{color:var(--green)} .hw{color:var(--amber)} .hb{color:var(--red)}
+    .barg{background:var(--green)} .barw{background:var(--amber)} .barb{background:var(--red)}
+    .nudge-item { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; display: flex; align-items: flex-start; gap: 10px; opacity: 0; transform: translateX(-6px); transition: all .45s ease; }
+    .nudge-item.show { opacity: 1; transform: none; }
+    .nudge-icon { width: 22px; height: 22px; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .nudge-text { font-size: 11px; color: var(--dark); line-height: 1.5; }
+    .nudge-time { font-size: 10px; color: var(--light); margin-top: 2px; }
+    .kb-panel { display: flex; gap: 6px; overflow: hidden; }
+    .kb-pcol { flex: 1; }
+    .kb-pcol-head { font-size: 9px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--light); margin-bottom: 5px; }
+    .kb-pcard { background: white; border: 1px solid var(--border); border-radius: 7px; padding: 7px 8px; margin-bottom: 4px; font-size: 10px; }
+    .kb-pcard .kn { font-weight: 500; color: var(--dark); margin-bottom: 1px; }
+    .kb-pcard .ka { color: var(--light); }
+    .kb-pcard.risk { border-left: 2px solid var(--amber); }
+    .kb-pcard.moving { background: rgba(29,158,117,0.05); border-color: rgba(29,158,117,0.25); }
+    @keyframes slideIn { 0%{opacity:0;transform:translateY(-8px)} 100%{opacity:1;transform:none} }
+    .kb-pcard.new { animation: slideIn .4s ease forwards; }
+    .agents-section { border-top: 1px solid var(--border); padding: 64px 0; }
+    .agents-inner { max-width: 1200px; margin: 0 auto; padding: 0 36px; }
+    .agents-layout { display: grid; grid-template-columns: 1fr 1.6fr; gap: 64px; align-items: start; }
+    .agents-left { position: sticky; top: 80px; }
+    .agents-left h2 { margin-bottom: 16px; }
+    .agents-left p { font-size: 14px; font-weight: 300; color: var(--mid); line-height: 1.8; margin-bottom: 28px; }
+    .agents-cards { display: flex; flex-direction: column; gap: 10px; }
+    .agent-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 24px; transition: background .2s; }
+    .agent-card:hover { background: #e0deda; }
+    .agent-num { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--light); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+    .agent-icon { width: 28px; height: 28px; background: rgba(0,0,0,0.06); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .agent-bar { width: 24px; height: 1.5px; background: var(--border-mid); margin-bottom: 12px; border-radius: 2px; }
+    .agent-title { font-size: 16px; font-weight: 400; letter-spacing: -0.3px; color: var(--dark); margin-bottom: 8px; }
+    .agent-desc { font-size: 13px; font-weight: 300; color: var(--mid); line-height: 1.75; }
+    .agent-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 14px; }
+    .agent-tag { font-size: 10px; font-weight: 500; color: var(--mid); background: rgba(0,0,0,0.05); padding: 3px 9px; border-radius: 10px; display: flex; align-items: center; gap: 4px; }
+
+    /* PRICING — 4 column launch sequence */
+    .pricing-section { padding: 64px 36px; max-width: 1200px; margin: 0 auto; border-top: 1px solid var(--border); }
+    .price-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; margin-top: 36px; }
+    .pc { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 22px 18px; position: relative; display: flex; flex-direction: column; }
+    .pc-waitlist { background: white; border: 1.5px solid var(--green); }
+    .pc-phase-badge { display: inline-block; font-size: 10px; font-weight: 500; padding: 3px 10px; border-radius: 10px; background: var(--bg); color: var(--light); margin-bottom: 12px; width: fit-content; }
+    .pc-badge-green { background: rgba(29,158,117,0.1); color: var(--green); }
+    .pc-badge-gray { background: var(--bg); color: var(--light); }
+    .pc-plan-title { font-size: 16px; font-weight: 400; color: var(--dark); margin-bottom: 8px; letter-spacing: -0.2px; }
+    .pc-price { font-size: 36px; font-weight: 300; letter-spacing: -2px; color: var(--dark); line-height: 1; margin-bottom: 2px; }
+    .pc-per { font-size: 11px; color: var(--light); margin-bottom: 10px; min-height: 16px; }
+    .pc-per-inline { font-size: 13px; font-weight: 300; letter-spacing: 0; color: var(--mid); }
+    .pc-price-wrap { margin-bottom: 2px; }
+    .pc-strike { font-size: 12px; color: var(--light); text-decoration: line-through; display: block; margin-bottom: 2px; }
+    .pc-savings { font-size: 10px; font-weight: 500; color: var(--green); margin-top: 3px; margin-bottom: 6px; }
+    .pc-desc { font-size: 12px; font-weight: 300; color: var(--mid); line-height: 1.65; margin-bottom: 10px; }
+    .pc-seats { font-size: 11px; color: var(--light); margin-bottom: 12px; }
+    .pc-line { height: 1px; background: var(--border); margin-bottom: 12px; }
+    .pc-list { list-style: none; margin-bottom: 18px; flex: 1; }
+    .pc-list li { font-size: 12px; color: var(--mid); padding: 5px 0; border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; gap: 8px; line-height: 1.4; }
+    .pc-list li::before { content: ''; display: block; width: 4px; height: 4px; border-radius: 50%; background: var(--border-mid); margin-top: 5px; flex-shrink: 0; }
+    .pc-list-muted li { color: var(--light); }
+    .pc-btn { display: block; text-align: center; font-family: 'Inter',sans-serif; font-size: 12px; font-weight: 500; padding: 9px 16px; border-radius: 18px; text-decoration: none; transition: all .15s; cursor: pointer; margin-top: auto; border: none; }
+    .pcb-green { background: var(--dark); color: white; } .pcb-green:hover { opacity: 0.82; }
+    .pcb-dark { background: var(--dark); color: white; } .pcb-dark:hover { opacity: 0.8; }
+    .pcb-disabled { background: var(--bg); color: var(--light); cursor: not-allowed; border: 1px solid var(--border); }
+
+    .cta-section { padding: 48px 36px 90px; max-width: 1200px; margin: 0 auto; }
+    .cta-inner { background-image: url('bg-texture.webp'); background-size: cover; background-position: 50% 55%; border-radius: 16px; padding: 72px 56px; position: relative; overflow: hidden; }
+    .cta-overlay { position: absolute; inset: 0; background: rgba(8,14,12,0.58); border-radius: 16px; }
+    .cta-content { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .cta-left h2 { color: white; margin-bottom: 14px; }
+    .cta-left h2 em { color: rgba(255,255,255,0.35); font-style: normal; }
+    .cta-left p { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.55); line-height: 1.75; }
+    .cta-right { flex-shrink: 0; display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
+    .btn-cta { font-family: 'Inter',sans-serif; font-size: 13px; font-weight: 500; color: var(--dark); background: white; border: none; cursor: pointer; padding: 12px 24px; border-radius: 20px; text-decoration: none; transition: opacity .15s, transform .15s; white-space: nowrap; }
+    .btn-cta:hover { opacity: 0.88; transform: translateY(-1px); }
+    .cta-note { font-size: 11px; color: rgba(255,255,255,0.3); }
+    footer { border-top: 1px solid var(--border); padding: 26px 36px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; }
+    .f-logo { font-family: "General Sans", sans-serif; font-size: 13px; font-weight: 500; color: var(--dark); text-decoration: none; }
+    .f-links { display: flex; gap: 22px; list-style: none; justify-self: center; }
+    .f-links a { font-size: 12px; color: var(--light); text-decoration: none; transition: color .15s; }
+    .f-links a:hover { color: var(--dark); }
+    .f-copy { font-size: 11px; color: var(--light); justify-self: end; }
+    .faq-section { padding: 64px 36px; max-width: 1200px; margin: 0 auto; border-top: 1px solid var(--border); }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 36px; }
+    .faq-item { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+    .faq-item summary { font-size: 14px; font-weight: 400; color: var(--dark); padding: 18px 20px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; letter-spacing: -0.2px; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; font-size: 18px; font-weight: 300; color: var(--light); flex-shrink: 0; transition: transform .2s; }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-item[open] summary { border-bottom: 1px solid var(--border); }
+    .faq-a { font-size: 13px; font-weight: 300; color: var(--mid); line-height: 1.75; padding: 16px 20px; }
+    .fade { opacity: 0; transform: translateY(12px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .fade.in { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 12px 0 16px; }
+      .nav-inner { grid-template-columns: auto 1fr auto; }
+      .nav-links { display: none; }
+      .hero { padding: 96px 20px 56px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 28px; }
+      .trust { padding: 20px; flex-direction: column; gap: 12px; }
+      .bento-section { padding: 48px 20px; }
+      .bento { grid-template-columns: 1fr; }
+      .bc-pipeline,.bc-capture,.bc-photo-1,.bc-photo-2,.bc-photo-3 { grid-column: 1; grid-row: auto; }
+      .demo-tabs { padding: 40px 20px 0; }
+      .scene-cols { padding: 24px 20px 48px; grid-template-columns: 1fr; grid-template-rows: 280px 460px; height: auto; }
+      .scene-photo { min-height: 280px; height: 280px; }
+      .scene-panel { height: 460px; min-height: 460px; overflow-y: auto; overscroll-behavior: contain; }
+      .agents-section { padding: 48px 20px; }
+      .agents-layout { grid-template-columns: 1fr; gap: 36px; }
+      .agents-left { position: static; }
+      .pricing-section { padding: 48px 20px; }
+      .price-grid { grid-template-columns: 1fr; }
+      .faq-section { padding: 48px 20px; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .cta-section { padding: 36px 20px 72px; }
+      .cta-inner { padding: 40px 24px; }
+      .cta-content { flex-direction: column; }
+      .cta-right { align-items: flex-start; }
+      footer { padding: 22px 20px; }
+      .footer-inner { grid-template-columns: 1fr; gap: 10px; }
+      .f-links { justify-self: start; }
+      .f-copy { justify-self: start; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/crm" class="nav-logo">
+        <img src="/rollable-logo.svg" alt="Rollable AI CRM" width="220" height="56" style="height: 32px; width: auto; display: block;" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="/labs/crm/login" class="btn-ghost">Log in</a>
+        <a href="/labs/crm" class="btn-black">Start free</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <h1>The AI CRM<br />that logs itself.<br /><em>Simple from day one.</em></h1>
+      </div>
+      <div class="hero-right">
+        <p class="hero-desc">Rollable registers information the way your team already works — snap a photo, speak a note, drop a file. The AI handles the rest, so nobody has to think about where to log, what to update, or what they might be missing. Just make it roll.</p>
+        <div class="hero-btns">
+          <a href="/labs/crm" class="btn-lg">Start for free</a>
+          <a href="#demo" class="btn-lg-o">See it in action</a>
+        </div>
+        <p class="hero-note">No credit card required. Free until public beta.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust">
+    <span class="trust-label">Built for</span>
+    <div class="trust-items">
+      <span class="trust-item">Consulting firms</span>
+      <span class="trust-item">SaaS sales teams</span>
+      <span class="trust-item">Freelance agencies</span>
+      <span class="trust-item">Field sales reps</span>
+      <span class="trust-item">Startups</span>
+    </div>
+  </div>
+
+  <section class="bento-section fade" id="features">
+    <div class="section-eyebrow">What Rollable does</div>
+    <h2>Your CRM should work<br /><em>for your team.</em></h2>
+    <p class="section-sub">Most sales teams don't fail at selling. They fail at logging. Rollable removes that friction entirely — turning a photo, a voice note, or a spreadsheet into structured CRM data before you've put your phone away. No configuration. No training sessions. No excuses.</p>
+    <div class="bento">
+      <div class="bc bc-pipeline">
+        <div class="bc-head">
+          <div class="bc-label">Pipeline</div>
+          <div class="bc-title">Kanban tracking with invoice and PO status built in</div>
+          <p class="bc-desc">See every deal at a glance. At-risk deals are flagged. Revenue tracking means your CRM knows if you actually got paid.</p>
+        </div>
+        <div class="bc-img"><picture><source srcset="pipeline.webp" type="image/webp" /><img src="pipeline.png" alt="Rollable AI CRM kanban pipeline view with deal health scores and invoice tracking" loading="lazy" width="1602" height="656" /></picture></div>
+      </div>
+      <div class="bc bc-photo bc-photo-1">
+        <div class="bc-overlay"></div>
+        <div class="bc-content">
+          <div class="bc-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>AI assistant</div>
+          <div class="bc-stat">9 tools</div>
+          <div class="bc-stat-sub">available at any time</div>
+        </div>
+      </div>
+      <div class="bc bc-capture">
+        <div class="bc-head">
+          <div class="bc-label">Capture</div>
+          <div class="bc-title">Photo, voice, or text — AI does the rest</div>
+          <p class="bc-desc">Snap a card, speak a note, type a message. Contact, company, and deal value extracted before you put your phone away.</p>
+        </div>
+        <div class="bc-img"><picture><source srcset="capture.webp" type="image/webp" /><img src="capture.png" alt="Rollable AI capture screen showing contact details extracted from a voice note" loading="lazy" width="1199" height="792" /></picture></div>
+      </div>
+      <div class="bc bc-photo bc-photo-2">
+        <div class="bc-overlay"></div>
+        <div class="bc-content">
+          <div class="bc-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Capture speed</div>
+          <div class="bc-stat">&lt; 30s</div>
+          <div class="bc-stat-sub">from snap to CRM update</div>
+        </div>
+      </div>
+      <div class="bc bc-photo bc-photo-3">
+        <div class="bc-overlay"></div>
+        <div class="bc-content">
+          <div class="bc-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>AI assistant can</div>
+          <ul class="bc-list">
+            <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Add contacts and companies</li>
+            <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Update deal stages</li>
+            <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Schedule follow-up tasks</li>
+            <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Search your whole pipeline</li>
+            <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>Flag at-risk deals</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="demo-section" id="demo" aria-label="Product demo">
+    <div class="demo-tabs">
+      <div class="section-eyebrow">See it in action</div>
+      <h2>AI that actually does the work.</h2>
+      <p class="section-sub">More than a chatbot, more than a CRM. Rollable is a real assistant that works for your team. Watch it in action.</p>
+      <div class="demo-tab-btns">
+        <button class="dtb on" onclick="showScene(0,this)"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;margin-right:4px;vertical-align:middle"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>Capture</button>
+        <button class="dtb" onclick="showScene(1,this)"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;margin-right:4px;vertical-align:middle"><rect x="3" y="3" width="5" height="18" rx="1"/><rect x="10" y="3" width="5" height="12" rx="1"/><rect x="17" y="3" width="5" height="15" rx="1"/></svg>Pipeline</button>
+        <button class="dtb" onclick="showScene(2,this)"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;margin-right:4px;vertical-align:middle"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>Analytics</button>
+        <button class="dtb" onclick="showScene(3,this)"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;margin-right:4px;vertical-align:middle"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>AI Signals</button>
+      </div>
+    </div>
+    <div class="demo-scene active" id="scene0">
+      <div class="scene-cols">
+        <div class="scene-photo scene-photo-1"><div class="scene-overlay"></div><div class="scene-photo-content"><div class="scene-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>Voice capture</div><div class="scene-bubbles" id="capBubbles"><div class="bubble user" id="cb0"><div class="voice-wave"><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div><div class="voice-bar"></div></div>&nbsp; Recording…</div></div></div></div>
+        <div class="scene-panel"><div><div class="panel-title">Extracted from voice note</div><div class="panel-sub">AI parsing in real time</div></div><div id="capFields" style="display:flex;flex-direction:column;gap:6px;"></div><div class="photo-preview" id="photoPreview" style="opacity:0;transition:opacity .5s;"><div class="photo-thumb"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div><div><div style="font-size:11px;color:white;font-weight:500;">business_card.jpg</div><div style="font-size:10px;color:rgba(255,255,255,0.5);">AI scanning for contact details…</div></div></div><div class="nudge-item" id="capSuccess" style="background:rgba(29,158,117,0.06);border-color:rgba(29,158,117,0.2);"><div class="nudge-icon" style="background:rgba(29,158,117,0.1);"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><div><div class="nudge-text" style="color:var(--green);font-weight:500;">Contact added to CRM</div><div class="nudge-time">Lena Berg · Boreal Supply · VP Sales</div></div></div></div>
+      </div>
+    </div>
+    <div class="demo-scene" id="scene1">
+      <div class="scene-cols">
+        <div class="scene-photo scene-photo-2"><div class="scene-overlay"></div><div class="scene-photo-content"><div class="scene-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="5" height="18" rx="1"/><rect x="10" y="3" width="5" height="12" rx="1"/><rect x="17" y="3" width="5" height="15" rx="1"/></svg>Pipeline · live view</div><div class="scene-bubbles" id="kbBubbles"></div></div></div>
+        <div class="scene-panel"><div><div class="panel-title">Deal pipeline</div><div class="panel-sub" id="kbSub2">5 active deals · €170k total</div></div><div class="kb-panel" id="kbPanel"></div><div class="nudge-item" id="kbNudge"><div class="nudge-icon" style="background:rgba(239,159,39,0.1);"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg></div><div><div class="nudge-text">Telenor hasn't moved in 14 days. Follow up before quarter end?</div><div class="nudge-time">Analysis agent · just now</div></div></div></div>
+      </div>
+    </div>
+    <div class="demo-scene" id="scene2">
+      <div class="scene-cols">
+        <div class="scene-photo scene-photo-3"><div class="scene-overlay"></div><div class="scene-photo-content"><div class="scene-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>Revenue analytics</div><div class="scene-bubbles" id="analytBubbles"><div class="bubble ai show">Pipeline up 23% this quarter. Proposal stage has the most stalled deals.</div><div class="bubble user show">Which deal should I prioritise?</div><div class="bubble ai show">Aker Solutions — highest health score and largest value. Close it first.</div></div></div></div>
+        <div class="scene-panel"><div class="stat-cards"><div class="stat-card"><div class="stat-val" id="sv1">€0</div><div class="stat-lbl">Pipeline</div><div class="stat-delta delta-up" id="sd1"></div></div><div class="stat-card"><div class="stat-val" id="sv2">0%</div><div class="stat-lbl">Win rate</div><div class="stat-delta delta-up" id="sd2"></div></div><div class="stat-card"><div class="stat-val" id="sv3">0d</div><div class="stat-lbl">Avg close</div><div class="stat-delta delta-dn" id="sd3"></div></div></div><div class="chart-wrap"><div class="chart-head"><span class="chart-title">Revenue trend</span><span class="chart-val" id="chartVal">↑ +23% QoQ</span></div><svg class="chart-svg" id="chartSvg" viewBox="0 0 300 64" preserveAspectRatio="none"></svg></div><div class="funnel-wrap"><div style="font-size:11px;font-weight:500;color:var(--dark);margin-bottom:10px;">Sales funnel</div><div id="funnelRows"></div></div><div class="health-wrap"><div style="font-size:11px;font-weight:500;color:var(--dark);margin-bottom:10px;">Deal health</div><div id="healthRows"></div></div></div>
+      </div>
+    </div>
+    <div class="demo-scene" id="scene3">
+      <div class="scene-cols">
+        <div class="scene-photo scene-photo-4"><div class="scene-overlay"></div><div class="scene-photo-content"><div class="scene-label"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>AI proactive signals</div><div class="scene-bubbles"><div class="bubble ai show">I've spotted 3 issues in your pipeline that need attention today.</div><div class="bubble user show">Show me.</div></div></div></div>
+        <div class="scene-panel"><div><div class="panel-title">AI signals</div><div class="panel-sub">Proactive — no prompting needed</div></div><div style="display:flex;flex-direction:column;gap:8px;" id="signalItems"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="agents-section" id="agents" aria-label="How it works">
+    <div class="agents-inner">
+      <div class="section-eyebrow">How it works</div>
+      <div class="agents-layout">
+        <div class="agents-left fade">
+          <h2>Deploy agents that capture, analyse,<br /><em>and take action.</em></h2>
+          <p>Rollable isn't a form you fill in. It's a layer of intelligent agents working in the background — observing, learning, and acting on your sales data so your team never has to.</p>
+          <a href="/labs/crm" class="btn-lg">Try it free →</a>
+        </div>
+        <div class="agents-cards">
+          <div class="agent-card fade">
+            <div class="agent-num"><div class="agent-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6b6a66" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>Agent 01</div>
+            <div class="agent-bar"></div>
+            <div class="agent-title">Capture agent</div>
+            <p class="agent-desc">Watches for business cards, voice notes, and messages. Extracts structured CRM data — contact, company, deal value, next action — in seconds. No forms, no typing.</p>
+            <div class="agent-tags"><span class="agent-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>Photo</span><span class="agent-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>Voice</span><span class="agent-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="21" y1="10" x2="3" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="21" y1="18" x2="11" y2="18"/></svg>Text</span></div>
+          </div>
+          <div class="agent-card fade" style="transition-delay:.08s">
+            <div class="agent-num"><div class="agent-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6b6a66" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>Agent 02</div>
+            <div class="agent-bar"></div>
+            <div class="agent-title">Analysis agent</div>
+            <p class="agent-desc">Continuously monitors your pipeline for signals — stale deals, missing invoices, overdue follow-ups. Surfaces what matters before it becomes a problem.</p>
+            <div class="agent-tags"><span class="agent-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>At-risk alerts</span><span class="agent-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>Deal health</span><span class="agent-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/></svg>Nudges</span></div>
+          </div>
+          <div class="agent-card fade" style="transition-delay:.16s">
+            <div class="agent-num"><div class="agent-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6b6a66" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>Agent 03</div>
+            <div class="agent-bar"></div>
+            <div class="agent-title">Action agent</div>
+            <p class="agent-desc">Your AI assistant that can update deals, add contacts, schedule tasks, and summarise your pipeline — via voice or text, in natural language.</p>
+            <div class="agent-tags"><span class="agent-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/></svg>Update deals</span><span class="agent-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Create tasks</span><span class="agent-tag"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Search CRM</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING — 4 column launch sequence -->
+  <section class="pricing-section fade" id="pricing">
+    <div class="section-eyebrow">Pricing</div>
+    <h2>Join us early.<br /><em>We'll earn it.</em></h2>
+    <p class="section-sub">We're building this in the open. Join and feedback now to lock in early access pricing when we open the doors.</p>
+    <div class="price-grid">
+
+
+      <!-- Solo — open now, limited pro access -->
+      <div class="pc" style="background: white; border: 1.5px solid var(--green);">
+        <div class="pc-phase-badge pc-badge-green">Open now</div>
+        <div class="pc-plan-title">Solo</div>
+        <div class="pc-price">Free <span class="pc-per-inline">/ until public beta opens</span></div>
+        <div class="pc-per">then choose to convert or not to Pro</div>
+        <p class="pc-desc">Get started today. Limited access to Pro features — and first in line when public beta opens.</p>
+        <div class="pc-seats">1 user · no card required</div>
+        <div class="pc-line"></div>
+        <ul class="pc-list">
+          <li>Core CRM features</li>
+          <li>Unlimited contacts</li>
+          <li>AI assistant — voice + text</li>
+          <li>Limited Pro features</li>
+          <li>Priority access to public beta</li>
+        </ul>
+        <a href="/labs/crm" class="pc-btn pcb-dark">Start free</a>
+      </div>
+
+      <!-- Early access -->
+      <div class="pc">
+        <div class="pc-phase-badge pc-badge-green">Early access</div>
+        <div class="pc-plan-title">Public beta</div>
+        <div class="pc-price-wrap">
+          <span class="pc-strike">€29 / mo</span>
+          <div class="pc-price">€14 <span class="pc-per-inline">/ mo</span></div>
+          <div class="pc-savings">50% off — first year only</div>
+        </div>
+        <p class="pc-desc">Open to waitlist. Discounted while we're in beta. Price locks in for 12 months.</p>
+        <div class="pc-seats">Limited to 200 seats</div>
+        <div class="pc-line"></div>
+        <ul class="pc-list pc-list-muted">
+          <li>Full Pro access</li>
+          <li>Beta label on account</li>
+          <li>Price locked for 12 months</li>
+        </ul>
+        <button class="pc-btn pcb-disabled" disabled>Opens later</button>
+      </div>
+
+      <!-- Full pricing -->
+      <div class="pc">
+        <div class="pc-phase-badge pc-badge-gray">Full pricing</div>
+        <div class="pc-plan-title">Pro</div>
+        <div class="pc-price">€29 <span class="pc-per-inline">/ user / mo</span></div>
+        <div class="pc-per">&nbsp;</div>
+        <p class="pc-desc">Once we're out of beta. All Pro features for every new user.</p>
+        <div class="pc-seats">No seat limit</div>
+        <div class="pc-line"></div>
+        <ul class="pc-list pc-list-muted">
+          <li>All Pro features</li>
+          <li>Beta function priority</li>
+          <li>Priority support</li>
+          <li>Team + analytics</li>
+        </ul>
+        <button class="pc-btn pcb-disabled" disabled>Coming later</button>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="faq-section fade" id="faq">
+    <div class="section-eyebrow">FAQ</div>
+    <h2>Common questions.</h2>
+    <div class="faq-grid">
+      <details class="faq-item">
+        <summary>What is Rollable?</summary>
+        <p class="faq-a">Rollable is an AI CRM that logs itself. Instead of manual data entry, your team snaps a photo of a business card, speaks a voice note, or uploads a file — and Rollable's AI instantly extracts contact details, deal values, and next actions into your pipeline. No forms, no training sessions required.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How does the AI capture work?</summary>
+        <p class="faq-a">Rollable's Capture Agent watches for photos, voice recordings, and text inputs. It uses AI to identify names, companies, roles, deal amounts, and follow-up actions — then structures that data directly into your CRM. The whole process takes under 30 seconds from photo to pipeline update.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does Rollable require manual data entry?</summary>
+        <p class="faq-a">No. Rollable is designed to eliminate manual CRM entry entirely. The AI handles extraction and logging automatically. Your team's job is to sell — Rollable's job is to keep the CRM current.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How much does Rollable cost?</summary>
+        <p class="faq-a">Rollable is free to use until public beta launches — no credit card required. Early access to the paid Pro plan will be available at €14 per user per month (50% off the standard €29/month price), locked in for 12 months for early adopters.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What types of businesses use Rollable?</summary>
+        <p class="faq-a">Rollable is built for small to mid-sized sales teams including consulting firms, SaaS sales teams, freelance agencies, field sales reps, and startups — any team where CRM adoption is low because the manual logging burden is too high.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How is Rollable different from other CRMs?</summary>
+        <p class="faq-a">Most CRMs require your team to log activity manually — a constant source of incomplete data and low adoption. Rollable reverses this with AI agents that capture, analyse, and act on your pipeline automatically. The result is a CRM that stays current without requiring discipline or habit changes from your sales team.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-inner">
+      <div class="cta-overlay"></div>
+      <div class="cta-content fade">
+        <div class="cta-left">
+          <h2>This is what AI<br />should have been doing.</h2>
+          <p>Not another dashboard to maintain. An assistant that watches your pipeline, learns your patterns, and acts — so your team spends less time in software and more time closing.</p>
+        </div>
+        <div class="cta-right">
+          <a href="/labs/crm" class="btn-cta">Start for free</a>
+          <span class="cta-note">Free until public beta. No card required.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="/crm" class="f-logo"><img src="rollable-logo.svg" alt="Rollable AI CRM" width="220" height="56" style="height: 24px; width: auto; display: block;" /></a>
+      <ul class="f-links">
+        <li><a href="mailto:hello@rollable.app">Contact</a></li>
+        <li><a href="/privacy.html">Privacy</a></li>
+        <li><a href="/terms.html">Terms</a></li>
+      </ul>
+      <span class="f-copy">© 2026 Rollable</span>
+    </div>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('in'); }), {threshold:.08});
+    document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+    let currentScene = 0, sceneTimers = [];
+    function showScene(i, btn) {
+      sceneTimers.forEach(clearTimeout); sceneTimers = [];
+      document.querySelectorAll('.demo-scene').forEach((s,idx) => s.classList.toggle('active', idx===i));
+      document.querySelectorAll('.dtb').forEach((b,idx) => b.classList.toggle('on', idx===i));
+      currentScene = i;
+      if(i===0) animCapture(); if(i===1) animPipeline(); if(i===2) animAnalytics(); if(i===3) animSignals();
+    }
+    const d = ms => new Promise(r => { sceneTimers.push(setTimeout(r, ms)); });
+    async function animCapture() {
+      const fields=document.getElementById('capFields'), success=document.getElementById('capSuccess'), photo=document.getElementById('photoPreview');
+      fields.innerHTML=''; success.classList.remove('show'); photo.style.opacity='0';
+      await d(1000);
+      const bubbles=document.getElementById('capBubbles'); bubbles.innerHTML='';
+      const vb=document.createElement('div'); vb.className='bubble user show';
+      vb.innerHTML=`<div class="voice-wave">${'<div class="voice-bar"></div>'.repeat(7)}</div>&nbsp; Speaking…`;
+      bubbles.appendChild(vb); await d(1500);
+      vb.innerHTML='"Met Lena Berg at Boreal Supply, VP Sales, follow up Tuesday."';
+      await d(800); photo.style.opacity='1'; await d(1000);
+      const data=[['Name','Lena Berg'],['Company','Boreal Supply'],['Role','VP Sales'],['Follow-up','Tuesday demo call']];
+      for(const [k,v] of data) { const row=document.createElement('div'); row.className='health-row'; row.innerHTML=`<div class="health-name" style="width:80px;color:var(--light)">${k}</div><div style="flex:1;font-size:11px;font-weight:500;color:var(--dark)">${v}</div>`; fields.appendChild(row); await d(350); }
+      await d(600); success.classList.add('show'); await d(3500); animCapture();
+    }
+    const kbDeals=[{n:'Nordvik Gruppen',a:'€18k',s:0,risk:false},{n:'Telenor Enterprise',a:'€34k',s:1,risk:true},{n:'Aker Solutions',a:'€62k',s:2,risk:false},{n:'Helios Solar',a:'€15k',s:0,risk:false},{n:'Fjord Fleet',a:'€41k',s:1,risk:false}];
+    const kbStages=['Qualified','Demo','Won'];
+    function renderKanban(highlight=null) {
+      const el=document.getElementById('kbPanel'); el.innerHTML='';
+      kbStages.forEach((sn,si)=>{ const col=document.createElement('div'); col.className='kb-pcol'; col.innerHTML=`<div class="kb-pcol-head">${sn}</div>`; kbDeals.filter(d=>d.s===si).forEach(deal=>{ const c=document.createElement('div'); c.className='kb-pcard'+(deal.risk?' risk':'')+(deal.n===highlight?' moving new':''); c.innerHTML=`<div class="kn">${deal.n}</div><div class="ka">${deal.a}</div>`; col.appendChild(c); }); el.appendChild(col); });
+    }
+    async function animPipeline() {
+      const nudge=document.getElementById('kbNudge'); nudge.classList.remove('show'); renderKanban(); await d(1000); nudge.classList.add('show'); await d(1500);
+      const bubbles=document.getElementById('kbBubbles'); bubbles.innerHTML='';
+      const b1=document.createElement('div'); b1.className='bubble user show'; b1.textContent='Move Helios Solar to Qualified'; bubbles.appendChild(b1); await d(800);
+      const b2=document.createElement('div'); b2.className='bubble action show'; b2.innerHTML=`<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Done — Helios moved`; bubbles.appendChild(b2);
+      kbDeals.find(d=>d.n==='Helios Solar').s=1; renderKanban('Helios Solar'); document.getElementById('kbSub2').textContent='5 active deals · €170k total'; await d(3000); kbDeals.find(d=>d.n==='Helios Solar').s=0; animPipeline();
+    }
+    async function animAnalytics() {
+      ['sv1','sv2','sv3'].forEach(id=>{ const el=document.getElementById(id); if(el) el.textContent=id==='sv1'?'€0':id==='sv2'?'0%':'0d'; });
+      ['sd1','sd2','sd3'].forEach(id=>{ const el=document.getElementById(id); if(el) el.textContent=''; });
+      document.getElementById('chartVal').style.opacity='0';
+      const svg=document.getElementById('chartSvg'); svg.innerHTML='';
+      const pts=[10,22,18,30,25,38,32,44,40,52,46,58], w=300, h=64, n=pts.length;
+      const xs=pts.map((_,i)=>i*(w/(n-1))), ys=pts.map(p=>h-(p/60)*h);
+      const area=document.createElementNS('http://www.w3.org/2000/svg','path');
+      let d2=`M${xs[0]},${h}`; xs.forEach((x,i)=>{ d2+=` L${x},${ys[i]}`; }); d2+=` L${xs[xs.length-1]},${h} Z`;
+      area.setAttribute('d',d2); area.setAttribute('fill','rgba(29,158,117,0.08)'); svg.appendChild(area);
+      const line=document.createElementNS('http://www.w3.org/2000/svg','polyline');
+      line.setAttribute('points',xs.map((x,i)=>`${x},${ys[i]}`).join(' ')); line.setAttribute('fill','none'); line.setAttribute('stroke','#1D9E75'); line.setAttribute('stroke-width','2'); line.setAttribute('stroke-linecap','round'); svg.appendChild(line);
+      await d(400); animCount('sv1','€170k',1200); await d(100); document.getElementById('sd1').textContent='↑ +23% QoQ'; await d(200);
+      animCount('sv2','38%',1000); await d(100); document.getElementById('sd2').textContent='↑ +5pp'; await d(200);
+      animCount('sv3','24d',800); await d(100); document.getElementById('sd3').textContent='↓ 3d faster';
+      document.getElementById('chartVal').style.opacity='1'; document.getElementById('chartVal').style.transition='opacity .6s';
+      await d(500);
+      const funnelData=[{l:'Lead',v:18,c:'#1D9E75'},{l:'Qualified',v:11,c:'#1D9E75'},{l:'Demo',v:7,c:'#EF9F27'},{l:'Proposal',v:4,c:'#EF9F27'},{l:'Won',v:2,c:'#E24B4A'}];
+      const fr=document.getElementById('funnelRows'); fr.innerHTML='';
+      funnelData.forEach(f=>{ const row=document.createElement('div'); row.className='funnel-row'; row.innerHTML=`<div class="funnel-label">${f.l}</div><div class="funnel-bar-bg"><div class="funnel-bar" style="background:${f.c}" data-w="${Math.round(f.v/18*100)}"></div></div><div class="funnel-count">${f.v}</div>`; fr.appendChild(row); });
+      await d(100); fr.querySelectorAll('.funnel-bar').forEach(b=>{ b.style.width=b.dataset.w+'%'; });
+      const healthData=[{n:'Aker Solutions',s:92,c:'g'},{n:'Fjord Fleet',s:78,c:'g'},{n:'Nordvik Gruppen',s:64,c:'w'},{n:'Helios Solar',s:55,c:'w'},{n:'Telenor Enterprise',s:41,c:'b'}];
+      const hr=document.getElementById('healthRows'); hr.innerHTML='';
+      healthData.forEach(h=>{ const row=document.createElement('div'); row.className='health-row'; row.innerHTML=`<div class="health-name">${h.n}</div><div class="health-bar-bg"><div class="health-bar bar${h.c}" data-w="${h.s}"></div></div><div class="health-score h${h.c}">${h.s}</div>`; hr.appendChild(row); });
+      await d(100); hr.querySelectorAll('.health-bar').forEach(b=>{ b.style.width=b.dataset.w+'%'; }); await d(6000); animAnalytics();
+    }
+    function animCount(id,target,dur) {
+      const el=document.getElementById(id); if(!el) return;
+      const isEuro=target.startsWith('€'), isPct=target.endsWith('%'), isDay=target.endsWith('d');
+      const num=parseFloat(target.replace(/[€%k d]/g,'')), isK=target.includes('k');
+      let start=null;
+      function step(ts) { if(!start) start=ts; const prog=Math.min((ts-start)/dur,1), ease=1-Math.pow(1-prog,3), val=num*ease; el.textContent=isEuro?(isK?`€${Math.round(val)}k`:`€${Math.round(val)}`):isPct?`${Math.round(val)}%`:isDay?`${Math.round(val)}d`:Math.round(val); if(prog<1) requestAnimationFrame(step); }
+      requestAnimationFrame(step);
+    }
+    const signals=[{icon:'⚠',bg:'rgba(239,159,39,0.1)',stroke:'var(--amber)',text:"Telenor hasn't moved in 14 days. Follow up before quarter end.",time:'Analysis agent · just now'},{icon:'↑',bg:'rgba(29,158,117,0.1)',stroke:'var(--green)',text:'Aker Solutions invoice confirmed — €62k marked as paid.',time:'Action agent · 2 min ago'},{icon:'✓',bg:'rgba(29,158,117,0.1)',stroke:'var(--green)',text:'Helios Solar moved to Qualified — follow-up task created for Friday.',time:'Action agent · 5 min ago'},{icon:'⚠',bg:'rgba(226,75,74,0.1)',stroke:'var(--red)',text:'Nordvik invoice 21 days overdue. Consider a payment nudge today.',time:'Analysis agent · 8 min ago'}];
+    async function animSignals() {
+      const el=document.getElementById('signalItems'); el.innerHTML='';
+      for(const s of signals) { const item=document.createElement('div'); item.className='nudge-item'; item.innerHTML=`<div class="nudge-icon" style="background:${s.bg};font-size:13px;color:${s.stroke};">${s.icon}</div><div><div class="nudge-text">${s.text}</div><div class="nudge-time">${s.time}</div></div>`; el.appendChild(item); await d(500); item.classList.add('show'); }
+      await d(5000); animSignals();
+    }
+    animCapture();
+    let autoIdx=0;
+    setInterval(()=>{ autoIdx=(autoIdx+1)%4; showScene(autoIdx,document.querySelectorAll('.dtb')[autoIdx]); },12000);
+  </script>
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
