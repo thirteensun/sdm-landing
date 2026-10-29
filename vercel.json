@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/labs/crm/:path*", "destination": "https://sdm-prototype.vercel.app/labs/crm/:path*" },
+    { "source": "/labs/production/:path*", "destination": "https://rollable-labs-production.vercel.app/labs/production/:path*" },
+    { "source": "/labs/panel-intel/:path*", "destination": "https://rollable-labs-panel-intel.vercel.app/labs/panel-intel/:path*" }
+  ]
+}
