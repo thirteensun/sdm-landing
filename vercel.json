@@ -1,10 +1,23 @@
 {
+  "trailingSlash": false,
   "rewrites": [
-    { "source": "/labs/crm", "destination": "https://sdm-prototype.vercel.app/labs/crm" },
-    { "source": "/labs/crm/:path*", "destination": "https://sdm-prototype.vercel.app/labs/crm/:path*" },
-    { "source": "/labs/production", "destination": "https://rollable-labs-production.vercel.app/labs/production" },
-    { "source": "/labs/production/:path*", "destination": "https://rollable-labs-production.vercel.app/labs/production/:path*" },
-    { "source": "/labs/panel-intel", "destination": "https://rollable-labs-panel-intel.vercel.app/labs/panel-intel" },
-    { "source": "/labs/panel-intel/:path*", "destination": "https://rollable-labs-panel-intel.vercel.app/labs/panel-intel/:path*" }
+    { "source": "/labs/crm",
+      "destination": "https://sdm-prototype.vercel.app/labs/crm"
+    },
+    { "source": "/labs/crm/:path*",
+      "destination": "https://sdm-prototype.vercel.app/labs/crm/:path*"
+    },
+    { "source": "/labs/production",
+      "destination": "https://rollable-labs-production.vercel.app/labs/production"
+    },
+    { "source": "/labs/production/:path*",
+      "destination": "https://rollable-labs-production.vercel.app/labs/production/:path*"
+    },
+    { "source": "/labs/panel-intel",
+      "destination": "https://rollable-labs-panel-intel.vercel.app/labs/panel-intel"
+    },
+    { "source": "/labs/panel-intel/:path*",
+      "destination": "https://rollable-labs-panel-intel.vercel.app/labs/panel-intel/:path*"
+    }
   ]
 }
