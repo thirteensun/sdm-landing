@@ -63,132 +63,354 @@
       unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
     }
   </style>
+  <link rel="preload" as="image" href="/pipeline.webp" type="image/webp" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --white: #ffffff; --bg: #f4f3f1; --card: #eeede9; --dark: #111110;
-      --mid: #6b6a66; --light: #a8a7a3; --border: rgba(0,0,0,0.06);
-      --border-mid: rgba(0,0,0,0.10); --green: #1D9E75; --amber: #EF9F27;
+      --white: #ffffff; --bg: #f7f6f3; --card: #f1f0ec; --dark: #111110; --ink2: #3d3c39;
+      --mid: #6b6a66; --light: #a8a7a3; --border: rgba(0,0,0,0.07);
+      --border-mid: rgba(0,0,0,0.12); --green: #1D9E75; --amber: #EF9F27;
+      --rail: 1200px; --mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
     }
-    html { overflow-x: hidden; }
-    body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--dark); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 54px; padding: 0 16px; background: rgba(255,255,255,0.93); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
-    .nav-inner { max-width: 1200px; height: 100%; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    html { overflow-x: hidden; scroll-behavior: smooth; scroll-padding-top: 72px; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--white); color: var(--dark); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    a:focus-visible { outline: 2px solid var(--dark); outline-offset: 3px; border-radius: 6px; }
+
+    /* Vertical rails frame the content column; sections are separated by full-width rules. */
+    .rails { max-width: var(--rail); margin: 0 auto; border-left: 1px solid var(--border); border-right: 1px solid var(--border); }
+    .rule { border-top: 1px solid var(--border); }
+    .label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--light); }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 60px; padding: 0 16px; background: rgba(255,255,255,0.86); backdrop-filter: saturate(1.4) blur(20px); -webkit-backdrop-filter: saturate(1.4) blur(20px); border-bottom: 1px solid var(--border); }
+    .nav-inner { max-width: var(--rail); height: 100%; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
     .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--dark); }
-    .nav-tag { font-size: 13px; font-weight: 400; color: var(--light); letter-spacing: -0.01em; }
-    .btn-ghost { font-size: 13px; color: var(--mid); padding: 6px 14px; border-radius: 20px; text-decoration: none; transition: color .15s, background .15s; }
-    .btn-ghost:hover { color: var(--dark); background: var(--bg); }
+    .nav-tag { font-size: 12px; font-weight: 500; color: var(--mid); border: 1px solid var(--border-mid); border-radius: 6px; padding: 2px 7px; }
+    .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
+    .nav-links a:not(.btn) { font-size: 13px; color: var(--mid); padding: 7px 12px; border-radius: 8px; text-decoration: none; transition: color .15s, background .15s; }
+    .nav-links a:not(.btn):hover { color: var(--dark); background: var(--bg); }
 
-    .hero { padding: 132px 36px 64px; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: end; }
-    .eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--light); margin-bottom: 14px; }
-    h1 { font-size: clamp(30px, 3.4vw, 46px); font-weight: 500; line-height: 1.15; letter-spacing: -1.2px; }
-    h1 em { font-style: normal; color: var(--light); }
-    .hero-desc { font-size: 15px; font-weight: 300; color: var(--mid); line-height: 1.8; max-width: 440px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 18px; border-radius: 10px; font-size: 14px; font-weight: 500; text-decoration: none; white-space: nowrap; transition: background .15s, border-color .15s, transform .15s; }
+    .btn-primary { background: var(--dark); color: #fff; }
+    .btn-primary:hover { background: #2a2a28; }
+    .btn-secondary { background: var(--white); color: var(--dark); border: 1px solid var(--border-mid); }
+    .btn-secondary:hover { background: var(--bg); }
+    .btn-sm { height: 34px; padding: 0 14px; font-size: 13px; border-radius: 9px; }
+    .btn .arrow { transition: transform .15s; }
+    .btn:hover .arrow { transform: translateX(2px); }
 
-    .concepts { padding: 32px 36px 72px; max-width: 1200px; margin: 0 auto; }
-    .concept-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-    .concept { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 10px; min-height: 260px; }
-    .concept-status { display: inline-flex; align-items: center; gap: 7px; font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--light); }
+    /* Hero */
+    .hero { position: relative; padding: 148px 24px 72px; text-align: center; }
+    .hero::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(0,0,0,0.07) 1px, transparent 1px); background-size: 22px 22px; background-position: center top; -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000, transparent); mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000, transparent); pointer-events: none; }
+    .hero-wrap { position: relative; }
+    .pill { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink2); background: var(--white); border: 1px solid var(--border-mid); border-radius: 999px; padding: 5px 12px 5px 6px; margin-bottom: 28px; }
+    .pill b { font-weight: 500; font-size: 11px; color: var(--white); background: var(--dark); border-radius: 999px; padding: 2px 8px; }
+    h1 { font-size: clamp(38px, 6.2vw, 72px); font-weight: 500; line-height: 1.02; letter-spacing: -0.045em; max-width: 900px; margin: 0 auto; }
+    h1 span { color: var(--light); }
+    .hero-desc { font-size: clamp(16px, 1.6vw, 18px); font-weight: 400; color: var(--mid); line-height: 1.6; max-width: 560px; margin: 24px auto 0; }
+    .hero-ctas { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 36px; }
+
+    .showcase { padding: 0 24px 80px; margin-top: -24px; }
+    .window { max-width: 1040px; margin: 0 auto; border-radius: 16px; padding: 6px; background: linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.02)); box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset, 0 30px 80px -30px rgba(17,17,16,0.25), 0 12px 24px -12px rgba(17,17,16,0.12); }
+    .window-inner { border-radius: 11px; overflow: hidden; border: 1px solid var(--border-mid); background: var(--bg); }
+    .window-bar { height: 36px; display: flex; align-items: center; gap: 6px; padding: 0 14px; background: var(--white); border-bottom: 1px solid var(--border); }
+    .window-bar i { width: 10px; height: 10px; border-radius: 50%; background: #e4e3df; }
+    .window-bar .url { margin: 0 auto; font-size: 11px; color: var(--light); font-family: var(--mono); padding-right: 46px; }
+    .window img { width: 100%; height: auto; aspect-ratio: 1602 / 600; object-fit: cover; object-position: left top; }
+    .caption { display: flex; justify-content: space-between; gap: 16px; max-width: 1040px; margin: 16px auto 0; }
+
+    /* Section heads */
+    .section { padding: 96px 40px; }
+    .section-head { display: grid; grid-template-columns: 3fr 2fr; gap: 48px; align-items: end; margin-bottom: 48px; }
+    h2 { font-size: clamp(28px, 3.6vw, 44px); font-weight: 500; line-height: 1.08; letter-spacing: -0.035em; margin-top: 14px; }
+    h2 span { color: var(--light); }
+    .section-desc { font-size: 15px; color: var(--mid); line-height: 1.7; max-width: 440px; justify-self: end; }
+
+    /* Labs */
+    .labs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .lab { position: relative; display: flex; flex-direction: column; background: var(--bg); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; transition: border-color .2s; }
+    .lab:hover { border-color: var(--border-mid); }
+    .lab-featured { grid-column: 1 / -1; display: grid; grid-template-columns: 5fr 6fr; }
+    .lab-body { padding: 28px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+    .lab-featured .lab-body { padding: 40px; justify-content: center; }
+    .status { display: inline-flex; align-items: center; gap: 7px; align-self: flex-start; font-size: 12px; font-weight: 500; color: var(--ink2); background: var(--white); border: 1px solid var(--border); border-radius: 999px; padding: 3px 10px 3px 8px; }
     .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--light); }
-    .dot.live { background: var(--green); }
-    .dot.pilot { background: var(--amber); }
-    .concept-name { font-size: 20px; font-weight: 500; letter-spacing: -0.5px; margin-top: 6px; }
-    .concept-line { font-size: 15px; font-weight: 400; letter-spacing: -0.3px; line-height: 1.35; }
-    .concept-desc { font-size: 13px; font-weight: 300; color: var(--mid); line-height: 1.7; flex: 1; }
-    .concept-link { align-self: flex-start; font-size: 13px; font-weight: 500; color: white; background: var(--dark); padding: 9px 18px; border-radius: 20px; text-decoration: none; transition: opacity .15s; }
-    .concept-link:hover { opacity: 0.8; }
-    .concept-note { font-size: 12px; color: var(--light); }
+    .dot.live { background: var(--green); box-shadow: 0 0 0 3px rgba(29,158,117,0.15); }
+    .dot.pilot { background: var(--amber); box-shadow: 0 0 0 3px rgba(239,159,39,0.15); }
+    .lab-name { font-size: 24px; font-weight: 500; letter-spacing: -0.03em; margin-top: 8px; }
+    .lab-featured .lab-name { font-size: 32px; }
+    .lab-line { font-size: 16px; color: var(--ink2); letter-spacing: -0.01em; line-height: 1.4; }
+    .lab-desc { font-size: 14px; color: var(--mid); line-height: 1.7; }
+    .lab-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; align-items: center; }
+    .note { font-size: 13px; color: var(--light); display: inline-flex; align-items: center; gap: 6px; }
+    .lab-visual { position: relative; background: var(--white); border-top: 1px solid var(--border); min-height: 200px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .lab-featured .lab-visual { border-top: 0; border-left: 1px solid var(--border); background: var(--card); padding: 40px 0 0 40px; align-items: flex-start; justify-content: flex-start; height: 380px; }
+    .lab-featured .lab-visual picture { width: 100%; }
+    .lab-featured .lab-visual img { width: 100%; height: auto; max-width: none; border-radius: 12px 0 0 0; border: 1px solid var(--border-mid); border-right: 0; border-bottom: 0; box-shadow: 0 20px 50px -20px rgba(17,17,16,0.2); }
+    .lab-visual svg { width: 100%; height: auto; max-height: 220px; }
 
-    .contact { border-top: 1px solid var(--border); }
-    .contact-inner { max-width: 1200px; margin: 0 auto; padding: 56px 36px 64px; display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
-    h2 { font-size: clamp(22px, 2.6vw, 32px); font-weight: 300; letter-spacing: -0.8px; line-height: 1.25; }
-    h2 em { font-style: normal; color: var(--light); }
-    .btn-lg-o { font-size: 13px; color: var(--dark); border: 1px solid var(--border-mid); padding: 10px 20px; border-radius: 20px; text-decoration: none; transition: background .15s; }
-    .btn-lg-o:hover { background: var(--bg); }
+    /* Process */
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .step { padding: 32px 28px 36px; background: var(--white); }
+    .step + .step { border-left: 1px solid var(--border); }
+    .step-num { font-family: var(--mono); font-size: 12px; color: var(--light); }
+    .step h3 { font-size: 18px; font-weight: 500; letter-spacing: -0.02em; margin: 40px 0 10px; }
+    .step p { font-size: 14px; color: var(--mid); line-height: 1.7; }
+    .step-icon { width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--border-mid); display: grid; place-items: center; margin-top: 20px; background: var(--bg); color: var(--ink2); }
 
-    footer { border-top: 1px solid var(--border); padding: 26px 36px; }
-    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; }
-    .f-logo { text-decoration: none; }
+    .statement { padding: 112px 40px; }
+    .statement p { font-size: clamp(24px, 3.2vw, 40px); font-weight: 500; line-height: 1.2; letter-spacing: -0.035em; max-width: 960px; }
+    .statement span { color: var(--light); }
+
+    /* Closing CTA */
+    .cta { padding: 24px; }
+    .cta-card { position: relative; overflow: hidden; border-radius: 20px; background: var(--dark); color: #fff; padding: 72px 48px; display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
+    .cta-card::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.09) 1px, transparent 1px); background-size: 22px 22px; -webkit-mask-image: radial-gradient(ellipse at 85% 50%, #000, transparent 70%); mask-image: radial-gradient(ellipse at 85% 50%, #000, transparent 70%); }
+    .cta-card > * { position: relative; }
+    .cta-card h2 { margin: 0; color: #fff; }
+    .cta-card h2 span { color: #7d7c78; }
+    .cta-card .label { color: #7d7c78; }
+    .cta-card .btn-primary { background: #fff; color: var(--dark); }
+    .cta-card .btn-primary:hover { background: #e9e8e4; }
+
+    footer { padding: 28px 40px; }
+    .footer-inner { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; }
     .f-links { display: flex; gap: 22px; list-style: none; justify-self: center; }
-    .f-links a { font-size: 12px; color: var(--light); text-decoration: none; transition: color .15s; }
+    .f-links a { font-size: 13px; color: var(--mid); text-decoration: none; transition: color .15s; }
     .f-links a:hover { color: var(--dark); }
-    .f-copy { font-size: 11px; color: var(--light); justify-self: end; }
+    .f-copy { font-size: 12px; color: var(--light); justify-self: end; }
+
+    /* Gentle reveal; content is visible without JS and with reduced motion. */
+    .js .reveal { opacity: 0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease; }
+    .js .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .js .reveal { opacity: 1; transform: none; transition: none; }
+    }
 
     @media (max-width: 900px) {
-      .concept-grid { grid-template-columns: 1fr; }
-      .concept { min-height: 0; }
+      .lab-featured { grid-template-columns: 1fr; }
+      .lab-featured .lab-visual { border-left: 0; border-top: 1px solid var(--border); height: 260px; padding: 28px 0 0 28px; }
+      .labs { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; }
+      .step + .step { border-left: 0; border-top: 1px solid var(--border); }
+      .section-head { grid-template-columns: 1fr; gap: 16px; }
+      .section-desc { justify-self: start; }
     }
     @media (max-width: 768px) {
-      .nav-tag { display: none; }
-      .hero { grid-template-columns: 1fr; gap: 20px; padding: 100px 16px 40px; }
-      .concepts { padding: 16px 16px 48px; }
-      .contact-inner { padding: 40px 16px 48px; }
-      footer { padding: 22px 16px; }
-      .footer-inner { grid-template-columns: 1fr; gap: 10px; }
+      .rails { border: 0; }
+      .nav-inner { padding: 0; }
+      .nav-links .hide-sm { display: none; }
+      .hero { padding: 116px 16px 56px; }
+      .showcase { padding: 0 16px 56px; }
+      .window .url { display: none; }
+      .window img { width: 200%; max-width: none; }
+      .caption { flex-direction: column; gap: 4px; }
+      .section { padding: 64px 16px; }
+      .lab-body, .lab-featured .lab-body { padding: 24px; }
+      .statement { padding: 72px 16px; }
+      .cta { padding: 16px; }
+      .cta-card { padding: 48px 24px; }
+      footer { padding: 24px 16px; }
+      .footer-inner { grid-template-columns: 1fr; gap: 12px; }
       .f-links, .f-copy { justify-self: start; }
     }
   </style>
 </head>
 
 <body>
+  <script>document.documentElement.classList.add('js')</script>
   <nav>
     <div class="nav-inner">
-      <a href="/" class="nav-logo">
-        <img src="/rollable-logo.svg" alt="Rollable" width="220" height="56" style="height: 32px; width: auto; display: block;" />
+      <a href="/" class="nav-logo" aria-label="Rollable Labs home">
+        <img src="/rollable-logo.svg" alt="Rollable" width="220" height="56" style="height: 30px; width: auto;" />
         <span class="nav-tag">Labs</span>
       </a>
-      <a href="mailto:hello@rollable.app" class="btn-ghost">Contact</a>
+      <ul class="nav-links">
+        <li class="hide-sm"><a href="#labs">Labs</a></li>
+        <li class="hide-sm"><a href="#how">How it works</a></li>
+        <li><a href="mailto:hello@rollable.app" class="btn btn-primary btn-sm">Contact</a></li>
+      </ul>
     </div>
   </nav>
 
   <main>
-    <section class="hero">
-      <div>
-        <p class="eyebrow">Rollable Labs</p>
-        <h1>Concepts,<br />proven on real work.<br /><em>One problem at a time.</em></h1>
-      </div>
-      <p class="hero-desc">Rollable Labs builds focused tools around a single problem and tests them with the people who have it. Each concept runs as its own product, with its own users. The ones that prove themselves grow up; the rest teach us what to build next.</p>
-    </section>
+    <div class="rails">
+      <section class="hero">
+        <div class="hero-wrap">
+          <a href="#labs" class="pill" style="text-decoration:none"><b>3 labs</b> One problem each, tested on real work</a>
+          <h1>Software concepts,<br />proven on real work.<br /><span>One problem at a time.</span></h1>
+          <p class="hero-desc">Rollable Labs builds focused tools around a single problem and tests them with the people who have it. Each concept runs as its own product, with its own users.</p>
+          <div class="hero-ctas">
+            <a href="#labs" class="btn btn-primary">Explore the labs <span class="arrow" aria-hidden="true">→</span></a>
+            <a href="mailto:hello@rollable.app" class="btn btn-secondary">Bring us a problem</a>
+          </div>
+        </div>
+      </section>
 
-    <section class="concepts" aria-label="Concepts">
-      <div class="concept-grid">
-        <article class="concept">
-          <span class="concept-status"><span class="dot live"></span>Open beta</span>
-          <h3 class="concept-name">CRM</h3>
-          <p class="concept-line">The AI CRM that logs itself.</p>
-          <p class="concept-desc">Snap a photo, speak a note or drop a file, and the pipeline updates itself. Built for sales teams who would rather sell than type.</p>
-          <a href="/crm" class="concept-link">See the CRM</a>
-        </article>
+      <section class="showcase" aria-label="The Rollable CRM pipeline">
+        <div class="window">
+          <div class="window-inner">
+            <div class="window-bar" aria-hidden="true"><i></i><i></i><i></i><span class="url">rollable.app/labs/crm</span></div>
+            <picture>
+              <source srcset="/pipeline.webp" type="image/webp" />
+              <img src="/pipeline.png" alt="The Rollable CRM pipeline board, with deals grouped from Lead to Won" width="1602" height="656" fetchpriority="high" />
+            </picture>
+          </div>
+        </div>
+        <div class="caption">
+          <span class="label">Fig 0.1 — CRM pipeline</span>
+          <span class="label">Updated from photos, voice notes and files</span>
+        </div>
+      </section>
+    </div>
 
-        <article class="concept">
-          <span class="concept-status"><span class="dot pilot"></span>Pilot</span>
-          <h3 class="concept-name">Panel Intel</h3>
-          <p class="concept-line">Production intelligence for panel manufacturing.</p>
-          <p class="concept-desc">Every panel linked to the materials, machine settings and conditions it was made under, so scrap, delamination and warping can be traced to their causes.</p>
-          <span class="concept-note">By invitation</span>
-        </article>
+    <div class="rule"></div>
+    <div class="rails">
+      <section class="section" id="labs" aria-labelledby="labs-title">
+        <div class="section-head reveal">
+          <div>
+            <p class="label">01 — Labs</p>
+            <h2 id="labs-title">Three concepts in progress. <span>Each with its own users.</span></h2>
+          </div>
+          <p class="section-desc">Every lab is a separate product, built to answer one question: does this solve the problem for the people who have it?</p>
+        </div>
 
-        <article class="concept">
-          <span class="concept-status"><span class="dot"></span>Early concept</span>
-          <h3 class="concept-name">Production</h3>
-          <p class="concept-line">Predictive maintenance for production lines.</p>
-          <p class="concept-desc">Bearing diagnosis from vibration signals, to catch wear before it stops a line.</p>
-          <span class="concept-note">By invitation</span>
-        </article>
-      </div>
-    </section>
+        <div class="labs">
+          <article class="lab lab-featured reveal">
+            <div class="lab-body">
+              <span class="status"><span class="dot live"></span>Open beta</span>
+              <h3 class="lab-name">CRM</h3>
+              <p class="lab-line">The AI CRM that logs itself.</p>
+              <p class="lab-desc">Snap a photo, speak a note or drop a file, and the pipeline updates itself. Built for sales teams who would rather sell than type.</p>
+              <div class="lab-actions">
+                <a href="/crm" class="btn btn-primary">See the CRM <span class="arrow" aria-hidden="true">→</span></a>
+                <a href="/labs/crm" class="btn btn-secondary">Sign in</a>
+              </div>
+            </div>
+            <div class="lab-visual">
+              <picture>
+                <source srcset="/capture.webp" type="image/webp" />
+                <img src="/capture.png" alt="Capture screen: add a deal from an image, voice, a message or a spreadsheet" width="1199" height="792" loading="lazy" />
+              </picture>
+            </div>
+          </article>
 
-    <section class="contact">
-      <div class="contact-inner">
-        <h2>Have a problem worth a lab?<br /><em>Tell us about it.</em></h2>
-        <a href="mailto:hello@rollable.app" class="btn-lg-o">hello@rollable.app</a>
-      </div>
-    </section>
+          <article class="lab reveal">
+            <div class="lab-visual" aria-hidden="true">
+              <!-- A panel traced back to its batch, machine and conditions -->
+              <svg viewBox="0 0 520 220" fill="none">
+                <g stroke="#d6d5d0">
+                  <path d="M260 110 H150 M260 110 H370" />
+                  <path d="M150 110 V58 H96 M150 110 V162 H96 M370 110 V58 H424 M370 110 V162 H424" />
+                </g>
+                <g font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#6b6a66">
+                  <rect x="20" y="44" width="76" height="28" rx="7" fill="#fff" stroke="#e2e1dc" /><text x="32" y="62">Batch 4417</text>
+                  <rect x="20" y="148" width="76" height="28" rx="7" fill="#fff" stroke="#e2e1dc" /><text x="34" y="166">Press P-2</text>
+                  <rect x="424" y="44" width="76" height="28" rx="7" fill="#fff" stroke="#e2e1dc" /><text x="438" y="62">31 °C</text>
+                  <rect x="424" y="148" width="76" height="28" rx="7" fill="#fff" stroke="#EF9F27" /><text x="435" y="166" fill="#b5741a">RH 78%</text>
+                </g>
+                <g transform="translate(212 74)">
+                  <rect x="0" y="0" width="96" height="72" rx="8" fill="#f1f0ec" stroke="#cfcec9" />
+                  <path d="M0 18 H96 M0 36 H96 M0 54 H96" stroke="#dedcd7" />
+                  <path d="M60 36 C66 30 74 42 80 36" stroke="#EF9F27" stroke-width="2" />
+                  <text x="48" y="92" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#a8a7a3">PANEL #20931</text>
+                </g>
+              </svg>
+            </div>
+            <div class="lab-body">
+              <span class="status"><span class="dot pilot"></span>Pilot</span>
+              <h3 class="lab-name">Panel Intel</h3>
+              <p class="lab-line">Production intelligence for panel manufacturing.</p>
+              <p class="lab-desc">Every panel linked to the materials, machine settings and conditions it was made under, so scrap, delamination and warping can be traced to their causes.</p>
+              <div class="lab-actions"><span class="note">By invitation</span></div>
+            </div>
+          </article>
+
+          <article class="lab reveal">
+            <div class="lab-visual" aria-hidden="true">
+              <!-- A vibration signal whose wear signature is caught before failure -->
+              <svg viewBox="0 0 520 220" fill="none">
+                <path d="M20 170 H500" stroke="#ebeae6" />
+                <path d="M20 110 H500" stroke="#ebeae6" stroke-dasharray="3 5" />
+                <path d="M20 110 l10 -8 l10 14 l10 -10 l10 8 l10 -6 l10 10 l10 -12 l10 8 l10 -4 l10 6 l10 -9 l10 11 l10 -7 l10 5 l10 -8 l10 9 l10 -6 l10 7 l10 -10 l10 12 l10 -8 l10 5 l10 -6 l10 9" stroke="#a8a7a3" stroke-width="1.5" stroke-linejoin="round" />
+                <path d="M270 110 l10 -16 l10 30 l10 -26 l10 22 l10 -34 l10 40 l10 -30 l10 24 l10 -44 l10 50 l10 -36 l10 28 l10 -48 l10 54 l10 -40 l10 30 l10 -52 l10 58 l10 -44 l10 34 l10 -20" stroke="#111110" stroke-width="1.5" stroke-linejoin="round" />
+                <rect x="268" y="40" width="234" height="140" rx="8" fill="rgba(239,159,39,0.06)" stroke="#EF9F27" stroke-dasharray="4 4" />
+                <rect x="368" y="26" width="128" height="24" rx="12" fill="#fff" stroke="#EF9F27" />
+                <text x="432" y="42" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#b5741a">Outer-race wear</text>
+                <text x="20" y="196" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#a8a7a3">BEARING 3 · VIBRATION</text>
+              </svg>
+            </div>
+            <div class="lab-body">
+              <span class="status"><span class="dot"></span>Early concept</span>
+              <h3 class="lab-name">Production</h3>
+              <p class="lab-line">Predictive maintenance for production lines.</p>
+              <p class="lab-desc">Bearing diagnosis from vibration signals, to catch wear before it stops a line.</p>
+              <div class="lab-actions"><span class="note">By invitation</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <div class="rule"></div>
+    <div class="rails">
+      <section class="section" id="how" aria-labelledby="how-title">
+        <div class="section-head reveal">
+          <div>
+            <p class="label">02 — How a lab works</p>
+            <h2 id="how-title">Small on purpose. <span>Real from day one.</span></h2>
+          </div>
+          <p class="section-desc">A lab starts with one problem and one group of people who have it, and stays small until it has earned the right to grow.</p>
+        </div>
+        <div class="steps reveal">
+          <div class="step">
+            <span class="step-num">01</span>
+            <div class="step-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg></div>
+            <h3>Pick one problem</h3>
+            <p>One costly, specific problem that a real team has today, not a market or a feature list.</p>
+          </div>
+          <div class="step">
+            <span class="step-num">02</span>
+            <div class="step-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z" /></svg></div>
+            <h3>Build the smallest tool</h3>
+            <p>A working product with its own login and data, focused on that one job and nothing else.</p>
+          </div>
+          <div class="step">
+            <span class="step-num">03</span>
+            <div class="step-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg></div>
+            <h3>Prove it on real work</h3>
+            <p>Used by the people with the problem. The ones that prove themselves grow up; the rest teach us what to build next.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="rule"></div>
+    <div class="rails">
+      <section class="statement reveal" aria-label="Our approach">
+        <p>We'd rather ship one tool that a team relies on than ten that look good in a demo. <span>So every lab is measured by one thing: whether the work gets easier.</span></p>
+      </section>
+    </div>
+
+    <div class="rule"></div>
+    <div class="rails">
+      <section class="cta" aria-labelledby="cta-title">
+        <div class="cta-card reveal">
+          <div>
+            <p class="label">03 — Your problem</p>
+            <h2 id="cta-title" style="margin-top:14px">Have a problem worth a lab?<br /><span>Tell us about it.</span></h2>
+          </div>
+          <a href="mailto:hello@rollable.app" class="btn btn-primary">hello@rollable.app <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </section>
+    </div>
   </main>
 
-  <footer>
+  <div class="rule"></div>
+  <footer class="rails">
     <div class="footer-inner">
-      <a href="/" class="f-logo"><img src="/rollable-logo.svg" alt="Rollable" width="220" height="56" style="height: 24px; width: auto; display: block;" /></a>
+      <a href="/" aria-label="Rollable Labs home"><img src="/rollable-logo.svg" alt="Rollable" width="220" height="56" style="height: 22px; width: auto;" /></a>
       <ul class="f-links">
         <li><a href="mailto:hello@rollable.app">Contact</a></li>
         <li><a href="/privacy.html">Privacy</a></li>
@@ -197,6 +419,17 @@
       <span class="f-copy">© 2026 Rollable Labs</span>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) { els.forEach(function (el) { el.classList.add('in'); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -8% 0px' });
+      els.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
 </body>
 
 </html>
