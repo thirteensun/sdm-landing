@@ -165,8 +165,11 @@ new lab, then typecheck and look at every page.
 ### Workspace (tool pages)
 
 A lab page where people work on something — a signal, a batch, a pipeline — is
-laid out like a design tool such as Figma. Reference:
-`rollable/labs/production/src/app/(lab)/bearing-diagnosis/page.tsx`.
+laid out like a design tool such as Figma. References:
+`rollable/labs/production/src/app/(lab)/bearing-diagnosis/page.tsx` (a signal)
+and `rollable/labs/panel-intel/src/app/(lab)/panels/[code]/page.tsx` (a panel,
+whose first frame is a trace diagram of selectable nodes; shared styles in
+Panel Intel's `globals.css` and `components/TraceWorkspace.tsx`).
 
 - **Left panel:** the lab sidebar, white with a hairline border: the logo and
   lab name, then "Pages" and "Tools" sections (12px headings, 6px row highlight).
