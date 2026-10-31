@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rollable Labs — 04 Letter</title>
+  <link rel="stylesheet" href="base.css" />
+  <style>
+    /* A plain letter on a sheet of paper, with the facts kept in the margin. */
+    main { display: grid; grid-template-columns: 1fr 640px 1fr; gap: 40px; padding: 48px 40px 72px; align-items: start; }
+    .letter { grid-column: 2; background: var(--paper); border: 1px solid var(--line); padding: 56px 64px 64px; box-shadow: 0 1px 0 var(--line), 0 18px 40px -28px rgba(0,0,0,.18); }
+    .letter p + p { margin-top: 16px; }
+    .letter .date { color: var(--mute); font-size: 13px; margin-bottom: 32px; }
+    .sign { margin-top: 32px; }
+    .margin { grid-column: 3; position: sticky; top: 48px; font-size: 13px; display: grid; gap: 20px; max-width: 220px; }
+    .margin ul { list-style: none; display: grid; gap: 4px; margin-top: 6px; }
+    @media (max-width: 1100px) { main { grid-template-columns: 1fr; padding: 24px 16px 48px; } .letter, .margin { grid-column: 1; } .letter { padding: 32px 24px; } .margin { position: static; max-width: none; } }
+  </style>
+</head>
+<body>
+  <header class="top"><a href="/" class="logo"><b>Roll</b><span>able</span><em>Labs</em></a><a class="u" href="mailto:hello@rollable.app">Reply</a></header>
+  <main>
+    <article class="letter">
+      <p class="date">Rollable Labs, 2026</p>
+      <p>Hello,</p>
+      <p>Rollable Labs is a small software studio. We do not try to build a platform for everything. We pick one problem that a real team has today, build the smallest tool that solves it, and use it with that team on their real work.</p>
+      <p>If the tool helps, it grows and opens to more teams. If it does not, we stop and keep what we learned. Right now three labs are running: one in sales, one in manufacturing and one in maintenance.</p>
+      <p>If your team has a problem that costs time every week, write to us. We read every message.</p>
+      <p class="sign">Rollable Labs<br /><a class="u" href="mailto:hello@rollable.app">hello@rollable.app</a></p>
+    </article>
+    <aside class="margin">
+      <div><span class="label">Labs</span><ul><li><span class="dot on"></span>Sales — open beta</li><li><span class="dot pilot"></span>Manufacturing — pilot</li><li><span class="dot"></span>Maintenance — research</li></ul></div>
+      <div><span class="label">Method</span><p>One problem · smallest tool · real work · keep or stop</p></div>
+    </aside>
+  </main>
+  <footer class="foot"><span>© 2026 Rollable Labs</span><span><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></span></footer>
+</body>
+</html>

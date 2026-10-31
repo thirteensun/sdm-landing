@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rollable Labs — 09 Loop</title>
+  <link rel="stylesheet" href="base.css" />
+  <style>
+    /* The method drawn as what it is: a loop. Stopped labs feed the next problem. */
+    main { max-width: 1040px; margin: 0 auto; padding: 48px 40px 72px; }
+    .head { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: end; }
+    h1 { font-size: 26px; line-height: 1.3; }
+    .flow { display: grid; grid-template-columns: repeat(4, 1fr) 1.1fr; align-items: stretch; margin-top: 56px; position: relative; }
+    .box { background: var(--paper); border: 1px solid var(--line-2); padding: 18px 18px 20px; position: relative; margin-right: 28px; }
+    .box::after { content: '→'; position: absolute; right: -22px; top: 50%; transform: translateY(-50%); color: var(--mute); }
+    .box.end { margin-right: 0; display: grid; gap: 8px; padding: 0; border: 0; background: none; }
+    .box.end::after { content: none; }
+    .box.end div { background: var(--paper); border: 1px solid var(--line-2); padding: 12px 16px; font-size: 14px; }
+    .box h3 { font-size: 15px; margin-top: 4px; } .box p { font-size: 13px; color: var(--soft); margin-top: 4px; }
+    .back { margin: 14px 0 0 0; height: 34px; border: 1px solid var(--line-2); border-top: 0; border-radius: 0 0 10px 10px; position: relative; width: calc(100% - 8px); }
+    .back span { position: absolute; left: 50%; bottom: -10px; transform: translateX(-50%); background: var(--bg); padding: 0 10px; font-size: 12px; color: var(--mute); white-space: nowrap; }
+    .back::before { content: '↑'; position: absolute; left: -6px; top: -14px; color: var(--mute); font-size: 13px; }
+    .now { display: flex; gap: 32px; margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); flex-wrap: wrap; font-size: 14px; }
+    .now .label { margin-right: auto; }
+    @media (max-width: 860px) {
+      main { padding: 24px 16px 48px; } .head { grid-template-columns: 1fr; gap: 16px; }
+      .flow { grid-template-columns: 1fr; gap: 24px; } .box { margin-right: 0; } .box::after { content: '↓'; right: auto; left: 18px; top: auto; bottom: -22px; transform: none; }
+      .back { display: none; } .now { gap: 12px; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top"><a href="/" class="logo"><b>Roll</b><span>able</span><em>Labs</em></a><a class="u" href="mailto:hello@rollable.app">hello@rollable.app</a></header>
+  <main>
+    <div class="head">
+      <h1>A small studio that builds one focused tool at a time.</h1>
+      <p class="soft">Every lab follows the same loop. Nothing is wasted: a lab that stops still tells us which problem to take on next.</p>
+    </div>
+    <div class="flow">
+      <div class="box"><span class="label">1</span><h3>Problem</h3><p>One specific problem, from a real team.</p></div>
+      <div class="box"><span class="label">2</span><h3>Tool</h3><p>The smallest thing that solves it.</p></div>
+      <div class="box"><span class="label">3</span><h3>Real work</h3><p>Used by the team, every day.</p></div>
+      <div class="box"><span class="label">4</span><h3>Review</h3><p>Did the work get easier?</p></div>
+      <div class="box end"><div><span class="dot on"></span>Yes — it grows</div><div><span class="dot"></span>No — it stops</div></div>
+    </div>
+    <div class="back"><span>What we learn starts the next lab</span></div>
+    <div class="now"><span class="label">In the loop now</span><span><span class="dot on"></span>Sales · open beta</span><span><span class="dot pilot"></span>Manufacturing · pilot</span><span><span class="dot"></span>Maintenance · research</span></div>
+  </main>
+  <footer class="foot"><span>© 2026 Rollable Labs</span><span><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></span></footer>
+</body>
+</html>

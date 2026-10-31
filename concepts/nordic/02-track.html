@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rollable Labs — 02 Stage track</title>
+  <link rel="stylesheet" href="base.css" />
+  <style>
+    /* Every lab walks the same four stages; where it sits on the track is its status. */
+    main { max-width: 1080px; margin: 0 auto; padding: 64px 40px 80px; }
+    .intro { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 72px; }
+    h1 { font-size: 28px; line-height: 1.25; }
+    .track { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 2px solid var(--ink); }
+    .stage { position: relative; padding: 20px 20px 0 0; }
+    .stage::before { content: ''; position: absolute; left: 0; top: -7px; width: 12px; height: 12px; border-radius: 50%; background: var(--bg); border: 2px solid var(--ink); }
+    .stage h3 { font-size: 15px; margin-top: 6px; }
+    .stage p { font-size: 14px; color: var(--soft); margin-top: 4px; max-width: 220px; }
+    .lane { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 40px; border-top: 1px solid var(--line); }
+    .lane-row { display: contents; }
+    .lab { grid-column: var(--at) / span 1; display: flex; align-items: center; gap: 10px; padding: 14px 16px; margin: 10px 16px 0 0; white-space: nowrap; background: var(--paper); border: 1px solid var(--line); font-size: 14px; }
+    .lab .label { margin-left: auto; }
+    @media (max-width: 760px) {
+      main { padding: 32px 16px 48px; } .intro { grid-template-columns: 1fr; gap: 16px; margin-bottom: 40px; }
+      .track { grid-template-columns: 1fr 1fr; row-gap: 28px; } .lane { grid-template-columns: 1fr; } .lab { grid-column: 1; margin-right: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top"><a href="/" class="logo"><b>Roll</b><span>able</span><em>Labs</em></a><a class="u" href="mailto:hello@rollable.app">hello@rollable.app</a></header>
+  <main>
+    <div class="intro">
+      <h1>A small studio building focused tools, one problem at a time.</h1>
+      <p class="soft">Each lab starts with a real team and a real problem. It moves through the same four stages, and only continues when it has proven itself in the stage before.</p>
+    </div>
+    <div class="track">
+      <div class="stage"><span class="label">Stage 1</span><h3>Research</h3><p>Understand the problem with the people who have it.</p></div>
+      <div class="stage"><span class="label">Stage 2</span><h3>Pilot</h3><p>A first tool, used by one team on real work.</p></div>
+      <div class="stage"><span class="label">Stage 3</span><h3>Open beta</h3><p>Open to more teams with the same problem.</p></div>
+      <div class="stage"><span class="label">Stage 4</span><h3>Product</h3><p>Grows up, or is stopped with what it taught us.</p></div>
+    </div>
+    <div class="lane">
+      <a class="lab" style="--at:3" href="mailto:hello@rollable.app?subject=Lab%2001"><span class="dot on"></span>Lab 01 · Sales<span class="label">→</span></a>
+      <a class="lab" style="--at:2" href="mailto:hello@rollable.app?subject=Lab%2002"><span class="dot pilot"></span>Lab 02 · Manufacturing<span class="label">→</span></a>
+      <a class="lab" style="--at:1" href="mailto:hello@rollable.app?subject=Lab%2003"><span class="dot"></span>Lab 03 · Maintenance<span class="label">→</span></a>
+    </div>
+  </main>
+  <footer class="foot"><span>© 2026 Rollable Labs</span><span><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></span></footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rollable Labs — 06 Rings</title>
+  <link rel="stylesheet" href="base.css" />
+  <style>
+    /* Labs move outward as they mature: research at the core, open beta at the edge. */
+    main { max-width: 1080px; margin: 0 auto; padding: 48px 40px 72px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    h1 { font-size: 26px; line-height: 1.3; }
+    .text p { color: var(--soft); margin-top: 16px; max-width: 440px; }
+    .legend { list-style: none; margin-top: 32px; display: grid; gap: 10px; font-size: 14px; }
+    .legend li { display: grid; grid-template-columns: 110px 1fr; border-top: 1px solid var(--line); padding-top: 10px; }
+    svg { width: 100%; height: auto; }
+    svg text { font-family: 'Inter', sans-serif; font-size: 12px; fill: var(--mute); }
+    svg .name { fill: var(--ink); font-size: 13px; }
+    svg a:hover .name { text-decoration: underline; }
+    @media (max-width: 860px) { main { grid-template-columns: 1fr; gap: 32px; padding: 24px 16px 48px; } }
+  </style>
+</head>
+<body>
+  <header class="top"><a href="/" class="logo"><b>Roll</b><span>able</span><em>Labs</em></a><a class="u" href="mailto:hello@rollable.app">hello@rollable.app</a></header>
+  <main>
+    <div class="text">
+      <h1>A small studio that builds one focused tool at a time.</h1>
+      <p>A lab starts at the centre, close to one team and one problem. It moves outward only when it has proven itself on real work.</p>
+      <ul class="legend">
+        <li><span class="label">Centre</span><span>Research with one team</span></li>
+        <li><span class="label">Middle ring</span><span>Pilot on real work</span></li>
+        <li><span class="label">Outer ring</span><span>Open beta for more teams</span></li>
+      </ul>
+      <p style="margin-top:32px">Have a problem for the centre? <a class="u" href="mailto:hello@rollable.app">Write to us</a>.</p>
+    </div>
+    <svg viewBox="0 0 440 440" role="img" aria-label="Three labs placed on rings by stage: Sales on the outer ring, Manufacturing on the middle ring, Maintenance in the centre.">
+      <g fill="none" stroke="#cfccc4"><circle cx="220" cy="220" r="200" /><circle cx="220" cy="220" r="130" /><circle cx="220" cy="220" r="60" fill="#ffffff" /></g>
+      <text x="220" y="34" text-anchor="middle">Open beta</text>
+      <text x="220" y="104" text-anchor="middle">Pilot</text>
+      <text x="220" y="174" text-anchor="middle">Research</text>
+      <a href="mailto:hello@rollable.app?subject=Lab%2001"><circle cx="379" cy="341" r="7" fill="#2f7d5b" /><text class="name" x="364" y="372" text-anchor="end">01 Sales</text></a>
+      <a href="mailto:hello@rollable.app?subject=Lab%2002"><circle cx="112" cy="296" r="7" fill="#b9822c" /><text class="name" x="126" y="300">02 Manufacturing</text></a>
+      <a href="mailto:hello@rollable.app?subject=Lab%2003"><circle cx="232" cy="236" r="7" fill="#b3b0a8" /><text class="name" x="220" y="262" text-anchor="middle">03 Maintenance</text></a>
+    </svg>
+  </main>
+  <footer class="foot"><span>© 2026 Rollable Labs</span><span><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></span></footer>
+</body>
+</html>

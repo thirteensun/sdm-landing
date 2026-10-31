@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rollable Labs — 05 Four squares</title>
+  <link rel="stylesheet" href="base.css" />
+  <style>
+    /* The whole story in four equal squares: what, how, now, you. Reads like a folded leaflet. */
+    main { max-width: 1040px; margin: 0 auto; padding: 32px 40px 64px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .sq { background: var(--paper); aspect-ratio: 1 / .6; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; }
+    .sq h2 { font-size: 20px; line-height: 1.35; max-width: 360px; }
+    .sq p { color: var(--soft); max-width: 380px; }
+    .sq ol, .sq ul { list-style: none; display: grid; gap: 8px; }
+    .sq ol { counter-reset: n; } .sq ol li { counter-increment: n; display: grid; grid-template-columns: 28px 1fr; }
+    .sq ol li::before { content: counter(n); color: var(--mute); }
+    .sq.dark { background: var(--ink); color: var(--bg); } .sq.dark .label { color: #9d9b94; }
+    .sq.dark a.u { border-color: #5a5954; } .sq.dark a.u:hover { border-color: var(--bg); }
+    @media (max-width: 760px) { main { padding: 16px 16px 48px; } .grid { grid-template-columns: 1fr; } .sq { aspect-ratio: auto; min-height: 240px; padding: 24px; gap: 24px; } }
+  </style>
+</head>
+<body>
+  <header class="top"><a href="/" class="logo"><b>Roll</b><span>able</span><em>Labs</em></a><span class="label">Software studio</span></header>
+  <main>
+    <div class="grid">
+      <section class="sq"><span class="label">What</span><h2>We build focused tools for one problem at a time, and test them with the teams that have it.</h2></section>
+      <section class="sq"><span class="label">How</span><ol><li>Pick one problem with a real team</li><li>Build the smallest tool that solves it</li><li>Use it on their real work</li><li>Keep what works, stop what does not</li></ol></section>
+      <section class="sq"><span class="label">Now</span><ul><li><span class="dot on"></span>Sales — open beta</li><li><span class="dot pilot"></span>Manufacturing — pilot</li><li><span class="dot"></span>Maintenance — research</li></ul></section>
+      <section class="sq dark"><span class="label">You</span><div><h2>Bring a problem your team has today.</h2><p style="margin-top:16px;color:#c9c7c0"><a class="u" href="mailto:hello@rollable.app">hello@rollable.app</a></p></div></section>
+    </div>
+  </main>
+  <footer class="foot"><span>© 2026 Rollable Labs</span><span><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></span></footer>
+</body>
+</html>
