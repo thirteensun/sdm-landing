@@ -170,6 +170,9 @@ laid out like a design tool such as Figma. References:
 and `rollable/labs/panel-intel/src/app/(lab)/panels/[code]/page.tsx` (a panel,
 whose first frame is a trace diagram of selectable nodes; shared styles in
 Panel Intel's `globals.css` and `components/TraceWorkspace.tsx`).
+Also `panel-intel/.../drivers/page.tsx` (analysis controls in the top bar) and
+`crm/src/app/analytics/AnalyticsClient.tsx` (inside the CRM shell, which keeps
+its own top bar; the views list is the left panel).
 
 - **Left panel:** the lab sidebar, white with a hairline border: the logo and
   lab name, then "Pages" and "Tools" sections (12px headings, 6px row highlight).
