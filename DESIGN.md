@@ -187,7 +187,10 @@ its own top bar; the views list is the left panel).
   compact label/value rows. Clicking something on the canvas selects it and the
   inspector's first section shows it ("Selection"). Explanations and glossaries
   live in the "Method" tab, not on the canvas.
-- **Narrow screens:** top bar, canvas and inspector stack in one column.
+- **Narrow screens:** top bar, canvas and inspector stack in one column. The lab
+  sidebar becomes a compact bar on top (logo, live pages, sign out; "Soon" items
+  hidden). Charts keep a readable size (min 640px) and scroll sideways inside
+  their frame; the page itself never scrolls sideways.
 
 Don't add tool chrome that does nothing (fake zoom levels, layer lists, toolbars):
 every control must work.
