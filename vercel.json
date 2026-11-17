@@ -28,6 +28,14 @@
     {
       "source": "/labs/panel-intel/:path*",
       "destination": "https://rollable-labs-panel-intel.vercel.app/labs/panel-intel/:path*"
+    },
+    {
+      "source": "/labs/builder",
+      "destination": "https://rollable-labs-builder.vercel.app/labs/builder"
+    },
+    {
+      "source": "/labs/builder/:path*",
+      "destination": "https://rollable-labs-builder.vercel.app/labs/builder/:path*"
     }
   ]
 }
