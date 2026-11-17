@@ -2,6 +2,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/",
+      "destination": "/labs/builder",
+      "permanent": false
+    },
+    {
       "source": "/crm",
       "destination": "/labs/builder",
       "permanent": false
