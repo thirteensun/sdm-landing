@@ -1,0 +1,20 @@
+# Rollable Builder
+
+> Rollable Builder is an AI app builder for small businesses. You describe the tool you need in plain words, add spreadsheets, documents or photos if you have them, and a team of AI builders makes it into a working app with lists, forms, boards, dashboards and calendars. You change it by asking, and every change can be undone. Made by Rollable (rollable.app), in early access by invitation.
+
+## Key pages
+
+- [Start page and demo](https://rollable.app/labs/builder/start): describe a tool and watch how it is built, no sign-in needed. Includes "What is Rollable Builder?", who it is for, how it works, and questions and answers.
+- [Privacy](https://rollable.app/privacy.html)
+- [Terms](https://rollable.app/terms.html)
+
+## Facts
+
+- Who it is for: small businesses such as cafés and bakeries, salons and clinics, trades, shops, studios and freelancers.
+- Input: a plain-language description (English or Norwegian), plus optional Excel or CSV spreadsheets, Word documents, PDFs, notes and photos (up to five files of 5 MB each).
+- Output: an internal app with its own tables and address; screen kinds are lists, forms, boards, dashboards and calendars. Data can be exported to Excel or CSV.
+- Changes: by chat ("add a column for invoice date"); every version is kept and can be undone.
+- Team: people are invited to a workspace by email as editors or viewers.
+- Data: stored in the EU (database and app servers in Ireland). Files that only AI can read are sent to Claude by Anthropic after the person agrees; data is not used to train AI models.
+- Access: early access by invitation. Contact: hello@rollable.app.
+- No code is needed.
