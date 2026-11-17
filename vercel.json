@@ -1,34 +1,48 @@
 {
   "trailingSlash": false,
-  "rewrites": [
+  "redirects": [
     {
       "source": "/crm",
-      "destination": "/crm.html"
+      "destination": "/labs/builder",
+      "permanent": false
+    },
+    {
+      "source": "/crm.html",
+      "destination": "/labs/builder",
+      "permanent": false
     },
     {
       "source": "/labs/crm",
-      "destination": "https://sdm-prototype.vercel.app/labs/crm"
+      "destination": "/labs/builder",
+      "permanent": false
     },
     {
       "source": "/labs/crm/:path*",
-      "destination": "https://sdm-prototype.vercel.app/labs/crm/:path*"
+      "destination": "/labs/builder",
+      "permanent": false
     },
     {
       "source": "/labs/production",
-      "destination": "https://rollable-labs-production.vercel.app/labs/production"
+      "destination": "/labs/builder",
+      "permanent": false
     },
     {
       "source": "/labs/production/:path*",
-      "destination": "https://rollable-labs-production.vercel.app/labs/production/:path*"
+      "destination": "/labs/builder",
+      "permanent": false
     },
     {
       "source": "/labs/panel-intel",
-      "destination": "https://rollable-labs-panel-intel.vercel.app/labs/panel-intel"
+      "destination": "/labs/builder",
+      "permanent": false
     },
     {
       "source": "/labs/panel-intel/:path*",
-      "destination": "https://rollable-labs-panel-intel.vercel.app/labs/panel-intel/:path*"
-    },
+      "destination": "/labs/builder",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
     {
       "source": "/labs/builder",
       "destination": "https://rollable-labs-builder.vercel.app/labs/builder"
