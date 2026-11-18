@@ -7,6 +7,10 @@
 - [Start page and demo](https://rollable.app/labs/builder/start): describe a tool and watch how it is built, no sign-in needed. Includes "What is Rollable Builder?", how it works, and questions and answers.
 - [Guides](https://rollable.app/labs/builder/guides): step-by-step examples, each from a real run of Builder, with screenshots, day-to-day use and what it doesn't do yet.
 - [How to make a loyalty card app for your café, without code](https://rollable.app/labs/builder/guides/cafe-loyalty-card): a 10-stamp coffee card built from one description and a list of regulars.
+- [How to make a booking app for your hair salon, without code](https://rollable.app/labs/builder/guides/salon-bookings): bookings from a spreadsheet export become a calendar, a booking form and a no-show overview.
+- [How to turn your job whiteboard into an app for your trade business](https://rollable.app/labs/builder/guides/trades-job-board): a picture of a plumbing firm’s whiteboard becomes a job list, a “done, not invoiced” list and an overview.
+- [How to make a stock app for your shop from an Excel sheet](https://rollable.app/labs/builder/guides/shop-stock): a gift shop’s stock spreadsheet becomes a stock list, a running-low overview and a reorder list per supplier.
+- [How to turn your project notes into a project tracker for your design studio](https://rollable.app/labs/builder/guides/studio-projects): a page of loose project notes becomes a project list and a ready-to-invoice list.
 - [Privacy](https://rollable.app/privacy.html)
 - [Terms](https://rollable.app/terms.html)
 
