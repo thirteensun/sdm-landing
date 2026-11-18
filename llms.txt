@@ -24,5 +24,5 @@
 - Transparency: each step is shown as it happens: files read and what was found, values the AI was unsure about, who builds which screen and why they were picked. Nothing is sent to AI to read without asking first.
 - Team: people are invited to a workspace by email as editors or viewers.
 - Data: stored in the EU (database and app servers in Ireland). Files that only AI can read are sent to Claude by Anthropic after the person agrees; data is not used to train AI models.
-- Access: early access by invitation. Contact: hello@rollable.app.
+- Access: early access; sign in with Google or email. A limited number of new people get in each day, then a short waitlist. Free during early access (1,000 credits per account). Contact: hello@rollable.app.
 - No code is needed.
