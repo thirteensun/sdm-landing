@@ -4,7 +4,9 @@
 
 ## Key pages
 
-- [Start page and demo](https://rollable.app/labs/builder/start): describe a tool and watch how it is built, no sign-in needed. Includes "What is Rollable Builder?", who it is for, how it works, and questions and answers.
+- [Start page and demo](https://rollable.app/labs/builder/start): describe a tool and watch how it is built, no sign-in needed. Includes "What is Rollable Builder?", how it works, and questions and answers.
+- [Guides](https://rollable.app/labs/builder/guides): step-by-step examples, each from a real run of Builder, with screenshots, day-to-day use and what it doesn't do yet.
+- [How to make a loyalty card app for your café, without code](https://rollable.app/labs/builder/guides/cafe-loyalty-card): a 10-stamp coffee card built from one description and a list of regulars.
 - [Privacy](https://rollable.app/privacy.html)
 - [Terms](https://rollable.app/terms.html)
 
