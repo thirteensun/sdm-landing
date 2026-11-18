@@ -1,6 +1,6 @@
 # Rollable Builder
 
-> Rollable Builder is an AI app builder for small businesses, run by a team of AI agents you can see. You start from what you want to do, in your own words, and bring whatever you have: notes, spreadsheets, Word documents, PDFs or photos. A team of characters (a lead who knows your kind of business, specialists and builders) makes it into a working app while you watch each step: what they read, what they decide and what they build. You change it by asking, and every change can be undone. Made by Rollable (rollable.app), in early access by invitation.
+> Rollable Builder is an AI app builder for everyone, run by a team of AI agents you can see: to run a business, teach a class, learn something new, create a project or look after things. You start from what you want to do, in your own words, and bring whatever you have: notes, spreadsheets, Word documents, PDFs or photos. A team of characters (a lead who knows your kind of work, specialists and builders) makes it into a working app while you watch each step: what they read, what they decide and what they build. You change it by asking, and every change can be undone. Made by Rollable (rollable.app), in early access by invitation.
 
 ## Key pages
 
@@ -16,11 +16,11 @@
 
 ## Facts
 
-- Who it is for: small businesses such as cafés and bakeries, salons and clinics, trades, shops, studios and freelancers.
+- Who it is for: anyone who keeps track of something. Small businesses (cafés, salons, trades, shops, studios), teachers (class registers, reading logs, course sign-ups), students and learners (exam plans, vocabulary, practice), creators (band gigs, writing submissions, recipes) and people looking after things (home upkeep, club equipment, service logs).
 - Start: from a use case (what you want to do), described in plain language (English or Norwegian); bring any mix of Excel or CSV spreadsheets, Word documents, PDFs, notes and photos (up to five files of 5 MB each).
 - Output: an internal app with its own tables and address; screen kinds are lists, forms, boards, dashboards and calendars. Data can be exported to Excel or CSV.
 - Changes: by chat ("add a column for invoice date"); every version is kept and can be undone.
-- AI agents: each character has one job. Leads by kind of business (for example Bao for cafés, Bolt for trades), specialists by tool type (for example Tally for orders, Cal for bookings), and builders for screens (Pip lists and forms, Kumo dashboards, Toko boards and calendars). The team is picked from the description and can be swapped.
+- AI agents: each character has one job. Leads by kind of work (for example Bao for cafés, Bolt for trades, Lyra for music and the arts), specialists by tool type (for example Tally for orders, Cal for bookings), and builders for screens (Pip lists and forms, Kumo dashboards, Toko boards and calendars). The team is picked from the description and can be swapped.
 - Transparency: each step is shown as it happens: files read and what was found, values the AI was unsure about, who builds which screen and why they were picked. Nothing is sent to AI to read without asking first.
 - Team: people are invited to a workspace by email as editors or viewers.
 - Data: stored in the EU (database and app servers in Ireland). Files that only AI can read are sent to Claude by Anthropic after the person agrees; data is not used to train AI models.
