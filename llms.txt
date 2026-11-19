@@ -11,6 +11,8 @@
 - [How to turn your job whiteboard into an app for your trade business](https://rollable.app/labs/builder/guides/trades-job-board): a picture of a plumbing firm’s whiteboard becomes a job list, a “done, not invoiced” list and an overview.
 - [How to make a stock app for your shop from an Excel sheet](https://rollable.app/labs/builder/guides/shop-stock): a gift shop’s stock spreadsheet becomes a stock list, a running-low overview and a reorder list per supplier.
 - [How to turn your project notes into a project tracker for your design studio](https://rollable.app/labs/builder/guides/studio-projects): a page of loose project notes becomes a project list and a ready-to-invoice list.
+- [How to run a reading challenge and homework nudges for your class, without code](https://rollable.app/labs/builder/guides/class-reading-stars): a teacher’s class list becomes a star counter towards 5 books, homework nudges with one-tap buttons and a list of whose parents to call.
+- [How to make a vocabulary practice app for the language you’re learning, without code](https://rollable.app/labs/builder/guides/spanish-vocabulary): a Spanish word list becomes a practice screen with Got it right and Got it wrong buttons and progress towards 5 right answers per word.
 - [Privacy](https://rollable.app/privacy.html)
 - [Terms](https://rollable.app/terms.html)
 
